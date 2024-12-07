@@ -3,39 +3,56 @@
 </script>
 
 <AccordionItem>
-  <!-- Header Content -->
   <p slot="headerSlot" class="accordion-header.level-1">Education</p>
-  <!-- Body Content -->
 
+  <!-- Doctor of Medicine -->
   <AccordionItem useStyle={false}>
     <table slot="headerSlot" class="education">
+      <colgroup>
+        <col style="width: 60%;" />
+        <col style="width: 40%;" />
+      </colgroup>
       <tbody>
         <tr>
-          <td rowspan="2"><h3 class="centered tight">Doctor of Medicine</h3></td
-          >
-          <td><p class="centered tight">Semmelweis University, Budapest</p></td>
+          <td rowspan="2">
+            <h3 class="centered tight">Doctor of Medicine</h3>
+          </td>
+          <td>
+            <p class="centered tight">Semmelweis University, Budapest</p>
+          </td>
         </tr>
         <tr>
-          <td><p class="centered tight">2014 - 2021</p></td>
+          <td>
+            <p class="centered tight">2014 - 2021</p>
+          </td>
         </tr>
       </tbody>
     </table>
     <p>Juhu</p>
   </AccordionItem>
 
+  <!-- Physics B.Sc. -->
   <AccordionItem useStyle={false}>
     <table slot="headerSlot" class="education">
+      <colgroup>
+        <col style="width: 60%;" />
+        <col style="width: 40%;" />
+      </colgroup>
       <tbody>
         <tr>
-          <td rowspan="2"><h3 class="centered tight">Physics B.Sc.</h3></td>
-          <td
-            ><p class="centered tight">
+          <td rowspan="2">
+            <h3 class="centered tight">Physics B.Sc.</h3>
+          </td>
+          <td>
+            <p class="centered tight">
               Eötvös Loránd Science University, Budapest
-            </p></td
-          >
+            </p>
+          </td>
         </tr>
         <tr>
-          <td><p class="centered tight">2016 - 2020</p></td>
+          <td>
+            <p class="centered tight">2016 - 2020</p>
+          </td>
         </tr>
       </tbody>
     </table>
@@ -50,16 +67,14 @@
     border: 3px;
   }
 
-  /* table, th, td {
-      border: 1px solid black;
-} */
-
-  .centered {
-    text-align: center;
+  .education col {
+    width: auto;
   }
 
-  .tight {
-    padding: 0px;
-    margin: 0px;
+  th,
+  td {
+    /* border: 1px solid black; */
+    text-align: center;
+    padding: 8px;
   }
 </style>
