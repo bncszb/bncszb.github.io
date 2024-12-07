@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import AccordionItem from '$lib/components/AccordionItem.svelte';
 
 	onMount(() => {
 		const navLinks = document.querySelectorAll('nav a');
@@ -27,52 +28,43 @@
 		<p>Web Developer</p>
 	</header>
 
-	<section id="contact">
-		<h2>Contact Information</h2>
+	<AccordionItem header="Contact Information">
 		<ul>
 			<li>Email: john.doe@example.com</li>
 			<li>Phone: (123) 456-7890</li>
 			<li>Location: New York, NY</li>
 		</ul>
-	</section>
+	</AccordionItem>
 
-	<section id="summary">
-		<h2>Summary</h2>
+	<AccordionItem header="Summary">
 		<p>Experienced web developer with a passion for creating responsive and user-friendly websites. Skilled in HTML, CSS, JavaScript, and various modern frameworks.</p>
-	</section>
+	</AccordionItem>
 
-	<section id="experience">
-		<h2>Work Experience</h2>
-		<div class="job">
-			<h3>Senior Web Developer - Tech Solutions Inc.</h3>
+	<AccordionItem header="Work Experience">
+		<AccordionItem header="Senior Web Developer - Tech Solutions Inc." level={2}>
 			<p class="date">January 2018 - Present</p>
 			<ul>
 				<li>Lead a team of 5 developers in creating web applications for clients</li>
 				<li>Implemented responsive design principles, improving mobile traffic by 40%</li>
 				<li>Optimized website performance, reducing load times by 25%</li>
 			</ul>
-		</div>
-		<div class="job">
-			<h3>Web Developer - Digital Creations LLC</h3>
+		</AccordionItem>
+		<AccordionItem header="Web Developer - Digital Creations LLC" level={2}>
 			<p class="date">June 2015 - December 2017</p>
 			<ul>
 				<li>Developed and maintained websites for small to medium-sized businesses</li>
 				<li>Collaborated with designers to implement visually appealing interfaces</li>
 				<li>Integrated third-party APIs to enhance website functionality</li>
 			</ul>
-		</div>
-	</section>
+		</AccordionItem>
+	</AccordionItem>
 
-	<section id="education">
-		<h2>Education</h2>
-		<div class="education">
-			<h3>Bachelor of Science in Computer Science</h3>
-			<p>University of Technology, Graduated 2015</p>
-		</div>
-	</section>
+	<AccordionItem header="Education">
+		<h3>Bachelor of Science in Computer Science</h3>
+		<p>University of Technology, Graduated 2015</p>
+	</AccordionItem>
 
-	<section id="skills">
-		<h2>Skills</h2>
+	<AccordionItem header="Skills">
 		<ul>
 			<li>HTML5, CSS3, JavaScript</li>
 			<li>React, Vue.js, Svelte</li>
@@ -81,7 +73,7 @@
 			<li>Responsive Web Design</li>
 			<li>UI/UX Principles</li>
 		</ul>
-	</section>
+	</AccordionItem>
 </main>
 
 <style>
@@ -90,36 +82,6 @@
 		margin: 0 auto;
 		padding: 20px;
 		font-family: Arial, sans-serif;
-	}
-
-	nav {
-		background-color: #f8f8f8;
-		padding: 10px 0;
-		position: sticky;
-		top: 0;
-		z-index: 100;
-	}
-
-	nav ul {
-		list-style-type: none;
-		padding: 0;
-		margin: 0;
-		display: flex;
-		justify-content: center;
-	}
-
-	nav li {
-		margin: 0 10px;
-	}
-
-	nav a {
-		text-decoration: none;
-		color: #333;
-		font-weight: bold;
-	}
-
-	nav a:hover {
-		color: #0066cc;
 	}
 
 	header {
@@ -132,15 +94,6 @@
 		margin-bottom: 5px;
 	}
 
-	h2 {
-		border-bottom: 2px solid #333;
-		padding-bottom: 5px;
-	}
-
-	.job, .education {
-		margin-bottom: 15px;
-	}
-
 	.date {
 		font-style: italic;
 		color: #666;
@@ -148,9 +101,5 @@
 
 	ul {
 		padding-left: 20px;
-	}
-
-	section {
-		margin-top: 40px;
 	}
 </style>
