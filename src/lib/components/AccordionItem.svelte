@@ -4,6 +4,7 @@
 
   export let isOpen = false;
   export let level = 1;
+  export let useStyle = true;
 
   const dispatch = createEventDispatcher();
 
@@ -15,7 +16,9 @@
 
 <div class="accordion-item" style="margin-left: {(level - 1) * 20}px">
   <div
-    class="accordion-header level-{level} {isOpen ? 'open' : ''}"
+    class="accordion-header {useStyle ? `level-${level}` : ''} {isOpen
+      ? 'open'
+      : ''}"
     on:click={toggle}
   >
     <slot name="headerSlot"></slot>
