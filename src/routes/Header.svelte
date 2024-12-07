@@ -43,6 +43,8 @@
 	header {
 		display: flex;
 		justify-content: space-between;
+		position: sticky;
+		top: 0;
 	}
 
 	.corner {
@@ -67,7 +69,7 @@
 	nav {
 		display: flex;
 		justify-content: center;
-		--background: rgba(255, 255, 255, 0.7);
+		--background: rgba(255, 255, 255, 1);
 	}
 
 	svg {
