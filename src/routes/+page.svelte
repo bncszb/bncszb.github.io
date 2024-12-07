@@ -1,5 +1,19 @@
 <script lang="ts">
-	// You can add any necessary imports here
+	import { onMount } from 'svelte';
+
+	onMount(() => {
+		const navLinks = document.querySelectorAll('nav a');
+		navLinks.forEach(link => {
+			link.addEventListener('click', (e) => {
+				e.preventDefault();
+				const targetId = link.getAttribute('href').slice(1);
+				const targetElement = document.getElementById(targetId);
+				if (targetElement) {
+					targetElement.scrollIntoView({ behavior: 'smooth' });
+				}
+			});
+		});
+	});
 </script>
 
 <svelte:head>
@@ -13,7 +27,7 @@
 		<p>Web Developer</p>
 	</header>
 
-	<section>
+	<section id="contact">
 		<h2>Contact Information</h2>
 		<ul>
 			<li>Email: john.doe@example.com</li>
@@ -22,12 +36,12 @@
 		</ul>
 	</section>
 
-	<section>
+	<section id="summary">
 		<h2>Summary</h2>
 		<p>Experienced web developer with a passion for creating responsive and user-friendly websites. Skilled in HTML, CSS, JavaScript, and various modern frameworks.</p>
 	</section>
 
-	<section>
+	<section id="experience">
 		<h2>Work Experience</h2>
 		<div class="job">
 			<h3>Senior Web Developer - Tech Solutions Inc.</h3>
@@ -49,7 +63,7 @@
 		</div>
 	</section>
 
-	<section>
+	<section id="education">
 		<h2>Education</h2>
 		<div class="education">
 			<h3>Bachelor of Science in Computer Science</h3>
@@ -57,7 +71,7 @@
 		</div>
 	</section>
 
-	<section>
+	<section id="skills">
 		<h2>Skills</h2>
 		<ul>
 			<li>HTML5, CSS3, JavaScript</li>
@@ -78,9 +92,40 @@
 		font-family: Arial, sans-serif;
 	}
 
+	nav {
+		background-color: #f8f8f8;
+		padding: 10px 0;
+		position: sticky;
+		top: 0;
+		z-index: 100;
+	}
+
+	nav ul {
+		list-style-type: none;
+		padding: 0;
+		margin: 0;
+		display: flex;
+		justify-content: center;
+	}
+
+	nav li {
+		margin: 0 10px;
+	}
+
+	nav a {
+		text-decoration: none;
+		color: #333;
+		font-weight: bold;
+	}
+
+	nav a:hover {
+		color: #0066cc;
+	}
+
 	header {
 		text-align: center;
 		margin-bottom: 20px;
+		padding-top: 20px;
 	}
 
 	h1 {
@@ -103,5 +148,9 @@
 
 	ul {
 		padding-left: 20px;
+	}
+
+	section {
+		margin-top: 40px;
 	}
 </style>
