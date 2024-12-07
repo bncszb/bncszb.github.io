@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { slide } from 'svelte/transition';
   import { createEventDispatcher } from 'svelte';
+  import { slide } from 'svelte/transition';
 
   export let header: string;
   export let isOpen = false;
@@ -15,7 +15,7 @@
 </script>
 
 <div class="accordion-item" style="margin-left: {(level - 1) * 20}px">
-  <div class="accordion-header" on:click={toggle}>
+  <div class="accordion-header level-{level}" on:click={toggle}>
     {header}
   </div>
   {#if isOpen}
@@ -41,12 +41,21 @@
     padding: 10px;
     cursor: pointer;
     user-select: none;
+    /* font-weight: bold; */
+  }
+  .accordion-header.level-1 {
+    font-size: 24px;
+    color: #333;
+  }
+  .accordion-header.level-2 {
+    font-size: 20px;
+    color: #2d841b;
+  }
+  .accordion-header.level-3 {
+    font-size: 18px;
+    color: #bf1b1b;
   }
   .accordion-body {
     padding: 10px;
-  }
-  .toggle-icon {
-    display: inline-block;
-    width: 20px;
   }
 </style>

@@ -1,20 +1,5 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
 	import AccordionItem from '$lib/components/AccordionItem.svelte';
-
-	onMount(() => {
-		const navLinks = document.querySelectorAll('nav a');
-		navLinks.forEach(link => {
-			link.addEventListener('click', (e) => {
-				e.preventDefault();
-				const targetId = link.getAttribute('href').slice(1);
-				const targetElement = document.getElementById(targetId);
-				if (targetElement) {
-					targetElement.scrollIntoView({ behavior: 'smooth' });
-				}
-			});
-		});
-	});
 </script>
 
 <svelte:head>
