@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import logo from '$lib/images/svelte-logo.svg';
 	import github from '$lib/images/github.svg';
+	import logo from '$lib/images/svelte-logo.svg';
 </script>
 
 <header>
@@ -24,6 +24,9 @@
 			</li>
 			<li aria-current={$page.url.pathname.startsWith('/sverdle') ? 'page' : undefined}>
 				<a href="/sverdle">Sverdle</a>
+			</li>		
+			<li aria-current={$page.url.pathname.startsWith('/blabla') ? 'page' : undefined}>
+				<a href="/blabla">Blabla</a>
 			</li>
 		</ul>
 		<svg viewBox="0 0 2 3" aria-hidden="true">
