@@ -16,7 +16,6 @@
 
 <div class="accordion-item" style="margin-left: {(level - 1) * 20}px">
   <div class="accordion-header" on:click={toggle}>
-    <span class="toggle-icon">{isOpen ? '▼' : '▶'}</span>
     {header}
   </div>
   {#if isOpen}
@@ -28,11 +27,17 @@
 
 <style>
   .accordion-item {
-    border: 1px solid #ddd;
     margin-bottom: 5px;
+    width: 95%;
+    transition: box-shadow 0.3s ease;
+    align-items: center;
+    align-self: center;
+  }
+  .accordion-item:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
   .accordion-header {
-    background-color: #f5f5f5;
+    background-color: rgba(red, green, blue, 0);
     padding: 10px;
     cursor: pointer;
     user-select: none;
