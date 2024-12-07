@@ -1,6 +1,7 @@
 <script lang="ts">
   import AccordionItem from "$lib/components/AccordionItem.svelte";
   import Education from "./Education.svelte";
+  import WorkExperience from "./WorkExperience.svelte";
 </script>
 
 <svelte:head>
@@ -37,55 +38,9 @@
       modern frameworks.
     </p>
   </AccordionItem>
+  <WorkExperience />
 
-  <AccordionItem>
-    <!-- Header Content-->
-    <p slot="headerSlot" class="accordion-header.level-1">Work Experience</p>
-    <!-- Body Content -->
-
-    <AccordionItem>
-      <!-- Header Content-->
-
-      <p slot="headerSlot" class="accordion-header.level-2">
-        Senior Web Developer - Tech Solutions Inc.
-      </p>
-
-      <!-- Body Content -->
-
-      <p class="date">January 2018 - Present</p>
-      <ul>
-        <li>
-          Lead a team of 5 developers in creating web applications for clients
-        </li>
-        <li>
-          Implemented responsive design principles, improving mobile traffic by
-          40%
-        </li>
-        <li>Optimized website performance, reducing load times by 25%</li>
-      </ul>
-    </AccordionItem>
-
-    <AccordionItem>
-      <!-- Header Content-->
-      <p slot="headerSlot" class="accordion-header.level-2">
-        Web Developer - Digital Creations LLC
-      </p>
-      <!-- Body Content -->
-
-      <p class="date">June 2015 - December 2017</p>
-      <ul>
-        <li>
-          Developed and maintained websites for small to medium-sized businesses
-        </li>
-        <li>
-          Collaborated with designers to implement visually appealing interfaces
-        </li>
-        <li>Integrated third-party APIs to enhance website functionality</li>
-      </ul>
-    </AccordionItem>
-  </AccordionItem>
-
-  <Education></Education>
+  <Education />
 
   <AccordionItem>
     <!-- Header Content-->
@@ -111,7 +66,6 @@
     width: 80%;
     font-family: Arial, sans-serif;
   }
-
 
   h1 {
     margin-bottom: 5px;
