@@ -1,8 +1,7 @@
 <script lang="ts">
-  import { createEventDispatcher } from 'svelte';
-  import { slide } from 'svelte/transition';
+  import { createEventDispatcher } from "svelte";
+  import { slide } from "svelte/transition";
 
-  export let header: string;
   export let isOpen = false;
   export let level = 1;
 
@@ -10,17 +9,22 @@
 
   function toggle() {
     isOpen = !isOpen;
-    dispatch('toggle', { isOpen });
+    dispatch("toggle", { isOpen });
   }
 </script>
 
 <div class="accordion-item" style="margin-left: {(level - 1) * 20}px">
-  <div class="accordion-header level-{level}" on:click={toggle}>
-    {header}
+  <div
+    class="accordion-header level-{level} {isOpen ? 'open' : ''}"
+    on:click={toggle}
+  >
+    <slot name="headerSlot"></slot>
+    <!-- Slot for custom header content -->
   </div>
   {#if isOpen}
     <div class="accordion-body" transition:slide>
       <slot></slot>
+      <!-- Slot for the body content -->
     </div>
   {/if}
 </div>
@@ -37,11 +41,8 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
   .accordion-header {
-    background-color: rgba(red, green, blue, 0);
-    padding: 10px;
     cursor: pointer;
     user-select: none;
-    /* font-weight: bold; */
   }
   .accordion-header.level-1 {
     font-size: 24px;
@@ -49,11 +50,14 @@
   }
   .accordion-header.level-2 {
     font-size: 20px;
-    color: #2d841b;
+    color: #333333;
   }
   .accordion-header.level-3 {
     font-size: 18px;
-    color: #bf1b1b;
+    color: #464645;
+  }
+  .accordion-header.open {
+    border: 5px;
   }
   .accordion-body {
     padding: 10px;
