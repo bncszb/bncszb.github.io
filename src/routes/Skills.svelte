@@ -38,6 +38,7 @@
         <li>PyTorch <SiPytorch color="#EE4C2C" size={iconSize} /></li>
         <li>Tensorflow <SiTensorflow color="#FF6F00" size={iconSize} /></li>
         <li>Langchain <SiLangchain color="#FF6F00" size={iconSize} /></li>
+        <li>NetworkX</li>
       </ul>
     </li>
     <li>

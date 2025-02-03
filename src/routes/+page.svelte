@@ -45,13 +45,4 @@
   h1 {
     margin-bottom: 5px;
   }
-
-  .date {
-    font-style: italic;
-    color: #666;
-  }
-
-  ul {
-    padding-left: 20px;
-  }
 </style>
