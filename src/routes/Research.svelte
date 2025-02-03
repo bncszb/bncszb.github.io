@@ -32,7 +32,7 @@
 
   <HistoryElement
     title="Cooperation formation in networks"
-    location="Biot.ai Lab"
+    location="LinkGroup"
     time="2018 - 2021"
     slot="headerSlot"
   />

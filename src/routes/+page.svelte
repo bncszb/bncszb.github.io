@@ -2,6 +2,7 @@
   import AccordionItem from "$lib/components/AccordionItem.svelte";
   import Education from "./Education.svelte";
   import Research from "./Research.svelte";
+  import VolunteerExperience from "./VolunteerExperience.svelte";
   import WorkExperience from "./WorkExperience.svelte";
 </script>
 
@@ -45,6 +46,8 @@
   <Research />
 
   <Education />
+
+  <VolunteerExperience />
 
   <AccordionItem>
     <!-- Header Content-->
