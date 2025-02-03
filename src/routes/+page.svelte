@@ -1,6 +1,7 @@
 <script lang="ts">
   import AccordionItem from "$lib/components/AccordionItem.svelte";
   import Education from "./Education.svelte";
+  import Research from "./Research.svelte";
   import WorkExperience from "./WorkExperience.svelte";
 </script>
 
@@ -38,7 +39,10 @@
       modern frameworks.
     </p>
   </AccordionItem>
+
   <WorkExperience />
+
+  <Research />
 
   <Education />
 
