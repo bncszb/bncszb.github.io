@@ -21,6 +21,7 @@
 		"vite": "^6.0.0"
 	},
 	"dependencies": {
-		"@icons-pack/svelte-simple-icons": "^4.0.2"
+		"@icons-pack/svelte-simple-icons": "^4.0.2",
+		"svelte-icons-pack": "^3.1.3"
 	}
 }
