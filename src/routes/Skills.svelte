@@ -8,11 +8,32 @@
   <!-- Body Content -->
 
   <ul>
-    <li>HTML5, CSS3, JavaScript</li>
-    <li>React, Vue.js, Svelte</li>
-    <li>Node.js, Express</li>
-    <li>Git, GitHub</li>
-    <li>Responsive Web Design</li>
-    <li>UI/UX Principles</li>
+    <li>
+      Programming Languages:
+      <ul>
+        <li>Python</li>
+        <li>Typescript</li>
+        <li>Go</li>
+      </ul>
+    </li>
+    <li>
+      Frameworks:
+      <ul>
+        <li>PyTorch</li>
+        <li>Tensorflow</li>
+        <li>Langchain</li>
+      </ul>
+    </li>
+    <li>
+      Tools:
+      <ul>
+        <li>Git</li>
+        <li>Docker</li>
+        <li>Kubernetes</li>
+        <li>MLFlow</li>
+        <li>Tensorboard</li>
+        <li>LangFuse</li>
+      </ul>
+    </li>
   </ul>
 </AccordionItem>

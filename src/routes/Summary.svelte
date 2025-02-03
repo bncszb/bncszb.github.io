@@ -7,8 +7,6 @@
   <p slot="headerSlot" class="accordion-header.level-1">Summary</p>
   <!-- Body Content -->
   <p>
-    Experienced web developer with a passion for creating responsive and
-    user-friendly websites. Skilled in HTML, CSS, JavaScript, and various modern
-    frameworks.
+    Experienced IT professional with a deep understanding of biomedical data.
   </p>
 </AccordionItem>
