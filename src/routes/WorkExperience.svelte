@@ -8,37 +8,98 @@
 <AccordionItem useStyle={false}>
   <!-- Header Content-->
 
-  <HistoryElement title="Head of AI" location="Biot.ai Lab" time="2024 - ongoing" slot="headerSlot" />
+  <HistoryElement
+    title="Head of AI"
+    location="Biot.ai Lab"
+    time="2024 - ongoing"
+    slot="headerSlot"
+  />
 
   <!-- Body Content -->
 
-  <p class="date">January 2018 - Present</p>
   <ul>
     <li>
-      Lead a team of 5 developers in creating web applications for clients
+      Vectorized Patient Similarity search based on demographic data using
+      qdrant
     </li>
     <li>
-      Implemented responsive design principles, improving mobile traffic by 40%
+      Speech-to-form service for filling out medical forms using LangChain
     </li>
-    <li>Optimized website performance, reducing load times by 25%</li>
-  </ul>
-</AccordionItem>
+    <li>
+      Tools:
+      <ul>
+        <li>qdrant</li>
+        <li>LangChain</li>
+        <li>TypeScript</li>
+        <li>Neo4j</li>
+      </ul>
+    </li>
+  </ul></AccordionItem
+>
 
 <AccordionItem useStyle={false}>
-    <!-- Header Content-->
-  
-    <HistoryElement title="Software Developer" location="Biot.ai Lab" time="2022 - 2024" slot="headerSlot" />
-  
+  <!-- Header Content-->
+
+  <HistoryElement
+    title="Software Developer"
+    location="Biot.ai Lab"
+    time="2022 - 2024"
+    slot="headerSlot"
+  />
+
   <!-- Body Content -->
 
-  <p class="date">June 2015 - December 2017</p>
   <ul>
     <li>
-      Developed and maintained websites for small to medium-sized businesses
+      Development of a patient administration and Clinical Decision Support site
     </li>
     <li>
-      Collaborated with designers to implement visually appealing interfaces
+      Researching and building an AI infrastructure for NLP projects, like Fall
+      Risk Classification from progress notes
     </li>
-    <li>Integrated third-party APIs to enhance website functionality</li>
+    <li>
+      Creation of a medical terminology matching microservice for free text,
+      using medical knowledge graphs like SNOMED CT or RXNorm
+    </li>
+    <li>Medication microservice using DrugBank and Go</li>
+    <li>
+      Tools:
+      <ul>
+        <li>Django</li>
+        <li>Go</li>
+        <li>Kubernetes</li>
+        <li>MySQL</li>
+      </ul>
+    </li>
+  </ul>
+</AccordionItem>
+<AccordionItem useStyle={false}>
+  <!-- Header Content-->
+
+  <HistoryElement
+    title="AI Researcher"
+    location="Ulyssys"
+    time="2021 - 2022"
+    slot="headerSlot"
+  />
+
+  <!-- Body Content -->
+
+  <ul>
+    <li>Cancer segmentation in lung CT images using Deep Learning</li>
+    <li>Ensuring compatibility between Medicine and Machine Learning</li>
+    <li>
+      Research and experimentation with Data Processing steps and Deep Learning
+      architectures
+    </li>
+    <li>Data visualization and analysis</li>
+    <li>
+      Tools:
+      <ul>
+        <li>TensorFlow</li>
+        <li>Pandas</li>
+        <li>Docker</li>
+      </ul>
+    </li>
   </ul>
 </AccordionItem>
