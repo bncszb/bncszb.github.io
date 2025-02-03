@@ -2,7 +2,7 @@
   "name": "site",
   "version": "0.0.1",
   "type": "module",
-  "homepage": "https://github.com/bncszb/site/",
+  "homepage": "https://bncszb.github.io/site/",
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
