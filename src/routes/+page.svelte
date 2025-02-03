@@ -1,7 +1,8 @@
 <script lang="ts">
-  import AccordionItem from "$lib/components/AccordionItem.svelte";
+  import Contact from "./Contact.svelte";
   import Education from "./Education.svelte";
   import Research from "./Research.svelte";
+  import Summary from "./Summary.svelte";
   import VolunteerExperience from "./VolunteerExperience.svelte";
   import WorkExperience from "./WorkExperience.svelte";
 </script>
@@ -16,30 +17,9 @@
     <h1>Bence Szabó MD</h1>
   </header>
 
-  <AccordionItem>
-    <!-- Header Slot -->
-    <p slot="headerSlot" class="accordion-header.level-1">
-      Contact Information
-    </p>
-    <!-- Body Content -->
+  <Contact />
 
-    <ul>
-      <li>Email: bszabo96@gmail.com</li>
-      <li>Phone: +36 20 566 6348</li>
-      <li>Location: Budapest, Hungary</li>
-    </ul>
-  </AccordionItem>
-
-  <AccordionItem>
-    <!-- Header Content -->
-    <p slot="headerSlot" class="accordion-header.level-1">Summary</p>
-    <!-- Body Content -->
-    <p>
-      Experienced web developer with a passion for creating responsive and
-      user-friendly websites. Skilled in HTML, CSS, JavaScript, and various
-      modern frameworks.
-    </p>
-  </AccordionItem>
+  <Summary />
 
   <WorkExperience />
 
@@ -48,21 +28,6 @@
   <Education />
 
   <VolunteerExperience />
-
-  <AccordionItem>
-    <!-- Header Content-->
-    <p slot="headerSlot" class="accordion-header.level-1">Skills</p>
-    <!-- Body Content -->
-
-    <ul>
-      <li>HTML5, CSS3, JavaScript</li>
-      <li>React, Vue.js, Svelte</li>
-      <li>Node.js, Express</li>
-      <li>Git, GitHub</li>
-      <li>Responsive Web Design</li>
-      <li>UI/UX Principles</li>
-    </ul>
-  </AccordionItem>
 </main>
 
 <style>
