@@ -2,7 +2,7 @@
   import AccordionItem from "$lib/components/AccordionItem.svelte";
 </script>
 
-<AccordionItem>
+<AccordionItem isOpen={true}>
   <!-- Header Content-->
   <p slot="headerSlot" class="accordion-header.level-1">Skills</p>
   <!-- Body Content -->
