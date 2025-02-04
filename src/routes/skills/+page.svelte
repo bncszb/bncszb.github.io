@@ -1,5 +1,10 @@
 <script lang="ts">
   import history from "$lib/models/history";
+
+  import { page } from "$app/state";
+
+  const urlParams = new URLSearchParams(page.url.searchParams);
+  const query = urlParams.get("query");
 </script>
 
 <svelte:head>
@@ -11,6 +16,8 @@
   <header>
     <h1>Bence Szabó MD</h1>
   </header>
+
+  <h2>{query}</h2>
 
   {#each history.getSkills().entries() as [v, k]}
     <p>{v.name}</p>
