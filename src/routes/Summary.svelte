@@ -7,6 +7,6 @@
   <p slot="headerSlot" class="accordion-header.level-1">Summary</p>
   <!-- Body Content -->
   <p>
-    Experienced IT professional with a deep understanding of biomedical data.
+    Experienced IT professional with a deep understanding of biomedical data!
   </p>
 </AccordionItem>
