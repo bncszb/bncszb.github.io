@@ -34,6 +34,8 @@
 
 <style>
   table {
+    margin-top: 3em;
+    margin-bottom: 0em;
     width: 100%;
     height: fit-content;
     border: 3px;
