@@ -1,3 +1,4 @@
+import type { Project } from "../projects";
 import type { Tool } from "../tools";
 
 export const roleCategories = [
@@ -18,5 +19,6 @@ export type Role = {
   location?: string;
   description?: string;
   bulletPoints?: string[];
+  projects?: Project[];
   tools?: Tool[];
 };

@@ -8,6 +8,7 @@ import {
   SiMysql,
   SiNeo4j,
   SiPandas,
+  SiPlotly,
   SiPython,
   SiPytorch,
   SiTensorflow,
@@ -76,6 +77,12 @@ export const LangchainTool: Tool = {
 export const NetworkxTool: Tool = {
   name: "NetworkX",
   category: "Frameworks",
+};
+
+export const PlotlyTool: Tool = {
+  name: "Plotly",
+  category: "Frameworks",
+  icon: SiPlotly,
 };
 
 export const GitTool: Tool = {

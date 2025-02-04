@@ -2,6 +2,7 @@
   import type { Role } from "$lib/models/roles/common-roles";
   import AccordionItem from "./AccordionItem.svelte";
   import HistoryElement from "./HistoryElement.svelte";
+  import ShortDescriptionWIthIcons from "./project/ShortDescriptionWIthIcons.svelte";
 
   export let role: Role;
 </script>
@@ -31,11 +32,15 @@
       {/if}
 
       {#if role.bulletPoints && role.bulletPoints.length > 0}
-        <ul>
-          {#each role.bulletPoints as bulletPoint}
-            <li>{bulletPoint}</li>
-          {/each}
-        </ul>
+        {#each role.bulletPoints as bulletPoint}
+          <p>{bulletPoint}</p>
+        {/each}
+      {/if}
+
+      {#if role.projects && role.projects.length > 0}
+        {#each role.projects as project}
+          <ShortDescriptionWIthIcons {project} />
+        {/each}
       {/if}
 
       {#if role.tools && role.tools.length > 0}
