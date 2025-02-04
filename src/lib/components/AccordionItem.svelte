@@ -14,13 +14,8 @@
   }
 </script>
 
-<div class="accordion-item" style="margin-left: {(level - 1) * 20}px">
-  <div
-    class="accordion-header {useStyle ? `level-${level}` : ''} {isOpen
-      ? 'open'
-      : ''}"
-    on:click={toggle}
-  >
+<div class="accordion-item" on:click={toggle}>
+  <div class="accordion-header {isOpen ? 'open' : ''}">
     <slot name="headerSlot"></slot>
     <!-- Slot for custom header content -->
   </div>
@@ -39,26 +34,20 @@
     transition: box-shadow 0.3s ease;
     align-items: center;
     align-self: center;
+    /* box-shadow: 0 0 3px rgba(0, 0, 0, 0.1); */
+    backdrop-filter: brightness(0.98);
   }
   .accordion-item:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    filter: brightness(1.01);
   }
   .accordion-header {
     cursor: pointer;
     user-select: none;
-  }
-  .accordion-header.level-1 {
     font-size: 24px;
     color: #333;
   }
-  .accordion-header.level-2 {
-    font-size: 20px;
-    color: #333333;
-  }
-  .accordion-header.level-3 {
-    font-size: 18px;
-    color: #464645;
-  }
+
   .accordion-header.open {
     border: 5px;
   }

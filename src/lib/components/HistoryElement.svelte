@@ -31,6 +31,7 @@
     width: 100%;
     height: fit-content;
     border: 3px;
+    font-size: medium;
   }
 
   .history-element col {
