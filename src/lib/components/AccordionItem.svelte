@@ -3,8 +3,6 @@
   import { slide } from "svelte/transition";
 
   export let isOpen = false;
-  export let level = 1;
-  export let useStyle = true;
 
   const dispatch = createEventDispatcher();
 
