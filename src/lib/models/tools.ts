@@ -7,6 +7,7 @@ import {
   SiMlflow,
   SiMysql,
   SiNeo4j,
+  SiPandas,
   SiPython,
   SiPytorch,
   SiTensorflow,
@@ -58,6 +59,12 @@ export const TensorflowTool: Tool = {
   name: "Tensorflow",
   category: "Frameworks",
   icon: SiTensorflow,
+};
+
+export const PandasTool: Tool = {
+  name: "Pandas",
+  category: "Frameworks",
+  icon: SiPandas,
 };
 
 export const LangchainTool: Tool = {
@@ -148,6 +155,7 @@ const tools: Tool[] = [
   GoTool,
   PytorchTool,
   TensorflowTool,
+  PandasTool,
   LangchainTool,
   NetworkxTool,
   GitTool,
