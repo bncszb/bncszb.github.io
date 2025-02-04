@@ -1,9 +1,9 @@
-import type { Tool } from "./tools";
+import type { Skill } from "./skills";
 
 export type Project = {
   name: string;
   shortDescription: string;
   description?: string;
   bulletPoints?: string[];
-  tools?: Tool[];
+  skills?: Skill[];
 };

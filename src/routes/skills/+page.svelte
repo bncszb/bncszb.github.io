@@ -12,7 +12,7 @@
     <h1>Bence Szabó MD</h1>
   </header>
 
-  {#each history.getTools().entries() as [v, k]}
+  {#each history.getSkills().entries() as [v, k]}
     <p>{v.name}</p>
 
     {#each k as situtation}

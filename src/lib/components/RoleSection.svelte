@@ -43,11 +43,11 @@
         {/each}
       {/if}
 
-      {#if role.tools && role.tools.length > 0}
-        Tools:
+      {#if role.skills && role.skills.length > 0}
+        Skills:
         <ul>
-          {#each role.tools as tool}
-            <li>{tool.name}</li>
+          {#each role.skills as skill}
+            <li>{skill.name}</li>
           {/each}
         </ul>
       {/if}

@@ -1,6 +1,6 @@
 import type { Project } from "./projects";
 import allRoles, { type Role } from "./roles/common-roles";
-import type { Tool } from "./tools";
+import type { Skill } from "./skills";
 
 export class History {
   constructor(public roles: Role[]) {}
@@ -17,22 +17,22 @@ export class History {
     return projects;
   }
 
-  public getTools(): Map<Tool, (Project | Role)[]> {
-    let tools: Map<Tool, (Project | Role)[]> = new Map();
+  public getSkills(): Map<Skill, (Project | Role)[]> {
+    let skills: Map<Skill, (Project | Role)[]> = new Map();
 
     for (const role of this.roles) {
-      for (const tool of role.tools || []) {
-        tools.set(tool, [...(tools.get(tool) ?? []), role]);
+      for (const skill of role.skills || []) {
+        skills.set(skill, [...(skills.get(skill) ?? []), role]);
       }
 
       for (const project of role.projects || []) {
-        for (const tool of project.tools || []) {
-          tools.set(tool, [...(tools.get(tool) ?? []), project]);
+        for (const skill of project.skills || []) {
+          skills.set(skill, [...(skills.get(skill) ?? []), project]);
         }
       }
     }
 
-    return tools;
+    return skills;
   }
 }
 

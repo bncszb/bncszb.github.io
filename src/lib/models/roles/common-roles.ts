@@ -1,5 +1,5 @@
 import type { Project } from "../projects";
-import type { Tool } from "../tools";
+import type { Skill } from "../skills";
 import educationRoles from "./education-roles";
 import researchRoles from "./research-roles";
 import volunteerRoles from "./volunteer-roles";
@@ -24,7 +24,7 @@ export type Role = {
   description?: string;
   bulletPoints?: string[];
   projects?: Project[];
-  tools?: Tool[];
+  skills?: Skill[];
 };
 
 const roles = [
@@ -36,12 +36,12 @@ const roles = [
 
 export default roles;
 
-export function getRoleTools(role: Role): Tool[] {
-  let tools = role.tools || [];
+export function getRoleSkills(role: Role): Skill[] {
+  let skills = role.skills || [];
 
   for (const project of role.projects || []) {
-    tools = tools.concat(project.tools || []);
+    skills = skills.concat(project.skills || []);
   }
 
-  return tools;
+  return skills;
 }

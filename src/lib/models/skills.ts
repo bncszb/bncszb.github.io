@@ -16,177 +16,177 @@ import {
 } from "@icons-pack/svelte-simple-icons";
 import type { SvelteComponent } from "svelte";
 
-export const toolCategories = [
+export const skillCategories = [
   "Programming Languages",
   "Frameworks",
-  "Tools",
+  "Skills",
   "Databases",
   "Medical Ontologies",
 ] as const;
 
-export type ToolCategory = (typeof toolCategories)[number];
+export type SkillCategory = (typeof skillCategories)[number];
 
-export type Tool = {
+export type Skill = {
   name: string;
-  category: ToolCategory;
+  category: SkillCategory;
   icon?: new (...args: any) => SvelteComponent;
 };
 
-export const PythonTool: Tool = {
+export const PythonSkill: Skill = {
   name: "Python",
   category: "Programming Languages",
   icon: SiPython,
 };
 
-export const TypescriptTool: Tool = {
+export const TypescriptSkill: Skill = {
   name: "Typescript",
   category: "Programming Languages",
   icon: SiTypescript,
 };
 
-export const GoTool: Tool = {
+export const GoSkill: Skill = {
   name: "Go",
   category: "Programming Languages",
   icon: SiGo,
 };
 
-export const PytorchTool: Tool = {
+export const PytorchSkill: Skill = {
   name: "PyTorch",
   category: "Frameworks",
   icon: SiPytorch,
 };
 
-export const TensorflowTool: Tool = {
+export const TensorflowSkill: Skill = {
   name: "Tensorflow",
   category: "Frameworks",
   icon: SiTensorflow,
 };
 
-export const PandasTool: Tool = {
+export const PandasSkill: Skill = {
   name: "Pandas",
   category: "Frameworks",
   icon: SiPandas,
 };
 
-export const LangchainTool: Tool = {
+export const LangchainSkill: Skill = {
   name: "Langchain",
   category: "Frameworks",
   icon: SiLangchain,
 };
 
-export const NetworkxTool: Tool = {
+export const NetworkxSkill: Skill = {
   name: "NetworkX",
   category: "Frameworks",
 };
 
-export const PlotlyTool: Tool = {
+export const PlotlySkill: Skill = {
   name: "Plotly",
   category: "Frameworks",
   icon: SiPlotly,
 };
 
-export const GitTool: Tool = {
+export const GitSkill: Skill = {
   name: "Git",
-  category: "Tools",
+  category: "Skills",
   icon: SiGit,
 };
 
-export const DockerTool: Tool = {
+export const DockerSkill: Skill = {
   name: "Docker",
-  category: "Tools",
+  category: "Skills",
   icon: SiDocker,
 };
 
-export const KubernetesTool: Tool = {
+export const KubernetesSkill: Skill = {
   name: "Kubernetes",
-  category: "Tools",
+  category: "Skills",
   icon: SiKubernetes,
 };
 
-export const MlflowTool: Tool = {
+export const MlflowSkill: Skill = {
   name: "MLflow",
-  category: "Tools",
+  category: "Skills",
   icon: SiMlflow,
 };
 
-export const TensorboardTool: Tool = {
+export const TensorboardSkill: Skill = {
   name: "Tensorboard",
-  category: "Tools",
+  category: "Skills",
 };
 
-export const LangfuseTool: Tool = {
+export const LangfuseSkill: Skill = {
   name: "Langfuse",
-  category: "Tools",
+  category: "Skills",
 };
 
-export const MysqlTool: Tool = {
+export const MysqlSkill: Skill = {
   name: "MySQL",
   category: "Databases",
   icon: SiMysql,
 };
 
-export const QdrantTool: Tool = {
+export const QdrantSkill: Skill = {
   name: "Qdrant",
   category: "Databases",
 };
 
-export const Neo4jTool: Tool = {
+export const Neo4jSkill: Skill = {
   name: "Neo4j",
   category: "Databases",
   icon: SiNeo4j,
 };
 
-export const ICD10Tool: Tool = {
+export const ICD10Skill: Skill = {
   name: "ICD-10",
   category: "Medical Ontologies",
 };
 
-export const SNOMEDTool: Tool = {
+export const SNOMEDSkill: Skill = {
   name: "SNOMED CT",
   category: "Medical Ontologies",
 };
 
-export const LoincTool: Tool = {
+export const LoincSkill: Skill = {
   name: "LOINC",
   category: "Medical Ontologies",
 };
 
-export const DrugbankTool: Tool = {
+export const DrugbankSkill: Skill = {
   name: "Drugbank",
   category: "Medical Ontologies",
 };
 
-const tools: Tool[] = [
-  PythonTool,
-  TypescriptTool,
-  GoTool,
-  PytorchTool,
-  TensorflowTool,
-  PandasTool,
-  LangchainTool,
-  NetworkxTool,
-  GitTool,
-  DockerTool,
-  KubernetesTool,
-  MlflowTool,
-  TensorboardTool,
-  LangfuseTool,
-  MysqlTool,
-  QdrantTool,
-  Neo4jTool,
-  ICD10Tool,
-  SNOMEDTool,
-  LoincTool,
-  DrugbankTool,
+const skills: Skill[] = [
+  PythonSkill,
+  TypescriptSkill,
+  GoSkill,
+  PytorchSkill,
+  TensorflowSkill,
+  PandasSkill,
+  LangchainSkill,
+  NetworkxSkill,
+  GitSkill,
+  DockerSkill,
+  KubernetesSkill,
+  MlflowSkill,
+  TensorboardSkill,
+  LangfuseSkill,
+  MysqlSkill,
+  QdrantSkill,
+  Neo4jSkill,
+  ICD10Skill,
+  SNOMEDSkill,
+  LoincSkill,
+  DrugbankSkill,
 ];
 
-export const toolsByCategory: Record<ToolCategory, Tool[]> = tools.reduce(
-  (acc, tool) => {
-    if (!acc[tool.category]) {
-      acc[tool.category] = [];
+export const skillsByCategory: Record<SkillCategory, Skill[]> = skills.reduce(
+  (acc, skill) => {
+    if (!acc[skill.category]) {
+      acc[skill.category] = [];
     }
-    acc[tool.category].push(tool);
+    acc[skill.category].push(skill);
     return acc;
   },
-  {} as Record<ToolCategory, Tool[]>
+  {} as Record<SkillCategory, Skill[]>
 );

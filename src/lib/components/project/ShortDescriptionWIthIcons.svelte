@@ -16,9 +16,9 @@
           {project.shortDescription}
         </td>
         <td class="icons">
-          {#if project.tools && project.tools.length > 0}
-            {#each project.tools as tool}
-              <svelte:component this={tool.icon} />
+          {#if project.skills && project.skills.length > 0}
+            {#each project.skills as skill}
+              <svelte:component this={skill.icon} />
             {/each}
           {/if}
         </td>

@@ -1,13 +1,13 @@
 <script lang="ts">
-  import type { Tool } from "$lib/models/tools";
+  import type { Skill } from "$lib/models/skills";
 
   export let category = "";
-  export let tools: Tool[] = [];
+  export let skills: Skill[] = [];
   const iconSize = 50;
 </script>
 
 <div class="skill-section">
-  {#if category && tools.length > 0}
+  {#if category && skills.length > 0}
     <table class="skill-section">
       <colgroup>
         <col style="width: 20%;" />
@@ -18,15 +18,15 @@
         <tr>
           <th>{category}</th>
           <td>
-            {#each tools as tool}
-              <p>{tool.name}</p>
+            {#each skills as skill}
+              <p>{skill.name}</p>
             {/each}
           </td>
           <td>
-            {#each tools as tool}
+            {#each skills as skill}
               <svelte:component
-                this={tool.icon}
-                alt={tool.name}
+                this={skill.icon}
+                alt={skill.name}
                 size={iconSize}
               />
             {/each}

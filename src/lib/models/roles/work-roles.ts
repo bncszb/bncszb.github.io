@@ -1,31 +1,31 @@
 import type { Project } from "../projects";
 import {
-  DockerTool,
-  GoTool,
-  KubernetesTool,
-  LangchainTool,
-  MlflowTool,
-  MysqlTool,
-  Neo4jTool,
-  PandasTool,
-  PlotlyTool,
-  PytorchTool,
-  QdrantTool,
-  TensorflowTool,
-  TypescriptTool,
-} from "../tools";
+  DockerSkill,
+  GoSkill,
+  KubernetesSkill,
+  LangchainSkill,
+  MlflowSkill,
+  MysqlSkill,
+  Neo4jSkill,
+  PandasSkill,
+  PlotlySkill,
+  PytorchSkill,
+  QdrantSkill,
+  TensorflowSkill,
+  TypescriptSkill,
+} from "../skills";
 import type { Role } from "./common-roles";
 
 const speechToFormProject: Project = {
   name: "Speech-to-form",
   shortDescription: "Speech-to-form service for filling out medical forms",
-  tools: [LangchainTool, QdrantTool],
+  skills: [LangchainSkill, QdrantSkill],
 };
 
 const knowledgeGraphProject: Project = {
   name: "Knowledge Graph",
   shortDescription: "Knowledge Graph extraction from text for chatbots",
-  tools: [Neo4jTool, LangchainTool],
+  skills: [Neo4jSkill, LangchainSkill],
 };
 
 const biotHeadOfAIProjects: Project[] = [
@@ -41,13 +41,13 @@ const biotHeadOfAIRole: Role = {
   location: "Budapest",
   bulletPoints: [],
   projects: biotHeadOfAIProjects,
-  tools: [QdrantTool, LangchainTool, TypescriptTool, Neo4jTool],
+  skills: [QdrantSkill, LangchainSkill, TypescriptSkill, Neo4jSkill],
 };
 
 const medcationServiceProject: Project = {
   name: "Medication Service",
   shortDescription: "Medication microservice using DrugBank and Go",
-  tools: [GoTool, MysqlTool],
+  skills: [GoSkill, MysqlSkill],
 };
 
 const terminologyMatchingProject: Project = {
@@ -59,14 +59,14 @@ const terminologyMatchingProject: Project = {
 const fallRiskClassificationProject: Project = {
   name: "Fall Risk Classification",
   shortDescription: "Fall risk classification from progress notes",
-  tools: [PytorchTool, MlflowTool],
+  skills: [PytorchSkill, MlflowSkill],
 };
 
 const patientSimilaritySearchProject: Project = {
   name: "Patient Similarity Search",
   shortDescription:
     "Vectorized Patient Similarity search based on demographic data",
-  tools: [QdrantTool, PytorchTool],
+  skills: [QdrantSkill, PytorchSkill],
 };
 
 const biotSoftwareDeveloperProjects: Project[] = [
@@ -88,19 +88,19 @@ const biotSoftwareDeveloperRole: Role = {
     "Researching and building an AI infrastructure for NLP projects, like Fall Risk Classification from progress notes",
   ],
   projects: biotSoftwareDeveloperProjects,
-  tools: [GoTool, KubernetesTool, MysqlTool],
+  skills: [GoSkill, KubernetesSkill, MysqlSkill],
 };
 
 const maskRCNNProject: Project = {
   name: "Mask R-CNN",
   shortDescription: "Instance segmentation using Mask R-CNN",
-  tools: [TensorflowTool, DockerTool],
+  skills: [TensorflowSkill, DockerSkill],
 };
 
 const dataValidationProject: Project = {
   name: "Data Validation",
   shortDescription: "Tools for validation of data generation in Plotly Dash",
-  tools: [PlotlyTool],
+  skills: [PlotlySkill],
 };
 
 const ulyssysAIResearcherProjects: Project[] = [
@@ -122,7 +122,7 @@ const ulyssysAIResearcherRole: Role = {
     "Data visualization and analysis",
   ],
   projects: ulyssysAIResearcherProjects,
-  tools: [TensorflowTool, PandasTool, DockerTool],
+  skills: [TensorflowSkill, PandasSkill, DockerSkill],
 };
 
 export const workProjects = [
