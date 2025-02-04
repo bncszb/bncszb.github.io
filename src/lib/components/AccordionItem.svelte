@@ -28,7 +28,7 @@
 <style>
   .accordion-item {
     margin-bottom: 5px;
-    width: 95%;
+    width: 100%;
     transition: box-shadow 0.3s ease;
     align-items: center;
     align-self: center;
