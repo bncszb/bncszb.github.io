@@ -1,6 +1,6 @@
 <script lang="ts">
   import Contact from "./Contact.svelte";
-  import Education from "./Education.svelte";
+  import Education from "../lib/components/Education.svelte";
   import Research from "./Research.svelte";
   import Skills from "../lib/components/Skills.svelte";
   import Summary from "./Summary.svelte";
