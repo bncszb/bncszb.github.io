@@ -7,6 +7,7 @@ const MalteseRole: Role = {
   instutition: "Hungarian Charity Service of the Order of Malta",
   location: "Budapest",
   bulletPoints: [
+    "Dunabogdány flood - 2024",
     "COVID19 - Testing and vaccination",
     "Flash floods and storms - psychosocial crisis intervention and logistics",
     "Medical screening of Transylvanian population",
