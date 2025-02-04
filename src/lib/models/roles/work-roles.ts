@@ -28,6 +28,11 @@ const knowledgeGraphProject: Project = {
   tools: [Neo4jTool, LangchainTool],
 };
 
+const biotHeadOfAIProjects: Project[] = [
+  speechToFormProject,
+  knowledgeGraphProject,
+];
+
 const biotHeadOfAIRole: Role = {
   category: "Work Experience",
   name: "Head of AI",
@@ -35,7 +40,7 @@ const biotHeadOfAIRole: Role = {
   instutition: "Biot.ai Lab",
   location: "Budapest",
   bulletPoints: [],
-  projects: [speechToFormProject, knowledgeGraphProject],
+  projects: biotHeadOfAIProjects,
   tools: [QdrantTool, LangchainTool, TypescriptTool, Neo4jTool],
 };
 
@@ -64,6 +69,13 @@ const patientSimilaritySearchProject: Project = {
   tools: [QdrantTool, PytorchTool],
 };
 
+const biotSoftwareDeveloperProjects: Project[] = [
+  medcationServiceProject,
+  terminologyMatchingProject,
+  fallRiskClassificationProject,
+  patientSimilaritySearchProject,
+];
+
 const biotSoftwareDeveloperRole: Role = {
   category: "Work Experience",
   name: "Software Developer",
@@ -75,12 +87,7 @@ const biotSoftwareDeveloperRole: Role = {
     "Development of a patient administration and Clinical Decision Support site",
     "Researching and building an AI infrastructure for NLP projects, like Fall Risk Classification from progress notes",
   ],
-  projects: [
-    medcationServiceProject,
-    terminologyMatchingProject,
-    fallRiskClassificationProject,
-    patientSimilaritySearchProject,
-  ],
+  projects: biotSoftwareDeveloperProjects,
   tools: [GoTool, KubernetesTool, MysqlTool],
 };
 
@@ -96,7 +103,12 @@ const dataValidationProject: Project = {
   tools: [PlotlyTool],
 };
 
-const ulyssysAIRole: Role = {
+const ulyssysAIResearcherProjects: Project[] = [
+  maskRCNNProject,
+  dataValidationProject,
+];
+
+const ulyssysAIResearcherRole: Role = {
   category: "Work Experience",
   name: "AI Researcher",
   startDate: new Date("2021-09-01"),
@@ -109,8 +121,18 @@ const ulyssysAIRole: Role = {
     "Research and experimentation with Data Processing steps and Deep Learning architectures",
     "Data visualization and analysis",
   ],
-  projects: [maskRCNNProject, dataValidationProject],
+  projects: ulyssysAIResearcherProjects,
   tools: [TensorflowTool, PandasTool, DockerTool],
 };
 
-export default [biotHeadOfAIRole, biotSoftwareDeveloperRole, ulyssysAIRole];
+export const workProjects = [
+  ...biotHeadOfAIProjects,
+  ...biotSoftwareDeveloperProjects,
+  ...ulyssysAIResearcherProjects,
+];
+
+export default [
+  biotHeadOfAIRole,
+  biotSoftwareDeveloperRole,
+  ulyssysAIResearcherRole,
+];

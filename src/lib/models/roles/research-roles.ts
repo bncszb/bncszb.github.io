@@ -25,7 +25,7 @@ const LinkGroupRole: Role = {
   location: "Budapest",
   bulletPoints: [
     "The role of nodes with fix strategies in spatial social dilemma games",
-    "Prediction of nodes’ capability to spread cooperation using semi-supervised learning with Graph Convolutional Networks",
+    "Prediction of nodes' capability to spread cooperation using semi-supervised learning with Graph Convolutional Networks",
   ],
   tools: [PytorchTool, NetworkxTool],
 };

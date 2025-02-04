@@ -1,4 +1,5 @@
 <script lang="ts">
+  import history from "$lib/models/history";
 </script>
 
 <svelte:head>
@@ -10,6 +11,14 @@
   <header>
     <h1>Bence Szabó MD</h1>
   </header>
+
+  {#each history.getTools().entries() as [v, k]}
+    <p>{v.name}</p>
+
+    {#each k as situtation}
+      {situtation.name}
+    {/each}
+  {/each}
 </main>
 
 <style>
