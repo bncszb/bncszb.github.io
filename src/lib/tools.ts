@@ -14,12 +14,15 @@ import {
 } from "@icons-pack/svelte-simple-icons";
 import type { SvelteComponent } from "svelte";
 
-export type ToolCategory =
-  | "Programming Languages"
-  | "Frameworks"
-  | "Tools"
-  | "Databases"
-  | "Medical Ontologies";
+export const toolCategories = [
+  "Programming Languages",
+  "Frameworks",
+  "Tools",
+  "Databases",
+  "Medical Ontologies",
+] as const;
+
+export type ToolCategory = (typeof toolCategories)[number];
 
 export type Tool = {
   name: string;
@@ -161,3 +164,14 @@ export const tools: Tool[] = [
   LoincTool,
   DrugbankTool,
 ];
+
+export const toolsByCategory: Record<ToolCategory, Tool[]> = tools.reduce(
+  (acc, tool) => {
+    if (!acc[tool.category]) {
+      acc[tool.category] = [];
+    }
+    acc[tool.category].push(tool);
+    return acc;
+  },
+  {} as Record<ToolCategory, Tool[]>
+);
