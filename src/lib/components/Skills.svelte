@@ -2,7 +2,7 @@
   import AccordionItem from "$lib/components/AccordionItem.svelte";
   import SkillSection from "$lib/components/SkillSection.svelte";
 
-  import { toolsByCategory,toolCategories } from "$lib/tools";
+  import { toolCategories, toolsByCategory } from "$lib/models/tools";
 </script>
 
 <AccordionItem isOpen={true}>
@@ -11,9 +11,6 @@
   <!-- Body Content -->
 
   {#each toolCategories as category}
-  
-  <SkillSection category={category} tools={toolsByCategory[category]}/>
-    
-  
+    <SkillSection {category} tools={toolsByCategory[category]} />
   {/each}
 </AccordionItem>

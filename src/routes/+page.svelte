@@ -2,7 +2,7 @@
   import Contact from "./Contact.svelte";
   import Education from "./Education.svelte";
   import Research from "./Research.svelte";
-  import Skills from "./Skills.svelte";
+  import Skills from "../lib/components/Skills.svelte";
   import Summary from "./Summary.svelte";
   import VolunteerExperience from "./VolunteerExperience.svelte";
   import WorkExperience from "./WorkExperience.svelte";

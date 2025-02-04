@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { Tool } from "$lib/tools";
+  import type { Tool } from "$lib/models/tools";
 
   export let category = "";
   export let tools: Tool[] = [];
