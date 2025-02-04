@@ -1,3 +1,4 @@
+import { PythonTool } from "../tools";
 import type { Role } from "./common-roles";
 
 const MedicineRole: Role = {
@@ -24,7 +25,7 @@ const PhysicsRole: Role = {
   instutition: "Eötvös Loránd University",
   location: "Budapest",
   bulletPoints: ["Biophysics Specialization", "Thesis:"],
-  tools: [],
+  tools: [PythonTool],
 };
 
 export default [MedicineRole, PhysicsRole];

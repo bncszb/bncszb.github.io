@@ -21,10 +21,20 @@
       {#if role.description}
         <p class="role-description">{role.description}</p>
       {/if}
+
       {#if role.bulletPoints && role.bulletPoints.length > 0}
         <ul>
           {#each role.bulletPoints as bulletPoint}
             <li>{bulletPoint}</li>
+          {/each}
+        </ul>
+      {/if}
+
+      {#if role.tools && role.tools.length > 0}
+        Tools:
+        <ul>
+          {#each role.tools as tool}
+            <li>{tool.name}</li>
           {/each}
         </ul>
       {/if}

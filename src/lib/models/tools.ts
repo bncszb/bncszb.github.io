@@ -30,114 +30,114 @@ export type Tool = {
   icon?: new (...args: any) => SvelteComponent;
 };
 
-const PythonTool: Tool = {
+export const PythonTool: Tool = {
   name: "Python",
   category: "Programming Languages",
   icon: SiPython,
 };
 
-const TypescriptTool: Tool = {
+export const TypescriptTool: Tool = {
   name: "Typescript",
   category: "Programming Languages",
   icon: SiTypescript,
 };
 
-const GoTool: Tool = {
+export const GoTool: Tool = {
   name: "Go",
   category: "Programming Languages",
   icon: SiGo,
 };
 
-const PytorchTool: Tool = {
+export const PytorchTool: Tool = {
   name: "PyTorch",
   category: "Frameworks",
   icon: SiPytorch,
 };
 
-const TensorflowTool: Tool = {
+export const TensorflowTool: Tool = {
   name: "Tensorflow",
   category: "Frameworks",
   icon: SiTensorflow,
 };
 
-const LangchainTool: Tool = {
+export const LangchainTool: Tool = {
   name: "Langchain",
   category: "Frameworks",
   icon: SiLangchain,
 };
 
-const NetworkxTool: Tool = {
+export const NetworkxTool: Tool = {
   name: "NetworkX",
   category: "Frameworks",
 };
 
-const GitTool: Tool = {
+export const GitTool: Tool = {
   name: "Git",
   category: "Tools",
   icon: SiGit,
 };
 
-const DockerTool: Tool = {
+export const DockerTool: Tool = {
   name: "Docker",
   category: "Tools",
   icon: SiDocker,
 };
 
-const KubernetesTool: Tool = {
+export const KubernetesTool: Tool = {
   name: "Kubernetes",
   category: "Tools",
   icon: SiKubernetes,
 };
 
-const MlflowTool: Tool = {
+export const MlflowTool: Tool = {
   name: "MLflow",
   category: "Tools",
   icon: SiMlflow,
 };
 
-const TensorboardTool: Tool = {
+export const TensorboardTool: Tool = {
   name: "Tensorboard",
   category: "Tools",
 };
 
-const LangfuseTool: Tool = {
+export const LangfuseTool: Tool = {
   name: "Langfuse",
   category: "Tools",
 };
 
-const MysqlTool: Tool = {
+export const MysqlTool: Tool = {
   name: "MySQL",
   category: "Databases",
   icon: SiMysql,
 };
 
-const QdrantTool: Tool = {
+export const QdrantTool: Tool = {
   name: "Qdrant",
   category: "Databases",
 };
 
-const Neo4jTool: Tool = {
+export const Neo4jTool: Tool = {
   name: "Neo4j",
   category: "Databases",
   icon: SiNeo4j,
 };
 
-const ICD10Tool: Tool = {
+export const ICD10Tool: Tool = {
   name: "ICD-10",
   category: "Medical Ontologies",
 };
 
-const SNOMEDTool: Tool = {
+export const SNOMEDTool: Tool = {
   name: "SNOMED CT",
   category: "Medical Ontologies",
 };
 
-const LoincTool: Tool = {
+export const LoincTool: Tool = {
   name: "LOINC",
   category: "Medical Ontologies",
 };
 
-const DrugbankTool: Tool = {
+export const DrugbankTool: Tool = {
   name: "Drugbank",
   category: "Medical Ontologies",
 };
