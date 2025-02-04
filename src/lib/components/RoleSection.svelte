@@ -12,9 +12,17 @@
       <HistoryElement
         title={role.name}
         location={role.instutition + ", " + role.location}
-        time={role.startDate.getFullYear() +
+        time={role.startDate.toLocaleString("en-US", {
+          year: "numeric",
+          month: "short",
+        }) +
           " - " +
-          (role.endDate ? role.endDate.getFullYear() : "Present")}
+          (role.endDate
+            ? role.endDate.toLocaleString("en-US", {
+                year: "numeric",
+                month: "short",
+              })
+            : "Present")}
         slot="headerSlot"
       />
 
