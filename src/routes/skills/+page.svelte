@@ -3,8 +3,8 @@
 
   import { page } from "$app/state";
 
-  const urlParams = new URLSearchParams(page.url.searchParams);
-  const query = urlParams.get("query");
+  // const urlParams = new URLSearchParams(page.url.searchParams);
+  // const query = urlParams.get("query");
 </script>
 
 <svelte:head>
@@ -17,7 +17,7 @@
     <h1>Bence Szabó MD</h1>
   </header>
 
-  <h2>{query}</h2>
+  <!-- <h2>{query}</h2> -->
 
   {#each history.getSkills().entries() as [v, k]}
     <p>{v.name}</p>
