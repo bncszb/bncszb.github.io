@@ -4,7 +4,7 @@
   import Research from "../lib/components/Research.svelte";
   import Skills from "../lib/components/Skills.svelte";
   import Summary from "./Summary.svelte";
-  import VolunteerExperience from "./VolunteerExperience.svelte";
+  import VolunteerExperience from "../lib/components/VolunteerExperience.svelte";
   import WorkExperience from "../lib/components/WorkExperience.svelte";
 </script>
 
