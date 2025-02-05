@@ -16,7 +16,7 @@
 
   async function openPanel(skill: Skill) {
     selectedSkill = skill;
-    await tick(); 
+    await tick();
     isPanelOpen = true;
   }
 
@@ -31,36 +31,38 @@
   <meta name="description" content="Bence Szabó's CV" />
 </svelte:head>
 
-<main>
-  <header>
-    <h1>Skills</h1>
+<main class={isPanelOpen ? "panel-open" : ""}>
+  <h1>Skills</h1>
 
-    <table>
-      <tbody>
-        {#each tiers as tier, i}
-          <tr>
-            <td>
-              {#each tier as skill}
-                <button on:click={() => openPanel(skill)}>
-                  <svelte:component
-                    this={skill.icon}
-                    size={iconSizes[i % iconSizes.length]}
-                  />
-                </button>
-              {/each}
-            </td>
-          </tr>
-        {/each}
-      </tbody>
-    </table>
-  </header>
-
-  <SidePanel isOpen={isPanelOpen} onClose={closePanel}>
-    {#if selectedSkill}
-      <SkillDetails skill={selectedSkill} />
-    {/if}
-  </SidePanel>
+  <table>
+    <tbody>
+      {#each tiers as tier, i}
+        <tr>
+          <td>
+            {#each tier as skill}
+              <button on:click={() => openPanel(skill)}>
+                <svelte:component
+                  this={skill.icon}
+                  size={iconSizes[i % iconSizes.length]}
+                />
+              </button>
+            {/each}
+          </td>
+        </tr>
+      {/each}
+    </tbody>
+  </table>
 </main>
+
+<SidePanel
+  isOpen={isPanelOpen}
+  onClose={closePanel}
+  class={isPanelOpen ? "panel-open" : ""}
+>
+  {#if selectedSkill}
+    <SkillDetails skill={selectedSkill} />
+  {/if}
+</SidePanel>
 
 <style>
   main {
@@ -69,8 +71,17 @@
     font-family: Arial, sans-serif;
   }
 
+  main.panel-open table,
+  main.panel-open h1 {
+    filter: blur(2px);
+  }
+
   h1 {
     margin-bottom: 5px;
+  }
+
+  h1.panel-open {
+    display: none;
   }
 
   table {
@@ -87,6 +98,10 @@
 
   button:hover {
     color: var(--color-text-hover);
+  }
+
+  SidePanel.panel-open {
+    /* transform: translateX(0); */
   }
 
   tr,
