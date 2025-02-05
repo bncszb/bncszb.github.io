@@ -12,9 +12,11 @@ import {
   Neo4jSkill,
   PandasSkill,
   PlotlySkill,
+  PythonSkill,
   PytorchSkill,
   QdrantSkill,
   SNOMEDSkill,
+  TensorboardSkill,
   TensorflowSkill,
   TypescriptSkill,
 } from "../skills";
@@ -28,25 +30,45 @@ A node service written in Typescript that uses Langchain to extract information 
 
 The transcript is created using a HIPAA compliant API. Afterwards, the text is processed by Langchain to extract the relevant information. For fields that has to have values from a valueset (like ICD-10 codes) Qdrant is used to find the most similar one.
 
-Langchain is used for tracing. The service is deployed in a Kubernetes cluster.
+Langfuse is used for tracing. The service is deployed in a Kubernetes cluster.
 `,
-  skills: [LangchainSkill, QdrantSkill, LangfuseSkill, KubernetesSkill],
+  skills: [
+    LangchainSkill,
+    QdrantSkill,
+    LangfuseSkill,
+    KubernetesSkill,
+    TypescriptSkill,
+  ],
+};
+
+const progressNoteSummarizationProject: Project = {
+  name: "Progress Note Summarization",
+  shortDescription: "Summarization of progress notes using Langchain",
+  description: `
+A Langchain component in Typescript that summarizes progress notes about the health of a patient. 
+
+The multi-step process includes categorized extraction of information, summarization and reference resolution. 
+
+Langfuse is used for tracing.
+`,
+  skills: [LangchainSkill, LangfuseSkill, TypescriptSkill],
 };
 
 const knowledgeGraphProject: Project = {
   name: "Knowledge Graph",
   shortDescription: "Knowledge Graph extraction from text for chatbots",
   description: `
-A Langchain component that extracts information from text and creates a knowledge graph. The graph is stored in a Neo4j database.  
+A Langchain component in Typescript that extracts information from text and creates a knowledge graph. The graph is stored in a Neo4j database.  
 
 After the extraction, there are additional steps to clean the graph and to make it more understandable for the chatbot. The postprocessing steps include additional Langchain calls, similarity through embeddings and Cypher queries.
 `,
-  skills: [Neo4jSkill, LangchainSkill, QdrantSkill],
+  skills: [Neo4jSkill, LangchainSkill, QdrantSkill, TypescriptSkill],
 };
 
 const biotHeadOfAIProjects: Project[] = [
   speechToFormProject,
   knowledgeGraphProject,
+  progressNoteSummarizationProject,
 ];
 
 const biotHeadOfAIRole: Role = {
@@ -83,7 +105,15 @@ const patientSimilaritySearchProject: Project = {
   name: "Patient Similarity Search",
   shortDescription:
     "Vectorized Patient Similarity search based on demographic data",
-  skills: [QdrantSkill, PytorchSkill],
+  description: `
+A Python service that uses a custom language model based on BERT to vectorize patient data for similarity search. 
+
+The model itself is a Pytorch model that was trained on synthetic demographic data. Since the required performance could be achieved with a small model, the inference is done on the CPU. To decrease hardware requirements a Python package was created in Rust using Maturin. The package uses Candle to run the model.
+
+During training the metrics were logged on Tensorboard and the model was saved in Mlflow.
+The service runs in a Kubernetes cluster.
+`,
+  skills: [QdrantSkill, PytorchSkill, MlflowSkill, TensorboardSkill, PythonSkill],
 };
 
 const biotSoftwareDeveloperProjects: Project[] = [
