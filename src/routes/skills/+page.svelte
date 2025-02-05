@@ -90,16 +90,6 @@
     font-size: medium;
   }
 
-  button {
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
-
-  button:hover {
-    color: var(--color-text-hover);
-  }
-
   SidePanel.panel-open {
     /* transform: translateX(0); */
   }

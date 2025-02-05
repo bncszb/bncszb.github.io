@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { Skill } from "$lib/models/skills";
+  import { getSkillKebab, type Skill } from "$lib/models/skills";
 
   export let category = "";
   export let skills: Skill[] = [];
@@ -19,16 +19,20 @@
           <th>{category}</th>
           <td>
             {#each skills as skill}
-              <p>{skill.name}</p>
+              <p>
+                <a href="/site/skills/{getSkillKebab(skill)}">{skill.name}</a>
+              </p>
             {/each}
           </td>
           <td>
             {#each skills as skill}
-              <svelte:component
-                this={skill.icon}
-                alt={skill.name}
-                size={iconSize}
-              />
+              <a href="/site/skills/{getSkillKebab(skill)}">
+                <svelte:component
+                  this={skill.icon}
+                  alt={skill.name}
+                  size={iconSize}
+                />
+              </a>
             {/each}
           </td>
         </tr>

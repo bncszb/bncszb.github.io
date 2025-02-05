@@ -49,9 +49,20 @@ a {
     text-decoration: none;
     color: var(--color-text);
   }
-  a:hover {
-    color: var(--color-text-hover);
-  }
+a:hover {
+color: var(--color-text-hover);
+}
+
+button {
+background: none;
+border: none;
+color: var(--color-text);
+cursor: pointer;
+}
+
+button:hover {
+color: var(--color-text-hover);
+}
 
 h1 {
 	font-size: 2rem;
