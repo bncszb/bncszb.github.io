@@ -10,13 +10,14 @@ import {
   MlflowSkill,
   MysqlSkill,
   Neo4jSkill,
+  NetworkxSkill,
   PandasSkill,
   PlotlySkill,
   PythonSkill,
   PytorchSkill,
   QdrantSkill,
+  RXNormSkill,
   SNOMEDSkill,
-  TensorboardSkill,
   TensorflowSkill,
   TypescriptSkill,
 } from "../skills";
@@ -77,6 +78,9 @@ const biotHeadOfAIRole: Role = {
   startDate: new Date("2024-07-01"),
   instutition: "Biot.ai Lab",
   location: "Budapest",
+  description: `
+Responsible for the AI infrastructure and the AI projects at Biot.ai Lab.
+`,
   bulletPoints: [],
   projects: biotHeadOfAIProjects,
   skills: [QdrantSkill, LangchainSkill, TypescriptSkill, Neo4jSkill],
@@ -85,20 +89,41 @@ const biotHeadOfAIRole: Role = {
 const medcationServiceProject: Project = {
   name: "Medication Service",
   shortDescription: "Medication microservice using DrugBank and Go",
-  skills: [GoSkill, MysqlSkill],
+  description: `
+A Go service that uses DrugBank to provide information about medications. 
+
+The data is stored in a MySQL database. The service is deployed in a Kubernetes cluster.
+`,
+  skills: [GoSkill, MysqlSkill, KubernetesSkill, DrugbankSkill],
 };
 
 const terminologyMatchingProject: Project = {
   name: "Terminology Matching",
   shortDescription:
     "Matching medical terminology between SNOMED CT, ICD-10 and RXNorm",
-  skills: [MysqlSkill, DrugbankSkill, SNOMEDSkill, ICD10Skill],
+  description: `
+A microservice written in Python that matches medical terminology between medical ontologies, like SNOMED CT, ICD-10, DrugBank and RXNorm.
+The service used a fuzzy matching algorithms along with a graph-based approach (NetworkX) to find the most similar concepts.
+`,
+  skills: [
+    DrugbankSkill,
+    SNOMEDSkill,
+    ICD10Skill,
+    RXNormSkill,
+    PythonSkill,
+    NetworkxSkill,
+  ],
 };
 
 const fallRiskClassificationProject: Project = {
   name: "Fall Risk Classification",
   shortDescription: "Fall risk classification from progress notes",
-  skills: [PytorchSkill, MlflowSkill],
+  description: `
+A Python service that uses a fine-tuned BERT model to classify the fall risk of a patient based on their progress notes.
+
+The training was done in Pytorch and the model was saved in Mlflow. 
+`,
+  skills: [PytorchSkill, MlflowSkill, PythonSkill],
 };
 
 const patientSimilaritySearchProject: Project = {
@@ -113,7 +138,12 @@ The model itself is a Pytorch model that was trained on synthetic demographic da
 During training the metrics were logged on Tensorboard and the model was saved in Mlflow.
 The service runs in a Kubernetes cluster.
 `,
-  skills: [QdrantSkill, PytorchSkill, MlflowSkill, TensorboardSkill, PythonSkill],
+  skills: [
+    QdrantSkill,
+    PytorchSkill,
+    MlflowSkill,
+    PythonSkill,
+  ],
 };
 
 const biotSoftwareDeveloperProjects: Project[] = [
@@ -130,9 +160,13 @@ const biotSoftwareDeveloperRole: Role = {
   endDate: new Date("2024-07-01"),
   instutition: "Biot.ai Lab",
   location: "Budapest",
+  description: `
+Backend developer with a focus on AI projects and medical supervision. The backend was written in Django with additional services in Go. During my time in this role I learned a lot about DevOps and Kubernetes as well.
+`,
   bulletPoints: [
     "Development of a patient administration and Clinical Decision Support site",
-    "Researching and building an AI infrastructure for NLP projects, like Fall Risk Classification from progress notes",
+    "Researching and building an AI infrastructure for NLP projects",
+    "Backend development in Django and Go",
   ],
   projects: biotSoftwareDeveloperProjects,
   skills: [GoSkill, KubernetesSkill, MysqlSkill],

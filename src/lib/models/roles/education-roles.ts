@@ -1,4 +1,3 @@
-import { PythonSkill } from "../skills";
 import type { Role } from "./common-roles";
 
 const MedicineRole: Role = {
@@ -14,7 +13,6 @@ const MedicineRole: Role = {
     "Research in LinkGroup",
     "Thesis:",
   ],
-  skills: [],
 };
 
 const PhysicsRole: Role = {
@@ -25,7 +23,6 @@ const PhysicsRole: Role = {
   instutition: "Eötvös Loránd University",
   location: "Budapest",
   bulletPoints: ["Biophysics Specialization", "Thesis:"],
-  skills: [PythonSkill],
 };
 
 export default [MedicineRole, PhysicsRole];

@@ -13,9 +13,9 @@
 <style>
   .side-panel {
     position: fixed;
-    right: -440px; /* Adjust for smoother animation */
+    right: -55%; /* Adjust for smoother animation */
     top: 0;
-    width: 400px;
+    width: 50%;
     height: 100vh;
     background: var(--color-bg-2);
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
@@ -35,5 +35,10 @@
     border: none;
     font-size: 20px;
     cursor: pointer;
+  }
+
+  .content {
+    padding: 20px;
+    padding-bottom: 100px;
   }
 </style>

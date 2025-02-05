@@ -123,12 +123,6 @@ export const MlflowSkill: Skill = {
   mastery: 7,
 };
 
-export const TensorboardSkill: Skill = {
-  name: "Tensorboard",
-  category: "Skills",
-  mastery: 7,
-};
-
 export const LangfuseSkill: Skill = {
   name: "Langfuse",
   category: "Skills",
@@ -179,6 +173,12 @@ export const DrugbankSkill: Skill = {
   mastery: 8,
 };
 
+export const RXNormSkill: Skill = {
+  name: "RXNorm",
+  category: "Medical Ontologies",
+  mastery: 4,
+};
+
 const skills: Skill[] = [
   PythonSkill,
   TypescriptSkill,
@@ -192,7 +192,6 @@ const skills: Skill[] = [
   DockerSkill,
   KubernetesSkill,
   MlflowSkill,
-  TensorboardSkill,
   LangfuseSkill,
   MysqlSkill,
   QdrantSkill,

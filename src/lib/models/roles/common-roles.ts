@@ -43,7 +43,8 @@ export function getRoleSkills(role: Role): Skill[] {
     skills = skills.concat(project.skills || []);
   }
 
-  return skills;
+  let uniqueSkills = new Set(skills);
+  return Array.from(uniqueSkills);
 }
 
 export function getGeneralRoleSkills(role: Role): Skill[] {

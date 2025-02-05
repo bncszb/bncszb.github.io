@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { Role } from "$lib/models/roles/common-roles";
+  import { getGeneralRoleSkills, getRoleSkills, type Role } from "$lib/models/roles/common-roles";
   import AccordionItem from "../AccordionItem.svelte";
   import HistoryElement from "../HistoryElement.svelte";
   import ShortDescriptionWIthIcons from "../project/ShortDescriptionWIthIcons.svelte";
@@ -32,21 +32,26 @@
       {/if}
 
       {#if role.bulletPoints && role.bulletPoints.length > 0}
+      <ul>
         {#each role.bulletPoints as bulletPoint}
-          <p>{bulletPoint}</p>
+          <li>{bulletPoint}</li>
         {/each}
+      </ul>
       {/if}
 
       {#if role.projects && role.projects.length > 0}
-        {#each role.projects as project}
-          <ShortDescriptionWIthIcons {project} />
-        {/each}
+        <h4>Projects:</h4>
+        <div class="projects-with-icons">
+          {#each role.projects as project}
+            <ShortDescriptionWIthIcons {project} />
+          {/each}
+        </div>
       {/if}
 
-      {#if role.skills && role.skills.length > 0}
+      {#if getRoleSkills(role).length > 0}
         Skills:
         <ul>
-          {#each role.skills as skill}
+          {#each getRoleSkills(role) as skill}
             <li>{skill.name}</li>
           {/each}
         </ul>
@@ -54,3 +59,13 @@
     </AccordionItem>
   {/if}
 </div>
+
+<style>
+  .projects-with-icons {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 3em;
+    font-weight: 200;
+    padding-bottom: 2em;
+  }
+</style>
