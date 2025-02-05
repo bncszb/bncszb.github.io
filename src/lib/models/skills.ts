@@ -19,7 +19,7 @@ import type { SvelteComponent } from "svelte";
 export const skillCategories = [
   "Programming Languages",
   "Frameworks",
-  "Skills",
+  "Tools",
   "Databases",
   "Medical Ontologies",
 ] as const;
@@ -33,173 +33,173 @@ export type Skill = {
   mastery: number;
 };
 
-export const PythonSkill: Skill = {
+export const pythonSkill: Skill = {
   name: "Python",
   category: "Programming Languages",
   icon: SiPython,
   mastery: 10,
 };
 
-export const TypescriptSkill: Skill = {
+export const typescriptSkill: Skill = {
   name: "Typescript",
   category: "Programming Languages",
   icon: SiTypescript,
   mastery: 4,
 };
 
-export const GoSkill: Skill = {
+export const goSkill: Skill = {
   name: "Go",
   category: "Programming Languages",
   icon: SiGo,
   mastery: 2,
 };
 
-export const PytorchSkill: Skill = {
+export const pytorchSkill: Skill = {
   name: "PyTorch",
   category: "Frameworks",
   icon: SiPytorch,
   mastery: 6,
 };
 
-export const TensorflowSkill: Skill = {
+export const tensorflowSkill: Skill = {
   name: "Tensorflow",
   category: "Frameworks",
   icon: SiTensorflow,
   mastery: 6,
 };
 
-export const PandasSkill: Skill = {
+export const pandasSkill: Skill = {
   name: "Pandas",
   category: "Frameworks",
   icon: SiPandas,
   mastery: 6,
 };
 
-export const LangchainSkill: Skill = {
+export const langchainSkill: Skill = {
   name: "Langchain",
   category: "Frameworks",
   icon: SiLangchain,
   mastery: 8,
 };
 
-export const NetworkxSkill: Skill = {
+export const networkxSkill: Skill = {
   name: "NetworkX",
   category: "Frameworks",
   mastery: 8,
 };
 
-export const PlotlySkill: Skill = {
+export const plotlySkill: Skill = {
   name: "Plotly",
   category: "Frameworks",
   icon: SiPlotly,
   mastery: 6,
 };
 
-export const GitSkill: Skill = {
+export const gitSkill: Skill = {
   name: "Git",
-  category: "Skills",
+  category: "Tools",
   icon: SiGit,
   mastery: 7,
 };
 
-export const DockerSkill: Skill = {
+export const dockerSkill: Skill = {
   name: "Docker",
-  category: "Skills",
+  category: "Tools",
   icon: SiDocker,
   mastery: 7,
 };
 
-export const KubernetesSkill: Skill = {
+export const kubernetesSkill: Skill = {
   name: "Kubernetes",
-  category: "Skills",
+  category: "Tools",
   icon: SiKubernetes,
   mastery: 6,
 };
 
-export const MlflowSkill: Skill = {
+export const mlflowSkill: Skill = {
   name: "MLflow",
-  category: "Skills",
+  category: "Tools",
   icon: SiMlflow,
   mastery: 7,
 };
 
-export const LangfuseSkill: Skill = {
+export const langfuseSkill: Skill = {
   name: "Langfuse",
-  category: "Skills",
+  category: "Tools",
   mastery: 4,
 };
 
-export const MysqlSkill: Skill = {
+export const mysqlSkill: Skill = {
   name: "MySQL",
   category: "Databases",
   icon: SiMysql,
   mastery: 6,
 };
 
-export const QdrantSkill: Skill = {
+export const qdrantSkill: Skill = {
   name: "Qdrant",
   category: "Databases",
   mastery: 8,
 };
 
-export const Neo4jSkill: Skill = {
+export const neo4jSkill: Skill = {
   name: "Neo4j",
   category: "Databases",
   icon: SiNeo4j,
   mastery: 4,
 };
 
-export const ICD10Skill: Skill = {
+export const icd10Skill: Skill = {
   name: "ICD-10",
   category: "Medical Ontologies",
   mastery: 8,
 };
 
-export const SNOMEDSkill: Skill = {
+export const snomedSkill: Skill = {
   name: "SNOMED CT",
   category: "Medical Ontologies",
   mastery: 8,
 };
 
-export const LoincSkill: Skill = {
+export const loincSkill: Skill = {
   name: "LOINC",
   category: "Medical Ontologies",
   mastery: 8,
 };
 
-export const DrugbankSkill: Skill = {
+export const drugbankSkill: Skill = {
   name: "Drugbank",
   category: "Medical Ontologies",
   mastery: 8,
 };
 
-export const RXNormSkill: Skill = {
+export const rxNormSkill: Skill = {
   name: "RXNorm",
   category: "Medical Ontologies",
   mastery: 4,
 };
 
 const skills: Skill[] = [
-  PythonSkill,
-  TypescriptSkill,
-  GoSkill,
-  PytorchSkill,
-  TensorflowSkill,
-  PandasSkill,
-  LangchainSkill,
-  NetworkxSkill,
-  GitSkill,
-  DockerSkill,
-  KubernetesSkill,
-  MlflowSkill,
-  LangfuseSkill,
-  MysqlSkill,
-  QdrantSkill,
-  Neo4jSkill,
-  ICD10Skill,
-  SNOMEDSkill,
-  LoincSkill,
-  DrugbankSkill,
+  pythonSkill,
+  typescriptSkill,
+  goSkill,
+  pytorchSkill,
+  tensorflowSkill,
+  pandasSkill,
+  langchainSkill,
+  networkxSkill,
+  gitSkill,
+  dockerSkill,
+  kubernetesSkill,
+  mlflowSkill,
+  langfuseSkill,
+  mysqlSkill,
+  qdrantSkill,
+  neo4jSkill,
+  icd10Skill,
+  snomedSkill,
+  loincSkill,
+  drugbankSkill,
 ];
 
 export const skillsByCategory: Record<SkillCategory, Skill[]> = skills.reduce(

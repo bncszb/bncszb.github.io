@@ -1,4 +1,4 @@
-import { NetworkxSkill, PytorchSkill } from "../skills";
+import { networkxSkill, pytorchSkill } from "../skills";
 import type { Role } from "./common-roles";
 
 const WignerRole: Role = {
@@ -27,7 +27,7 @@ const LinkGroupRole: Role = {
     "The role of nodes with fix strategies in spatial social dilemma games",
     "Prediction of nodes' capability to spread cooperation using semi-supervised learning with Graph Convolutional Networks",
   ],
-  skills: [PytorchSkill, NetworkxSkill],
+  skills: [pytorchSkill, networkxSkill],
 };
 
 export default [WignerRole, LinkGroupRole];

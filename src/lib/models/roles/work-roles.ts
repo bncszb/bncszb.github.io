@@ -1,25 +1,25 @@
 import type { Project } from "../projects";
 import {
-  DockerSkill,
-  DrugbankSkill,
-  GoSkill,
-  ICD10Skill,
-  KubernetesSkill,
-  LangchainSkill,
-  LangfuseSkill,
-  MlflowSkill,
-  MysqlSkill,
-  Neo4jSkill,
-  NetworkxSkill,
-  PandasSkill,
-  PlotlySkill,
-  PythonSkill,
-  PytorchSkill,
-  QdrantSkill,
-  RXNormSkill,
-  SNOMEDSkill,
-  TensorflowSkill,
-  TypescriptSkill,
+  dockerSkill,
+  drugbankSkill,
+  goSkill,
+  icd10Skill,
+  kubernetesSkill,
+  langchainSkill,
+  langfuseSkill,
+  mlflowSkill,
+  mysqlSkill,
+  neo4jSkill,
+  networkxSkill,
+  pandasSkill,
+  plotlySkill,
+  pythonSkill,
+  pytorchSkill,
+  qdrantSkill,
+  rxNormSkill,
+  snomedSkill,
+  tensorflowSkill,
+  typescriptSkill,
 } from "../skills";
 import type { Role } from "./common-roles";
 
@@ -34,11 +34,11 @@ The transcript is created using a HIPAA compliant API. Afterwards, the text is p
 Langfuse is used for tracing. The service is deployed in a Kubernetes cluster.
 `,
   skills: [
-    LangchainSkill,
-    QdrantSkill,
-    LangfuseSkill,
-    KubernetesSkill,
-    TypescriptSkill,
+    langchainSkill,
+    qdrantSkill,
+    langfuseSkill,
+    kubernetesSkill,
+    typescriptSkill,
   ],
 };
 
@@ -52,7 +52,7 @@ The multi-step process includes categorized extraction of information, summariza
 
 Langfuse is used for tracing.
 `,
-  skills: [LangchainSkill, LangfuseSkill, TypescriptSkill],
+  skills: [langchainSkill, langfuseSkill, typescriptSkill],
 };
 
 const knowledgeGraphProject: Project = {
@@ -63,7 +63,7 @@ A Langchain component in Typescript that extracts information from text and crea
 
 After the extraction, there are additional steps to clean the graph and to make it more understandable for the chatbot. The postprocessing steps include additional Langchain calls, similarity through embeddings and Cypher queries.
 `,
-  skills: [Neo4jSkill, LangchainSkill, QdrantSkill, TypescriptSkill],
+  skills: [neo4jSkill, langchainSkill, qdrantSkill, typescriptSkill],
 };
 
 const biotHeadOfAIProjects: Project[] = [
@@ -83,7 +83,7 @@ Responsible for the AI infrastructure and the AI projects at Biot.ai Lab.
 `,
   bulletPoints: [],
   projects: biotHeadOfAIProjects,
-  skills: [QdrantSkill, LangchainSkill, TypescriptSkill, Neo4jSkill],
+  skills: [qdrantSkill, langchainSkill, typescriptSkill, neo4jSkill],
 };
 
 const medcationServiceProject: Project = {
@@ -94,7 +94,7 @@ A Go service that uses DrugBank to provide information about medications.
 
 The data is stored in a MySQL database. The service is deployed in a Kubernetes cluster.
 `,
-  skills: [GoSkill, MysqlSkill, KubernetesSkill, DrugbankSkill],
+  skills: [goSkill, mysqlSkill, kubernetesSkill, drugbankSkill],
 };
 
 const terminologyMatchingProject: Project = {
@@ -106,12 +106,12 @@ A microservice written in Python that matches medical terminology between medica
 The service used a fuzzy matching algorithms along with a graph-based approach (NetworkX) to find the most similar concepts.
 `,
   skills: [
-    DrugbankSkill,
-    SNOMEDSkill,
-    ICD10Skill,
-    RXNormSkill,
-    PythonSkill,
-    NetworkxSkill,
+    drugbankSkill,
+    snomedSkill,
+    icd10Skill,
+    rxNormSkill,
+    pythonSkill,
+    networkxSkill,
   ],
 };
 
@@ -123,7 +123,7 @@ A Python service that uses a fine-tuned BERT model to classify the fall risk of 
 
 The training was done in Pytorch and the model was saved in Mlflow. 
 `,
-  skills: [PytorchSkill, MlflowSkill, PythonSkill],
+  skills: [pytorchSkill, mlflowSkill, pythonSkill],
 };
 
 const patientSimilaritySearchProject: Project = {
@@ -138,12 +138,7 @@ The model itself is a Pytorch model that was trained on synthetic demographic da
 During training the metrics were logged on Tensorboard and the model was saved in Mlflow.
 The service runs in a Kubernetes cluster.
 `,
-  skills: [
-    QdrantSkill,
-    PytorchSkill,
-    MlflowSkill,
-    PythonSkill,
-  ],
+  skills: [qdrantSkill, pytorchSkill, mlflowSkill, pythonSkill],
 };
 
 const biotSoftwareDeveloperProjects: Project[] = [
@@ -169,22 +164,40 @@ Backend developer with a focus on AI projects and medical supervision. The backe
     "Backend development in Django and Go",
   ],
   projects: biotSoftwareDeveloperProjects,
-  skills: [GoSkill, KubernetesSkill, MysqlSkill],
+  skills: [goSkill, kubernetesSkill, mysqlSkill],
 };
 
 const maskRCNNProject: Project = {
   name: "Mask R-CNN",
   shortDescription: "Instance segmentation using Mask R-CNN",
-  skills: [TensorflowSkill, DockerSkill],
+  description: `
+A Tensorflow project that uses Mask R-CNN for instance segmentation in medical images. The goal of the project is to segment cancer in lung CT images. 
+
+I joined the project in the middle of the development and I participated in the training and testing of the model, as well as experimenting with different architectures and processing steps.
+`,
+  skills: [tensorflowSkill, dockerSkill, pythonSkill],
+};
+
+const ensembleModelProject: Project = {
+  name: "Ensemble Model",
+  shortDescription: "Ensemble model for nodule segmentation",
+  description: `
+A Tensorflow project that combines different models for nodule segmentation in lung CT images. The project uses U-Net models and a Mask R-CNN model.
+`,
+  skills: [tensorflowSkill, dockerSkill, pythonSkill],
 };
 
 const dataValidationProject: Project = {
   name: "Data Validation",
-  shortDescription: "Tools for validation of data generation in Plotly Dash",
-  skills: [PlotlySkill],
+  shortDescription: "Data validation tools in Plotly Dash",
+  description: `
+A data validation tool written in Python that uses Plotly Dash for visualization. The tool was created to validate the data generation process and visualized the generated image patches and the corresponding masks in a Dash Volume Slicer and Streamlit.
+`,
+  skills: [plotlySkill, pythonSkill],
 };
 
 const ulyssysAIResearcherProjects: Project[] = [
+  ensembleModelProject,
   maskRCNNProject,
   dataValidationProject,
 ];
@@ -196,14 +209,16 @@ const ulyssysAIResearcherRole: Role = {
   endDate: new Date("2022-12-01"),
   instutition: "Ulyssys",
   location: "Budapest",
+  description: `
+Researcher in the Ulyssys AI group. The group worked on a EU funded project about malignant nodule segmentation in lung CT images.   
+`,
   bulletPoints: [
     "Cancer segmentation in lung CT images using Deep Learning",
     "Ensuring compatibility between Medicine and Machine Learning",
     "Research and experimentation with Data Processing steps and Deep Learning architectures",
-    "Data visualization and analysis",
   ],
   projects: ulyssysAIResearcherProjects,
-  skills: [TensorflowSkill, PandasSkill, DockerSkill],
+  skills: [tensorflowSkill, pandasSkill, dockerSkill],
 };
 
 export const workProjects = [
