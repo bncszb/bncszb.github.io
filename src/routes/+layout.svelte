@@ -53,13 +53,6 @@
     padding: 12px;
   }
 
-  nav {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    padding: 1rem;
-  }
-
   footer a {
     font-weight: bold;
   }

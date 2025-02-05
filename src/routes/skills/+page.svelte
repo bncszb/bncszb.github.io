@@ -54,11 +54,7 @@
   </table>
 </main>
 
-<SidePanel
-  isOpen={isPanelOpen}
-  onClose={closePanel}
-  class={isPanelOpen ? "panel-open" : ""}
->
+<SidePanel isOpen={isPanelOpen} onClose={closePanel}>
   {#if selectedSkill}
     <SkillDetails skill={selectedSkill} />
   {/if}
@@ -79,18 +75,10 @@
     margin-bottom: 5px;
   }
 
-  h1.panel-open {
-    display: none;
-  }
-
   table {
     width: 100%;
     border: none;
     font-size: medium;
-  }
-
-  SidePanel.panel-open {
-    /* transform: translateX(0); */
   }
 
   tr,
