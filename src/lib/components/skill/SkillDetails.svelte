@@ -1,30 +1,34 @@
 <script lang="ts">
   import history from "$lib/models/history";
   import type { Skill } from "$lib/models/skills";
+  import ProjectDetails from "../project/ProjectDetails.svelte";
+  import RoleDetails from "../role/RoleDetails.svelte";
 
   export let skill: Skill;
+  let iconSize = 40;
 </script>
 
-<h1>{skill.name}</h1>
-<p>{skill.mastery}</p>
+<table>
+  <tbody>
+    <tr>
+      <td><h1>{skill.name}</h1></td>
+      <td> <svelte:component this={skill.icon} size={iconSize} /></td>
+    </tr>
+  </tbody>
+</table>
 
-Projects:
-<ul>
-  {#each history.getProjectsBySkill(skill) as project}
-    <li>{project.name}</li>
-  {/each}
-</ul>
+<h2>Experience</h2>
+{#each history.getProjectsBySkill(skill) as project}
+  <ProjectDetails {project} />
+{/each}
 
-Roles:
-<ul>
-  {#each history.getRolesBySkill(skill) as role}
-    <li>{role.name}</li>
-  {/each}
-</ul>
+{#each history.getRolesByGeneralSkill(skill) as role}
+  <RoleDetails {role} />
+{/each}
 
-Roles with General skill:
-<ul>
-  {#each history.getRolesByGeneralSkill(skill) as role}
-    <li>{role.name}</li>
-  {/each}
-</ul>
+<style>
+  table {
+    margin-left: auto;
+    margin-right: auto;
+  }
+</style>

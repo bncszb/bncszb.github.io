@@ -47,10 +47,9 @@ export function getRoleSkills(role: Role): Skill[] {
 }
 
 export function getGeneralRoleSkills(role: Role): Skill[] {
-  const projectSkills: Skill[] = [];
-
+  let projectSkills: Skill[] = [];
   for (const project of role.projects || []) {
-    projectSkills.concat(project.skills || []);
+    projectSkills = projectSkills.concat(project.skills || []);
   }
 
   return (role.skills || []).filter(

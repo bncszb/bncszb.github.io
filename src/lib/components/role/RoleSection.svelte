@@ -1,8 +1,8 @@
 <script lang="ts">
   import type { Role } from "$lib/models/roles/common-roles";
-  import AccordionItem from "./AccordionItem.svelte";
-  import HistoryElement from "./HistoryElement.svelte";
-  import ShortDescriptionWIthIcons from "./project/ShortDescriptionWIthIcons.svelte";
+  import AccordionItem from "../AccordionItem.svelte";
+  import HistoryElement from "../HistoryElement.svelte";
+  import ShortDescriptionWIthIcons from "../project/ShortDescriptionWIthIcons.svelte";
 
   export let role: Role;
 </script>

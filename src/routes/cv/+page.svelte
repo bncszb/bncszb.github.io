@@ -1,5 +1,5 @@
 <script lang="ts">
-  import RoleSection from "$lib/components/RoleSection.svelte";
+  import RoleSection from "$lib/components/role/RoleSection.svelte";
   import Skills from "$lib/components/skill/Skills.svelte";
   import educationRoles from "$lib/models/roles/education-roles";
   import researchRoles from "$lib/models/roles/research-roles";
