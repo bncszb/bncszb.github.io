@@ -6,6 +6,7 @@ const MalteseRole: Role = {
   startDate: new Date("2019-07-01"),
   instutition: "Hungarian Charity Service of the Order of Malta",
   location: "Budapest",
+  description:``,
   bulletPoints: [
     "Dunabogdány flood - 2024",
     "COVID19 - Testing and vaccination",

@@ -11,7 +11,6 @@ const MedicineRole: Role = {
     "Biochemistry competition: 5th place (2015)",
     "Biophysics competition: 6th place (2015)",
     "Research in LinkGroup",
-    "Thesis:",
   ],
 };
 
@@ -22,7 +21,7 @@ const PhysicsRole: Role = {
   endDate: new Date("2020-06-01"),
   instutition: "Eötvös Loránd University",
   location: "Budapest",
-  bulletPoints: ["Biophysics Specialization", "Thesis:"],
+  bulletPoints: ["Biophysics Specialization"],
 };
 
 export default [MedicineRole, PhysicsRole];

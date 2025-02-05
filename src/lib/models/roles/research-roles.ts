@@ -41,6 +41,8 @@ const linkGroupRole: Role = {
 During my time in LinkGroup at Semmelweis University I studied the dynamics of cooperative / defective behavior in complex graphs.
 
 The goal was to learn the properties of certain node sets that could persuade the whole graph into cooperation. Using simulations and later Graph Neural Networks we were able to identify certain properties that enhance the persuasiveness of a node. The idea is that these selected sets share members with tumor inducing node sets.
+
+The results are the theses for my degrees.
 `,
 
   skills: [pytorchSkill, networkxSkill, pythonSkill],
