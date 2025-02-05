@@ -2,6 +2,7 @@
   import { getRoleSkills, type Role } from "$lib/models/roles/common-roles";
   import AccordionItem from "../AccordionItem.svelte";
   import HistoryElement from "../HistoryElement.svelte";
+  import Markdown from "../Markdown.svelte";
   import ShortDescriptionWIthIcons from "../project/ShortDescriptionWIthIcons.svelte";
 
   export let role: Role;
@@ -27,9 +28,7 @@
         slot="headerSlot"
       />
 
-      {#if role.description}
-        <p class="role-description">{role.description}</p>
-      {/if}
+      <Markdown source={role.description} />
 
       {#if role.bulletPoints && role.bulletPoints.length > 0}
         <ul>
