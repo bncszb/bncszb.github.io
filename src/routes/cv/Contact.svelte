@@ -6,41 +6,64 @@
     IoLogoLinkedin,
     IoPhonePortraitOutline,
   } from "svelte-icons-pack/io";
-  const iconSize = 40;
+
+  const iconSize = 24; // Reduced size for better responsiveness
 </script>
 
-<table>
-  <tbody>
-    <tr>
-      <td> <Icon src={FiMail} size={iconSize} /></td>
-      <td><a href="mailto:bszabo96@gmail.com">bszabo96@gmail.com</a> </td>
-      <td> <Icon src={IoPhonePortraitOutline} size={iconSize} /></td>
-      <td>+36 20 566 6348 </td>
+<div class="contact-info">
+  <div class="contact-item">
+    <Icon src={FiMail} size={iconSize} />
+    <a href="mailto:bszabo96@gmail.com">bszabo96@gmail.com</a>
+  </div>
 
-      <td> <Icon src={IoLocationOutline} size={iconSize} /></td>
-      <td> Budapest, Hungary</td>
-      <td>
-        <a href="https://www.linkedin.com/in/szabob/" target="_blank">
-          <Icon src={IoLogoLinkedin} size={iconSize} />
-        </a></td
-      >
-    </tr>
-  </tbody>
-</table>
+  <div class="contact-item">
+    <Icon src={IoPhonePortraitOutline} size={iconSize} />
+    <span>+36 20 566 6348</span>
+  </div>
+
+  <div class="contact-item">
+    <Icon src={IoLocationOutline} size={iconSize} />
+    <span>Budapest, Hungary</span>
+  </div>
+
+  <div class="contact-item">
+    <a href="https://www.linkedin.com/in/szabob/" target="_blank">
+      <Icon src={IoLogoLinkedin} size={iconSize} />
+    </a>
+  </div>
+</div>
 
 <style>
-  table {
-    margin-top: 3em;
-    margin-bottom: 0em;
-    width: 100%;
-    height: fit-content;
-    border: 3px;
+  .contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin-top: 2em;
     font-size: medium;
   }
 
-  td {
-    /* border: 1px solid black; */
-    text-align: center;
-    padding: 8px;
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: bold;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 600px) {
+    .contact-info {
+      flex-direction: column;
+      text-align: center;
+    }
   }
 </style>

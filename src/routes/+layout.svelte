@@ -5,6 +5,14 @@
   let { children } = $props();
 </script>
 
+<svelte:head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" />
+  <title>My Svelte App</title>
+  <meta name="description" content="A modern SvelteKit application." />
+  <link rel="icon" href="/site/favicon.png" />
+</svelte:head>
+
 <div class="app">
   <Header />
 
@@ -18,8 +26,6 @@
       about SvelteKit
     </p>
   </footer>
-
-
 </div>
 
 <style>
@@ -49,10 +55,10 @@
   }
 
   nav {
-	display: flex;
-	justify-content: center;
-	gap: 1rem;
-	padding: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
   }
 
   footer a {
