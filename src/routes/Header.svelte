@@ -8,6 +8,12 @@
       <img src={github} alt="GitHub" />
     </a>
   </div>
+
+  <nav>
+    <a href="/site">Home</a>
+    <a href="/site/cv">CV</a>
+    <a href="/site/skills">Skills</a>
+  </nav>
 </header>
 
 <style>
@@ -88,16 +94,11 @@
     height: 100%;
     align-items: center;
     padding: 0 0.5rem;
-    color: var(--color-text);
     font-weight: 700;
     font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     text-decoration: none;
     transition: color 0.2s linear;
-  }
-
-  a:hover {
-    color: var(--color-theme-1);
   }
 </style>
