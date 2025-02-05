@@ -38,6 +38,16 @@ export class History {
   public getSkills(): Skill[] {
     return Array.from(this.getSkillsWithSitutation().keys());
   }
+
+  public getProjectsBySkill(skill: Skill): Project[] {
+    return this.getProjects().filter((project) =>
+      project.skills?.includes(skill)
+    );
+  }
+
+  public getRolesBySkill(skill: Skill): Role[] {
+    return this.roles.filter((role) => role.skills?.includes(skill));
+  }
 }
 
 const history = new History(allRoles);
