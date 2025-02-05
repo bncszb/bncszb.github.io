@@ -1,13 +1,12 @@
 <script lang="ts">
-  import Education from "$lib/components/Education.svelte";
-  import Research from "$lib/components/Research.svelte";
+  import RoleSection from "$lib/components/RoleSection.svelte";
   import Skills from "$lib/components/skill/Skills.svelte";
-  import VolunteerExperience from "$lib/components/VolunteerExperience.svelte";
-  import WorkExperience from "$lib/components/WorkExperience.svelte";
+  import educationRoles from "$lib/models/roles/education-roles";
+  import researchRoles from "$lib/models/roles/research-roles";
+  import volunteerRoles from "$lib/models/roles/volunteer-roles";
+  import workRoles from "$lib/models/roles/work-roles";
   import Contact from "./Contact.svelte";
   import Summary from "./Summary.svelte";
-
-    
 </script>
 
 <svelte:head>
@@ -26,13 +25,29 @@
 
   <Skills />
 
-  <WorkExperience />
+  <h2>Work Experience</h2>
 
-  <Research />
+  {#each workRoles as role}
+    <RoleSection {role} />
+  {/each}
 
-  <Education />
+  <h2>Research</h2>
 
-  <VolunteerExperience />
+  {#each researchRoles as role}
+    <RoleSection {role} />
+  {/each}
+
+  <h2>Education</h2>
+
+  {#each educationRoles as role}
+    <RoleSection {role} />
+  {/each}
+
+  <h2>Volunteering</h2>
+
+  {#each volunteerRoles as role}
+    <RoleSection {role} />
+  {/each}
 </main>
 
 <style>
