@@ -3,8 +3,6 @@
   import type { Skill } from "$lib/models/skills";
 
   export let skill: Skill;
-
-  const projects = history.getProjectsBySkill(skill);
 </script>
 
 <h1>{skill.name}</h1>
@@ -12,9 +10,21 @@
 
 Projects:
 <ul>
-  {#each projects as project}
-    {project.name}
+  {#each history.getProjectsBySkill(skill) as project}
+    <li>{project.name}</li>
   {/each}
 </ul>
 
 Roles:
+<ul>
+  {#each history.getRolesBySkill(skill) as role}
+    <li>{role.name}</li>
+  {/each}
+</ul>
+
+Roles with General skill:
+<ul>
+  {#each history.getRolesByGeneralSkill(skill) as role}
+    <li>{role.name}</li>
+  {/each}
+</ul>

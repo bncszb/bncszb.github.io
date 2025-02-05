@@ -1,5 +1,9 @@
 import type { Project } from "./projects";
-import allRoles, { type Role } from "./roles/common-roles";
+import allRoles, {
+  getGeneralRoleSkills,
+  getRoleSkills,
+  type Role,
+} from "./roles/common-roles";
 import type { Skill } from "./skills";
 
 export class History {
@@ -46,10 +50,15 @@ export class History {
   }
 
   public getRolesBySkill(skill: Skill): Role[] {
-    return this.roles.filter((role) => role.skills?.includes(skill));
+    return this.roles.filter((role) => getRoleSkills(role).includes(skill));
+  }
+
+  public getRolesByGeneralSkill(skill: Skill): Role[] {
+    return this.roles.filter((role) =>
+      getGeneralRoleSkills(role).includes(skill)
+    );
   }
 }
-
 const history = new History(allRoles);
 
 export default history;
