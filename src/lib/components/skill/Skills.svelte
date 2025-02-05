@@ -12,6 +12,9 @@
   <!-- Body Content -->
 
   {#each skillCategories as category}
-    <SkillSection {category} skills={skillsByCategory[category]} />
+    <SkillSection
+      {category}
+      skills={skillsByCategory[category].sort((a, b) => b.mastery - a.mastery)}
+    />
   {/each}
 </AccordionItem>
