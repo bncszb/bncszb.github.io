@@ -1,4 +1,10 @@
-import { networkxSkill, pytorchSkill } from "../skills";
+import {
+  dockerSkill,
+  networkxSkill,
+  pythonSkill,
+  pytorchSkill,
+  tensorflowSkill,
+} from "../skills";
 import type { Role } from "./common-roles";
 
 const WignerRole: Role = {
@@ -13,7 +19,12 @@ const WignerRole: Role = {
     "Tensorflow Probability",
     "Achieved 6x speedup",
   ],
-  skills: [],
+  description: `
+
+
+[Paper](https://openreview.net/pdf?id=8dfboOQfYt3)
+`,
+  skills: [tensorflowSkill, pythonSkill, dockerSkill],
 };
 
 const LinkGroupRole: Role = {
