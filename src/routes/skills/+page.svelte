@@ -1,6 +1,6 @@
 <script lang="ts">
   import history from "$lib/models/history";
-  import { getSkillsByTier } from "$lib/models/skills";
+  import { getSkillKebab, getSkillsByTier } from "$lib/models/skills";
 
   const ratios = [2, 3, 4];
   const iconSizes = [100, 80, 60];
@@ -24,10 +24,12 @@
           <tr>
             <td>
               {#each tier as skill}
-                <svelte:component
-                  this={skill.icon}
-                  size={iconSizes[i % iconSizes.length]}
-                />
+                <a href={`/site/skills/${getSkillKebab(skill)}`}>
+                  <svelte:component
+                    this={skill.icon}
+                    size={iconSizes[i % iconSizes.length]}
+                  />
+                </a>
               {/each}
             </td>
           </tr>
