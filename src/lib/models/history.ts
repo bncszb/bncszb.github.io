@@ -17,7 +17,7 @@ export class History {
     return projects;
   }
 
-  public getSkills(): Map<Skill, (Project | Role)[]> {
+  public getSkillsWithSitutation(): Map<Skill, (Project | Role)[]> {
     let skills: Map<Skill, (Project | Role)[]> = new Map();
 
     for (const role of this.roles) {
@@ -33,6 +33,10 @@ export class History {
     }
 
     return skills;
+  }
+
+  public getSkills(): Skill[] {
+    return Array.from(this.getSkillsWithSitutation().keys());
   }
 }
 

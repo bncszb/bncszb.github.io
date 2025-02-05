@@ -1,10 +1,12 @@
 <script lang="ts">
   import history from "$lib/models/history";
+  import { getSkillsByTier } from "$lib/models/skills";
 
-  import { page } from "$app/state";
+  const ratios = [2, 3, 4];
+  const iconSizes = [100, 80, 60];
 
-  // const urlParams = new URLSearchParams(page.url.searchParams);
-  // const query = urlParams.get("query");
+  const skills = history.getSkills().filter((skill) => skill.icon);
+  const tiers = ratios.map((ratio, i) => getSkillsByTier(skills, i, ratios));
 </script>
 
 <svelte:head>
@@ -14,18 +16,25 @@
 
 <main>
   <header>
-    <h1>Bence Szabó MD</h1>
+    <h1>Skills</h1>
+
+    <table>
+      <tbody>
+        {#each tiers as tier, i}
+          <tr>
+            <td>
+              {#each tier as skill}
+                <svelte:component
+                  this={skill.icon}
+                  size={iconSizes[i % iconSizes.length]}
+                />
+              {/each}
+            </td>
+          </tr>
+        {/each}
+      </tbody>
+    </table>
   </header>
-
-  <!-- <h2>{query}</h2> -->
-
-  {#each history.getSkills().entries() as [v, k]}
-    <p>{v.name}</p>
-
-    {#each k as situtation}
-      {situtation.name}
-    {/each}
-  {/each}
 </main>
 
 <style>
@@ -33,11 +42,28 @@
     /* max-width: 800px; */
     margin: 0 auto;
     padding: 20px;
-    width: 80%;
     font-family: Arial, sans-serif;
   }
 
   h1 {
     margin-bottom: 5px;
+  }
+
+  table {
+    width: 100%;
+    height: fit-content;
+    border: 3px;
+    font-size: medium;
+  }
+
+  tr,
+  td {
+    justify-content: center;
+    text-align: center;
+    flex-wrap: wrap;
+    display: flex;
+    gap: 12px;
+    width: 300px;
+    margin: 10px;
   }
 </style>
