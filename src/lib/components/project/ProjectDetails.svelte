@@ -7,7 +7,7 @@
 <div class="project-details">
   <h3>{project.name}</h3>
 
-  <p>{project.description || project.shortDescription}</p>
+  <p>{(project.description || project.shortDescription).trim()}</p>
 
   {#if project.bulletPoints && project.bulletPoints.length > 0}
     <ul>
@@ -21,5 +21,8 @@
 <style>
   .project-details {
     margin: 1em;
+  }
+  .project-details p {
+    white-space: pre-line;
   }
 </style>
