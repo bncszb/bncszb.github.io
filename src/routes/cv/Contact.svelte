@@ -42,10 +42,6 @@
     font-size: medium;
   }
 
-  table col {
-    width: auto;
-  }
-
   td {
     /* border: 1px solid black; */
     text-align: center;

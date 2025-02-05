@@ -6,7 +6,7 @@
   const iconSizes = [100, 80, 60];
 
   const skills = history.getSkills().filter((skill) => skill.icon);
-  const tiers = ratios.map((ratio, i) => getSkillsByTier(skills, i, ratios));
+  const tiers = ratios.map((_, i) => getSkillsByTier(skills, i, ratios));
 </script>
 
 <svelte:head>
