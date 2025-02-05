@@ -13,7 +13,7 @@
 <style>
   .side-panel {
     position: fixed;
-    right: -55%; /* Adjust for smoother animation */
+    right: -60%; /* Adjust for smoother animation */
     top: 0;
     width: 50%;
     height: 100vh;
@@ -40,5 +40,12 @@
   .content {
     padding: 20px;
     padding-bottom: 100px;
+  }
+
+  @media (max-width: 768px) {
+    .side-panel {
+      width: 90%;
+      right: -110%; /* Adjust for smoother animation */
+    }
   }
 </style>

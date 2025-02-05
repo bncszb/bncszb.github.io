@@ -10,9 +10,9 @@
   {#if category && skills.length > 0}
     <table class="skill-section">
       <colgroup>
-        <col style="width: 20%;" />
-        <col style="width: 30%;" />
-        <col style="width: 60%;" />
+        <col class="col1" />
+        <col class="col2" />
+        <col class="col3" />
       </colgroup>
       <tbody>
         <tr>
@@ -24,9 +24,12 @@
               </p>
             {/each}
           </td>
-          <td>
+          <td class="hide-on-mobile">
             {#each skills as skill}
-              <a href="/site/skills/{getSkillKebab(skill)}">
+              <a
+                class="hide-on-mobile"
+                href="/site/skills/{getSkillKebab(skill)}"
+              >
                 <svelte:component
                   this={skill.icon}
                   alt={skill.name}
@@ -48,9 +51,9 @@
     border: 3px;
   }
 
-  .skill-section col {
+  /* .skill-section col {
     width: auto;
-  }
+  } */
 
   th {
     padding: 8px;
@@ -69,5 +72,37 @@
     justify-content: center;
     align-items: center;
     vertical-align: middle;
+  }
+
+  .col1 {
+    width: max(20%, 200px);
+  }
+
+  .col2 {
+    width: 30%;
+  }
+
+  .col3 {
+    width: 50%;
+  }
+
+  @media (max-width: 600px) {
+    .hide-on-mobile {
+      display: none;
+    }
+    .col1 {
+      width: 50%;
+    }
+    .col2 {
+      width: 50%;
+    }
+
+    th {
+      padding: 4px;
+    }
+
+    td {
+      padding: 4px;
+    }
   }
 </style>

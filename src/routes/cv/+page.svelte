@@ -54,11 +54,12 @@
   main {
     /* max-width: 800px; */
     margin: 0 auto;
-    padding: 20px;
+    /* padding: 20px; */
     width: 80%;
   }
 
   h1 {
     margin-bottom: 5px;
   }
+
 </style>
