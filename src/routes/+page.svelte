@@ -18,7 +18,6 @@
     margin: 0 auto;
     padding: 20px;
     width: 80%;
-    font-family: Arial, sans-serif;
   }
 
   h1 {

@@ -68,7 +68,6 @@
   main {
     margin: 0 auto;
     padding: 20px;
-    font-family: Arial, sans-serif;
   }
 
   main.panel-open table,

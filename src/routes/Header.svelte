@@ -95,7 +95,7 @@
     align-items: center;
     padding: 0 0.5rem;
     font-weight: 700;
-    font-size: 0.8rem;
+    font-size: 1rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     text-decoration: none;
