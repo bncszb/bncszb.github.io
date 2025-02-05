@@ -1,7 +1,7 @@
 <script lang="ts">
   import Education from "$lib/components/Education.svelte";
   import Research from "$lib/components/Research.svelte";
-  import Skills from "$lib/components/Skills.svelte";
+  import Skills from "$lib/components/skill/Skills.svelte";
   import VolunteerExperience from "$lib/components/VolunteerExperience.svelte";
   import WorkExperience from "$lib/components/WorkExperience.svelte";
   import Contact from "./Contact.svelte";

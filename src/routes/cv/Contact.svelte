@@ -10,10 +10,6 @@
 </script>
 
 <table>
-  <!-- <colgroup>
-    <col style="width: 60%;" />
-    <col style="width: 40%;" />
-  </colgroup> -->
   <tbody>
     <tr>
       <td> <Icon src={FiMail} size={iconSize} /></td>

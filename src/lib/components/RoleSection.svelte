@@ -9,7 +9,7 @@
 
 <div class="role-section">
   {#if role}
-    <AccordionItem useStyle={false}>
+    <AccordionItem>
       <HistoryElement
         title={role.name}
         location={role.instutition + ", " + role.location}
