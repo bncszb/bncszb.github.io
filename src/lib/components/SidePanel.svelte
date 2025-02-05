@@ -1,0 +1,39 @@
+<script lang="ts">
+  export let isOpen: boolean;
+  export let onClose: () => void;
+</script>
+
+<div class="side-panel {isOpen ? 'open' : ''}">
+  <button class="close-btn" on:click={onClose}>×</button>
+  <div class="content">
+    <slot />
+  </div>
+</div>
+
+<style>
+  .side-panel {
+    position: fixed;
+    right: -440px; /* Adjust for smoother animation */
+    top: 0;
+    width: 400px;
+    height: 100vh;
+    background: white;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    transition: right 0.3s ease-in-out;
+    overflow-y: auto;
+    padding: 20px;
+    z-index: 1000;
+  }
+  .side-panel.open {
+    right: 0;
+  }
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+  }
+</style>

@@ -1,17 +1,34 @@
 <script lang="ts">
+  import SidePanel from "$lib/components/SidePanel.svelte";
+  import SkillDetails from "$lib/components/skill/SkillDetails.svelte";
   import history from "$lib/models/history";
-  import { getSkillKebab, getSkillsByTier } from "$lib/models/skills";
+  import { getSkillsByTier, type Skill } from "$lib/models/skills";
+  import { tick } from "svelte";
 
   const ratios = [2, 3, 4];
   const iconSizes = [100, 80, 60];
 
   const skills = history.getSkills().filter((skill) => skill.icon);
   const tiers = ratios.map((_, i) => getSkillsByTier(skills, i, ratios));
+
+  let isPanelOpen = false;
+  let selectedSkill: Skill | null = null;
+
+  async function openPanel(skill: Skill) {
+    selectedSkill = skill;
+    await tick(); 
+    isPanelOpen = true;
+  }
+
+  function closePanel() {
+    isPanelOpen = false;
+    selectedSkill = null;
+  }
 </script>
 
 <svelte:head>
   <title>Bence Szabó</title>
-  <meta name="description" content="John Doe's CV" />
+  <meta name="description" content="Bence Szabó's CV" />
 </svelte:head>
 
 <main>
@@ -24,12 +41,12 @@
           <tr>
             <td>
               {#each tier as skill}
-                <a href={`/site/skills/${getSkillKebab(skill)}`}>
+                <button on:click={() => openPanel(skill)}>
                   <svelte:component
                     this={skill.icon}
                     size={iconSizes[i % iconSizes.length]}
                   />
-                </a>
+                </button>
               {/each}
             </td>
           </tr>
@@ -37,11 +54,16 @@
       </tbody>
     </table>
   </header>
+
+  <SidePanel isOpen={isPanelOpen} onClose={closePanel}>
+    {#if selectedSkill}
+      <SkillDetails skill={selectedSkill} />
+    {/if}
+  </SidePanel>
 </main>
 
 <style>
   main {
-    /* max-width: 800px; */
     margin: 0 auto;
     padding: 20px;
     font-family: Arial, sans-serif;
@@ -53,9 +75,18 @@
 
   table {
     width: 100%;
-    height: fit-content;
-    border: 3px;
+    border: none;
     font-size: medium;
+  }
+
+  button {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  button:hover {
+    color: var(--color-text-hover);
   }
 
   tr,
