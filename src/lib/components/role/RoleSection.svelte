@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { getGeneralRoleSkills, getRoleSkills, type Role } from "$lib/models/roles/common-roles";
+  import { getRoleSkills, type Role } from "$lib/models/roles/common-roles";
   import AccordionItem from "../AccordionItem.svelte";
   import HistoryElement from "../HistoryElement.svelte";
   import ShortDescriptionWIthIcons from "../project/ShortDescriptionWIthIcons.svelte";
@@ -32,11 +32,11 @@
       {/if}
 
       {#if role.bulletPoints && role.bulletPoints.length > 0}
-      <ul>
-        {#each role.bulletPoints as bulletPoint}
-          <li>{bulletPoint}</li>
-        {/each}
-      </ul>
+        <ul>
+          {#each role.bulletPoints as bulletPoint}
+            <li>{bulletPoint}</li>
+          {/each}
+        </ul>
       {/if}
 
       {#if role.projects && role.projects.length > 0}

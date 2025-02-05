@@ -2,7 +2,8 @@
   import AccordionItem from "$lib/components/AccordionItem.svelte";
   import SkillSection from "$lib/components/skill/SkillSection.svelte";
 
-  import { skillCategories, skillsByCategory } from "$lib/models/skills";
+  import { skillsByCategory } from "$lib/models/history";
+  import { skillCategories } from "$lib/models/skills";
 </script>
 
 <AccordionItem isOpen={true}>

@@ -4,7 +4,7 @@ import allRoles, {
   getRoleSkills,
   type Role,
 } from "./roles/common-roles";
-import type { Skill } from "./skills";
+import { getSkillsByCategory, getSkillUrlMap, type Skill } from "./skills";
 
 export class History {
   constructor(public roles: Role[]) {}
@@ -62,3 +62,7 @@ export class History {
 const history = new History(allRoles);
 
 export default history;
+
+export const skills = history.getSkills();
+export const skillsByCategory = getSkillsByCategory(skills);
+export const skillUrlMap = getSkillUrlMap(skills);

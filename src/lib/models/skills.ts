@@ -179,39 +179,17 @@ export const rxNormSkill: Skill = {
   mastery: 4,
 };
 
-const skills: Skill[] = [
-  pythonSkill,
-  typescriptSkill,
-  goSkill,
-  pytorchSkill,
-  tensorflowSkill,
-  pandasSkill,
-  langchainSkill,
-  networkxSkill,
-  gitSkill,
-  dockerSkill,
-  kubernetesSkill,
-  mlflowSkill,
-  langfuseSkill,
-  mysqlSkill,
-  qdrantSkill,
-  neo4jSkill,
-  icd10Skill,
-  snomedSkill,
-  loincSkill,
-  drugbankSkill,
-];
-
-export const skillsByCategory: Record<SkillCategory, Skill[]> = skills.reduce(
-  (acc, skill) => {
+export function getSkillsByCategory(
+  skills: Skill[]
+): Record<SkillCategory, Skill[]> {
+  return skills.reduce((acc, skill) => {
     if (!acc[skill.category]) {
       acc[skill.category] = [];
     }
     acc[skill.category].push(skill);
     return acc;
-  },
-  {} as Record<SkillCategory, Skill[]>
-);
+  }, {} as Record<SkillCategory, Skill[]>);
+}
 
 export function getSkillsByTier(
   skills: Skill[],
@@ -239,6 +217,6 @@ export function getSkillKebab(skill: Skill): string {
   return skill.name.toLowerCase().replace(/ /g, "-");
 }
 
-export const skillUrlMap: Map<string, Skill> = new Map(
-  skills.map((skill) => [getSkillKebab(skill), skill])
-);
+export function getSkillUrlMap(skills: Skill[]): Map<string, Skill> {
+  return new Map(skills.map((skill) => [getSkillKebab(skill), skill]));
+}

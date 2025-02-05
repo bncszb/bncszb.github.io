@@ -1,4 +1,4 @@
-import { skillUrlMap } from "$lib/models/skills";
+import { skillUrlMap } from "$lib/models/history";
 import type { PageLoad } from "./$types";
 
 export const load: PageLoad = ({ params }) => {

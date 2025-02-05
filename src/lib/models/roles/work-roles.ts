@@ -138,7 +138,13 @@ The model itself is a Pytorch model that was trained on synthetic demographic da
 During training the metrics were logged on Tensorboard and the model was saved in Mlflow.
 The service runs in a Kubernetes cluster.
 `,
-  skills: [qdrantSkill, pytorchSkill, mlflowSkill, pythonSkill],
+  skills: [
+    qdrantSkill,
+    pytorchSkill,
+    mlflowSkill,
+    pythonSkill,
+    kubernetesSkill,
+  ],
 };
 
 const biotSoftwareDeveloperProjects: Project[] = [
@@ -220,12 +226,6 @@ Researcher in the Ulyssys AI group. The group worked on a EU funded project abou
   projects: ulyssysAIResearcherProjects,
   skills: [tensorflowSkill, pandasSkill, dockerSkill],
 };
-
-export const workProjects = [
-  ...biotHeadOfAIProjects,
-  ...biotSoftwareDeveloperProjects,
-  ...ulyssysAIResearcherProjects,
-];
 
 export default [
   biotHeadOfAIRole,
