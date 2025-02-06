@@ -4,9 +4,9 @@
 
 <header>
   <div class="corner">
-    <a href="https://github.com/sveltejs/kit">
+    <!-- <a href="https://github.com/sveltejs/kit">
       <img src={github} alt="GitHub" />
-    </a>
+    </a> -->
   </div>
 
   <nav>
