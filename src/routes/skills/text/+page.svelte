@@ -1,8 +1,10 @@
 <script lang="ts">
   import SidePanel from "$lib/components/SidePanel.svelte";
   import SkillDetails from "$lib/components/skill/SkillDetails.svelte";
-  import history from "$lib/models/history";
-  import { getSkillsByTier, type Skill } from "$lib/models/skills";
+  import Skills from "$lib/components/skill/Skills.svelte";
+  import SkillSection from "$lib/components/skill/SkillSectionCV.svelte";
+  import history, { skillsByCategory } from "$lib/models/history";
+  import { getSkillsByTier, skillCategories, type Skill } from "$lib/models/skills";
   import { tick } from "svelte";
 
   const ratios = [2, 3, 4];
@@ -34,27 +36,17 @@
 <main class={isPanelOpen ? "panel-open" : ""}>
   <h1>Skills</h1>
   <div class="icon-or-text">
-    <a href="/site/skills" style="text-decoration: underline;">Icons</a>
-    <a href="/site/skills/text">Text</a>
+    <a href="/site/skills">Icons</a>
+    <a href="/site/skills/text" style="text-decoration: underline;">Text</a>
   </div>
-  <table>
-    <tbody>
-      {#each tiers as tier, i}
-        <tr>
-          <td>
-            {#each tier as skill}
-              <button on:click={() => openPanel(skill)}>
-                <svelte:component
-                  this={skill.icon}
-                  size={iconSizes[i % iconSizes.length]}
-                />
-              </button>
-            {/each}
-          </td>
-        </tr>
-      {/each}
-    </tbody>
-  </table>
+
+  {#each skillCategories as category}
+  <SkillSection
+    {category}
+    skills={skillsByCategory[category].sort((a, b) => b.mastery - a.mastery)}
+  />
+{/each}
+
 </main>
 
 <SidePanel isOpen={isPanelOpen} onClose={closePanel}>
@@ -94,7 +86,6 @@
     width: 300px;
     margin: 10px;
   }
-
   .icon-or-text {
     display: flex;
     justify-content: center;

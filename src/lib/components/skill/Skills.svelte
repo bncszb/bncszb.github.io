@@ -1,6 +1,6 @@
 <script>
   import AccordionItem from "$lib/components/AccordionItem.svelte";
-  import SkillSection from "$lib/components/skill/SkillSection.svelte";
+  import SkillSection from "$lib/components/skill/SkillSectionCV.svelte";
 
   import { skillsByCategory } from "$lib/models/history";
   import { skillCategories } from "$lib/models/skills";
