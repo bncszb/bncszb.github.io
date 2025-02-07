@@ -1,16 +1,15 @@
 <script lang="ts">
   import SidePanel from "$lib/components/SidePanel.svelte";
   import SkillDetails from "$lib/components/skill/SkillDetails.svelte";
-  import Skills from "$lib/components/skill/Skills.svelte";
-  import SkillSection from "$lib/components/skill/SkillSectionCV.svelte";
-  import history, { skillsByCategory } from "$lib/models/history";
-  import { getSkillsByTier, skillCategories, type Skill } from "$lib/models/skills";
+  import history from "$lib/models/history";
+  import { getSkillsByTier, type Skill } from "$lib/models/skills";
   import { tick } from "svelte";
 
   const ratios = [2, 3, 4];
-  const iconSizes = [100, 80, 60];
+  const iconSizes = [60, 40, 30];
+  const fontSizes = [30, 25, 20];
 
-  const skills = history.getSkills().filter((skill) => skill.icon);
+  const skills = history.getSkills();
   const tiers = ratios.map((_, i) => getSkillsByTier(skills, i, ratios));
 
   let isPanelOpen = false;
@@ -40,13 +39,21 @@
     <a href="/site/skills/text" style="text-decoration: underline;">Text</a>
   </div>
 
-  {#each skillCategories as category}
-  <SkillSection
-    {category}
-    skills={skillsByCategory[category].sort((a, b) => b.mastery - a.mastery)}
-  />
-{/each}
-
+  <table class="tier">
+    <tbody class="tier">
+      {#each tiers as tier, i}
+        <tr>
+          <td>
+            {#each tier as skill}
+              <button on:click={() => openPanel(skill)}>
+                <div class="skill" style="font-size: {fontSizes[i]}px;">{skill.name}</div>
+              </button>
+            {/each}
+          </td>
+        </tr>
+      {/each}
+    </tbody>
+  </table>
 </main>
 
 <SidePanel isOpen={isPanelOpen} onClose={closePanel}>
@@ -71,20 +78,23 @@
   }
 
   table {
-    width: 100%;
     border: none;
     font-size: medium;
   }
-
-  tr,
-  td {
+  tbody {
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+  }
+
+  .tier {
+    justify-content: center;
+    margin: auto;
     text-align: center;
     flex-wrap: wrap;
     display: flex;
     gap: 12px;
-    width: 300px;
-    margin: 10px;
+    width: min(400px, 100%);
   }
   .icon-or-text {
     display: flex;
@@ -92,5 +102,9 @@
     gap: 20px;
     margin-bottom: 20px;
     font-size: large;
+  }
+
+  .skill{
+    padding: 10px;
   }
 </style>

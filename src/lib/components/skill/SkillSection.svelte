@@ -3,106 +3,47 @@
 
   export let category = "";
   export let skills: Skill[] = [];
-  const iconSize = 50;
+  const iconSize = 25;
 </script>
 
-<div class="skill-section">
-  {#if category && skills.length > 0}
-    <table class="skill-section">
-      <colgroup>
-        <col class="col1" />
-        <col class="col2" />
-        <col class="col3" />
-      </colgroup>
-      <tbody>
-        <tr>
-          <th>{category}</th>
-          <td>
-            {#each skills as skill}
-              <p>
-                <a href="/site/skills/{getSkillKebab(skill)}">{skill.name}</a>
-              </p>
-            {/each}
-          </td>
-          <td class="hide-on-mobile">
-            {#each skills as skill}
-              <a
-                class="hide-on-mobile"
-                href="/site/skills/{getSkillKebab(skill)}"
-              >
-                <svelte:component
-                  this={skill.icon}
-                  alt={skill.name}
-                  size={iconSize}
-                />
-              </a>
-            {/each}
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  {/if}
-</div>
+<main>
+  <div class="skill-section">
+    {#if category && skills.length > 0}
+      <h2>{category}</h2>
+      {#each skills as skill}
+        <a href="/site/skills/{getSkillKebab(skill)}">
+          <table>
+            <tbody>
+              <tr>
+                <td><h4>{skill.name}</h4></td>
+                <td> <svelte:component this={skill.icon} size={iconSize} /></td>
+              </tr>
+            </tbody>
+          </table>
+        </a>
+      {/each}
+    {/if}
+  </div>
+</main>
 
 <style>
+  main {
+    width: 80%;
+  }
   .skill-section {
     width: 100%;
     height: fit-content;
     border: 3px;
+    justify-content: left;
   }
 
-  /* .skill-section col {
-    width: auto;
-  } */
-
-  th {
-    padding: 8px;
-    text-align: center;
-    vertical-align: top;
+  table {
+    margin-left: auto;
+    margin-right: auto;
   }
-  td {
-    /* border: 1px solid black; */
-    padding: 8px;
+  a {
+    margin: auto;
+
   }
 
-  td:nth-child(3) {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    justify-content: center;
-    align-items: center;
-    vertical-align: middle;
-  }
-
-  .col1 {
-    width: max(20%, 200px);
-  }
-
-  .col2 {
-    width: 30%;
-  }
-
-  .col3 {
-    width: 50%;
-  }
-
-  @media (max-width: 600px) {
-    .hide-on-mobile {
-      display: none;
-    }
-    .col1 {
-      width: 50%;
-    }
-    .col2 {
-      width: 50%;
-    }
-
-    th {
-      padding: 4px;
-    }
-
-    td {
-      padding: 4px;
-    }
-  }
 </style>
