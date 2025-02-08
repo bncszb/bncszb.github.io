@@ -15,10 +15,14 @@ const config = {
 			assets: 'build',
 			precompress: false,
 			strict: true
-	  }),
+	
+		}),
 	  paths: {
 		base: '/site' 
 	  }
+	},
+	compilerOptions:{
+		customElement:true,
 	}
 };
 
