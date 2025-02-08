@@ -1,5 +1,5 @@
 <script lang="ts">
-  import SidePanel from "$lib/components/SidePanel.svelte";
+  import "$lib/components/SidePanel.svelte";
   import SkillDetails from "$lib/components/skill/SkillDetails.svelte";
   import history from "$lib/models/history";
   import { getSkillsByTier, type Skill } from "$lib/models/skills";
@@ -43,7 +43,7 @@
         <tr>
           <td>
             {#each tier as skill}
-              <button on:click={() => openPanel(skill)}>
+              <button onclick={() => openPanel(skill)}>
                 <svelte:component
                   this={skill.icon}
                   size={iconSizes[i % iconSizes.length]}
@@ -57,11 +57,11 @@
   </table>
 </main>
 
-<SidePanel isOpen={isPanelOpen} onClose={closePanel}>
+<side-panel-component isOpen={isPanelOpen} onclose={closePanel}>
   {#if selectedSkill}
     <SkillDetails skill={selectedSkill} />
   {/if}
-</SidePanel>
+</side-panel-component>
 
 <style>
   main {
