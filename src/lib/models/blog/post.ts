@@ -6,6 +6,7 @@ export type Post = {
   date: Date;
   content?: string;
   shortContent?: string;
+  containsImage?: boolean;
 };
 
 // Import all markdown files as raw text at build time
@@ -15,13 +16,18 @@ const markdownFiles = import.meta.glob("/src/lib/models/blog/posts/*.md", {
 });
 
 export const posts: Post[] = Object.entries(markdownFiles)
-  .map(([path, content]) => ({
-    path,
-    title: extractTitle(content as string),
-    date: extractDateFromFilename(path),
-    content: content as string,
-    shortContent: getShortContent(content as string),
-  }))
+  .map(([path, content]) => {
+    content = content as string;
+
+    return {
+      path,
+      title: extractTitle(content),
+      date: extractDateFromFilename(path),
+      content: content,
+      shortContent: getShortContent(content),
+      containsImage: content.includes("![") || content.includes("<img"),
+    };
+  })
   .sort((a, b) => b.date.getTime() - a.date.getTime());
 
 function extractTitle(content: string): string {

@@ -16,8 +16,8 @@
     <div class="date">{post.date.toDateString()}</div>
   </div>
 
-  {#if post.content?.length != post.shortContent?.length}
-    <div class="content">
+  {#if post.content?.length != post.shortContent?.length || post.containsImage}
+    <div class="content {short ? 'remove-images' : ''}">
       <button class="content" onclick={() => (short = !short)}>
         <Markdown source={short ? post.shortContent : post.content} />
       </button>
@@ -37,6 +37,10 @@
 
   .post :global(h1) {
     /* font-size: 2em; */
+    display: none;
+  }
+
+  .remove-images :global(img) {
     display: none;
   }
 
