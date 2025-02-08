@@ -1,12 +1,11 @@
 <script lang="ts">
-  import SidePanel from "$lib/components/SidePanel.svelte";
+  import "$lib/components/SidePanel.svelte";
   import SkillDetails from "$lib/components/skill/SkillDetails.svelte";
   import history from "$lib/models/history";
   import { getSkillsByTier, type Skill } from "$lib/models/skills";
   import { tick } from "svelte";
 
   const ratios = [2, 3, 4];
-  const iconSizes = [60, 40, 30];
   const fontSizes = [30, 25, 20];
 
   const skills = history.getSkills();
@@ -45,8 +44,10 @@
         <tr>
           <td>
             {#each tier as skill}
-              <button on:click={() => openPanel(skill)}>
-                <div class="skill" style="font-size: {fontSizes[i]}px;">{skill.name}</div>
+              <button onclick={() => openPanel(skill)}>
+                <div class="skill" style="font-size: {fontSizes[i]}px;">
+                  {skill.name}
+                </div>
               </button>
             {/each}
           </td>
@@ -56,11 +57,11 @@
   </table>
 </main>
 
-<SidePanel isOpen={isPanelOpen} onClose={closePanel}>
+<side-panel-component isOpen={isPanelOpen} onclose={closePanel}>
   {#if selectedSkill}
     <SkillDetails skill={selectedSkill} />
   {/if}
-</SidePanel>
+</side-panel-component>
 
 <style>
   main {
@@ -104,7 +105,7 @@
     font-size: large;
   }
 
-  .skill{
+  .skill {
     padding: 10px;
   }
 </style>
