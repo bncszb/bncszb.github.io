@@ -11,6 +11,7 @@
 
   <nav>
     <a href="/site">Home</a>
+    <a href="/site/blog">Blog</a>
     <a href="/site/cv">CV</a>
     <a href="/site/skills">Skills</a>
   </nav>

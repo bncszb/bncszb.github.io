@@ -12,6 +12,7 @@
   </header>
 
   <div class="landing">
+    <p class="landing"><a href="/site/blog">Blog</a></p>
     <p class="landing"><a href="/site/cv">CV</a></p>
     <p class="landing"><a href="/site/skills">Skills</a></p>
   </div>
