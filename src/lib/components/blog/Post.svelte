@@ -16,7 +16,7 @@
     <div class="date">{post.date.toDateString()}</div>
   </div>
 
-  {#if post.content?.length != post.shortContent?.length || post.containsImage}
+  {#if post.content?.length != post.shortContent?.length || post.containsMedia}
     <div class="content {short ? 'remove-images' : ''}">
       <button class="content" onclick={() => (short = !short)}>
         <Markdown source={short ? post.shortContent : post.content} />

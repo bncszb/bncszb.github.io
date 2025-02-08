@@ -6,7 +6,7 @@ export type Post = {
   date: Date;
   content?: string;
   shortContent?: string;
-  containsImage?: boolean;
+  containsMedia?: boolean;
 };
 
 // Import all markdown files as raw text at build time
@@ -22,13 +22,17 @@ export const posts: Post[] = Object.entries(markdownFiles)
     const containsTable =
       (content.match(/^\|.*\|\n\|\s*[:-]+[\s\S]*\|.*\|$/gm)?.length || 0) > 0;
 
+    const containsMedia = containsImage || containsTable;
+
+    console.log({ path, containsMedia });
+
     return {
       path,
       title: extractTitle(content),
       date: extractDateFromFilename(path),
-      content: content,
-      shortContent: getShortContent(content),
-      containsImage: containsImage || containsTable,
+      content,
+      shortContent: getShortContent(content, containsMedia),
+      containsMedia,
     };
   })
   .sort((a, b) => b.date.getTime() - a.date.getTime());
@@ -44,7 +48,7 @@ function extractDateFromFilename(filePath: string): Date {
   return new Date(match[1]);
 }
 
-function getShortContent(content: string): string {
+function getShortContent(content: string, containsMedia: boolean): string {
   let shortContent = content.slice(0, shortContentLength);
   for (let i = shortContentLength; i < content.length; i++) {
     if ([",", ".", "!", "?"].includes(content[i])) {
@@ -53,8 +57,9 @@ function getShortContent(content: string): string {
     }
   }
 
-  if (shortContent.length < content.length) {
-    shortContent += "...";
+  if (shortContent.length < content.length || containsMedia) {
+    shortContent += "\n..."; // Disappeared after table without \m
+    // TODO: fix links and tables cut in half
   }
 
   return shortContent;
