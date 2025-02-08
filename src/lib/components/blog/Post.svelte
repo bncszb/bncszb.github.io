@@ -70,5 +70,14 @@
 
   .content {
     text-align: justify;
+    width: 100%;
+    max-width: 100%;
   }
+
+  .content :global(img) {
+    max-width: 100%;
+    height: auto;
+  }
+
+
 </style>
