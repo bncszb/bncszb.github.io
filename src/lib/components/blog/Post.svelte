@@ -7,6 +7,7 @@
   };
 
   let { post }: Props = $props();
+  let short = $state(true);
 </script>
 
 <div class="post">
@@ -14,9 +15,18 @@
     <div class="title">{post.title}</div>
     <div class="date">{post.date.toDateString()}</div>
   </div>
-  <div class="content">
-    <Markdown source={post.shortContent} />
-  </div>
+
+  {#if post.content?.length != post.shortContent?.length}
+    <div class="content">
+      <button class="content" onclick={() => (short = !short)}>
+        <Markdown source={short ? post.shortContent : post.content} />
+      </button>
+    </div>
+  {:else}
+    <div class="content">
+      <Markdown source={post.content} />
+    </div>
+  {/if}
 </div>
 
 <style>
@@ -48,5 +58,9 @@
 
   .date {
     font-style: italic;
+  }
+
+  .content {
+    text-align: justify;
   }
 </style>
