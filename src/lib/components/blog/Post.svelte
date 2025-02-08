@@ -44,6 +44,10 @@
     display: none;
   }
 
+  .remove-images :global(table) {
+    display: none;
+  }
+
   .post-header {
     display: flex;
     width: 100%;

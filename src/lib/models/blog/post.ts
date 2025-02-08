@@ -18,6 +18,9 @@ const markdownFiles = import.meta.glob("/src/lib/models/blog/posts/*.md", {
 export const posts: Post[] = Object.entries(markdownFiles)
   .map(([path, content]) => {
     content = content as string;
+    const containsImage = content.includes("![") || content.includes("<img");
+    const containsTable =
+      (content.match(/^\|.*\|\n\|\s*[:-]+[\s\S]*\|.*\|$/gm)?.length || 0) > 0;
 
     return {
       path,
@@ -25,7 +28,7 @@ export const posts: Post[] = Object.entries(markdownFiles)
       date: extractDateFromFilename(path),
       content: content,
       shortContent: getShortContent(content),
-      containsImage: content.includes("![") || content.includes("<img"),
+      containsImage: containsImage || containsTable,
     };
   })
   .sort((a, b) => b.date.getTime() - a.date.getTime());
