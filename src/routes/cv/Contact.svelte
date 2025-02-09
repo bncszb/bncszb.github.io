@@ -49,17 +49,6 @@
     align-items: center;
     gap: 8px;
   }
-
-  a {
-    text-decoration: none;
-    color: inherit;
-    font-weight: bold;
-  }
-
-  a:hover {
-    text-decoration: underline;
-  }
-
   @media (max-width: 600px) {
     .contact-info {
       flex-direction: column;
