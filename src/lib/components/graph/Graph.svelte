@@ -1,5 +1,6 @@
 <script lang="ts">
   import type { Graph } from "$lib/models/graph";
+  import { getSkillKebab } from "$lib/models/skills";
 
   type Props = {
     graph: Graph;
@@ -10,7 +11,9 @@
   import * as d3 from "d3";
   import { onMount } from "svelte";
 
+  const color1 = "rgba(0, 0, 0, 0.7)";
   const color2 = "rgba(0, 0, 0, 0.4)";
+
   let container: SVGSVGElement;
 
   onMount(() => {
@@ -61,7 +64,27 @@
       .append("circle")
       .attr("r", 10)
       .attr("fill", color2)
-      .attr("stroke", "#fff");
+      .attr("stroke", "#fff")
+      .attr("stroke-width", 2)
+      .on("mouseover", function (event, d) {
+        d3.select(this)
+          .transition()
+          .duration(200)
+          .attr("r", 15) // Increase size
+          .attr("fill", color1) // Change color
+          .attr("stroke-width", 4); // Thicker border
+      })
+      .on("mouseout", function (event, d) {
+        d3.select(this)
+          .transition()
+          .duration(200)
+          .attr("r", 10) // Reset size
+          .attr("fill", color2) // Reset color
+          .attr("stroke-width", 2); // Reset border
+      });
+    svg.selectAll("circle").on("click", (_, d) => {
+      window.location.href = `/site/skills/${getSkillKebab(d.id)}`;
+    });
 
     // Node labels
     const labels = svg

@@ -213,8 +213,10 @@ export function getSkillsByTier(
   return orderedSkills.slice(start, end);
 }
 
-export function getSkillKebab(skill: Skill): string {
-  return skill.name.toLowerCase().replace(/ /g, "-");
+export function getSkillKebab(skill: Skill | string): string {
+  console.log(skill);
+  const name = typeof skill === "string" ? skill : skill.name;
+  return name.toLowerCase().replace(/ /g, "-");
 }
 
 export function getSkillUrlMap(skills: Skill[]): Map<string, Skill> {
