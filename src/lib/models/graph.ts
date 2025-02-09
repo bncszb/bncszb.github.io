@@ -1,5 +1,7 @@
 export type Node = {
   id: string;
+  fx?: number;
+  fy?: number;
 };
 
 export type Edge = {

@@ -12,17 +12,14 @@
       height = 500;
 
     const graph = history.getStackGraph();
-    // Sample graph data
     const nodes = graph.nodes;
     const links = graph.edges;
 
-    // Create SVG
     const svg = d3
       .select(container)
       .attr("width", width)
       .attr("height", height);
 
-    // Create a force simulation
     const simulation = d3
       .forceSimulation(nodes)
       .force(
@@ -36,6 +33,16 @@
       .force("charge", d3.forceManyBody().strength(-1000))
       .force("center", d3.forceCenter(width / 2, height / 2));
 
+    nodes.forEach((node) => {
+      if (node.id === "Python") {
+        node.fx = width / 3; // Fixed X position
+        node.fy = height / 2; // Fixed Y position
+      }
+      if (node.id === "Typescript") {
+        node.fx = (2 * width) / 3; // Fixed X position
+        node.fy = height / 2; // Fixed Y position
+      }
+    });
     // Draw links (edges)
     const link = svg
       .selectAll("line")
@@ -104,6 +111,8 @@
   svg {
     display: block;
     margin: auto;
+    max-width: 100%;
+
     /* border: 1px solid #ccc; */
   }
   .icon-or-text {
