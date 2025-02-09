@@ -1,9 +1,9 @@
 <script lang="ts">
-  import "$lib/components/SidePanel.svelte";
+  import { openPanel } from "$lib/components/side-panel/side-panel.svelte";
+  import "$lib/components/side-panel/SidePanel.svelte";
   import SkillDetails from "$lib/components/skill/SkillDetails.svelte";
   import history from "$lib/models/history";
   import { getSkillsByTier, type Skill } from "$lib/models/skills";
-  import { openPanel } from "$lib/stores/panelStore.svelte";
 
   const ratios = [2, 3, 4];
   const fontSizes = [30, 25, 20];
