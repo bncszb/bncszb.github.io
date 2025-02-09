@@ -118,6 +118,23 @@ export class History {
     };
     return graph;
   }
+
+  public getRolesChronologically(): Role[] {
+    // sort first by start date, then by end date
+    const now = new Date();
+    return this.roles.sort((a, b) => {
+      if (a.startDate === b.startDate) {
+        return (
+          (a.endDate ? new Date(a.endDate).getTime() : now.getTime()) -
+          (b.endDate ? new Date(b.endDate).getTime() : now.getTime())
+        );
+      } else {
+        return (
+          new Date(a.startDate).getTime() - new Date(b.startDate).getTime()
+        );
+      }
+    });
+  }
 }
 const history = new History(allRoles);
 
