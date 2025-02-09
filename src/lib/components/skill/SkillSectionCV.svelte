@@ -1,9 +1,18 @@
 <script lang="ts">
-  import { getSkillKebab, type Skill } from "$lib/models/skills";
+  import { type Skill } from "$lib/models/skills";
+  import { openPanel } from "$lib/stores/panelStore.svelte";
+  import { stopPropagation } from "svelte/legacy";
+  import SkillDetails from "./SkillDetails.svelte";
 
   export let category = "";
   export let skills: Skill[] = [];
   const iconSize = 50;
+
+  function showSkill(skill: Skill) {
+    return () => {
+      openPanel(SkillDetails, { skill });
+    };
+  }
 </script>
 
 <div class="skill-section">
@@ -20,22 +29,21 @@
           <td>
             {#each skills as skill}
               <p>
-                <a href="/site/skills/{getSkillKebab(skill)}">{skill.name}</a>
+                <button onclick={stopPropagation(showSkill(skill))}>
+                  {skill.name}</button
+                >
               </p>
             {/each}
           </td>
           <td class="hide-on-mobile">
             {#each skills as skill}
-              <a
-                class="hide-on-mobile"
-                href="/site/skills/{getSkillKebab(skill)}"
-              >
+              <button onclick={stopPropagation(showSkill(skill))}>
                 <svelte:component
                   this={skill.icon}
                   alt={skill.name}
                   size={iconSize}
                 />
-              </a>
+              </button>
             {/each}
           </td>
         </tr>
