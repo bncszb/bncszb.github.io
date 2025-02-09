@@ -39,21 +39,21 @@
       width: 90%;
       right: -110%;
     }
-    .open {
-      right: 0;
-    }
-    .close-btn {
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      background: transparent;
-      border: none;
-      font-size: 20px;
-      cursor: pointer;
-    }
-    .content {
-      padding: 20px;
-      padding-bottom: 100px;
-    }
+  }
+  .open {
+    right: 0;
+  }
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  .content {
+    padding: 20px;
+    padding-bottom: 100px;
   }
 </style>

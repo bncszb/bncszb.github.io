@@ -18,7 +18,7 @@
 <div class="app">
   <Header />
 
-  <main>
+  <main class={panelState.isPanelOpen ? "panel-open" : ""}>
     {@render children()}
   </main>
 
@@ -50,6 +50,10 @@
     max-width: 64rem;
     margin: 0 auto;
     box-sizing: border-box;
+  }
+
+  .panel-open {
+    filter: blur(2px);
   }
 
   footer {
