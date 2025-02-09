@@ -22,7 +22,7 @@
 <style>
   .side-panel {
     position: fixed;
-    right: -60%; /* Adjust for smoother animation */
+    right: -60%;
     top: 0;
     width: 50%;
     height: 100vh;
@@ -33,28 +33,27 @@
     padding: 20px;
     z-index: 1000;
   }
-  .side-panel.open {
-    right: 0;
-  }
-  .close-btn {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background: transparent;
-    border: none;
-    font-size: 20px;
-    cursor: pointer;
-  }
-
-  .content {
-    padding: 20px;
-    padding-bottom: 100px;
-  }
 
   @media (max-width: 768px) {
     .side-panel {
       width: 90%;
-      right: -110%; /* Adjust for smoother animation */
+      right: -110%;
+    }
+    .open {
+      right: 0;
+    }
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: transparent;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+    }
+    .content {
+      padding: 20px;
+      padding-bottom: 100px;
     }
   }
 </style>

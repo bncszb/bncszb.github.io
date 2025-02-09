@@ -1,9 +1,10 @@
 <script lang="ts">
+  console.log("src/routes/skills/%2Bpage.svelte");
   import "$lib/components/SidePanel.svelte";
   import SkillDetails from "$lib/components/skill/SkillDetails.svelte";
   import history from "$lib/models/history";
   import { getSkillsByTier, type Skill } from "$lib/models/skills";
-  import { tick } from "svelte";
+  import { openPanel } from "$lib/stores/panelStore.svelte";
 
   const ratios = [2, 3, 4];
   const iconSizes = [100, 80, 60];
@@ -11,18 +12,8 @@
   const skills = history.getSkills().filter((skill) => skill.icon);
   const tiers = ratios.map((_, i) => getSkillsByTier(skills, i, ratios));
 
-  let isPanelOpen = false;
-  let selectedSkill: Skill | null = null;
-
-  async function openPanel(skill: Skill) {
-    selectedSkill = skill;
-    await tick();
-    isPanelOpen = true;
-  }
-
-  function closePanel() {
-    isPanelOpen = false;
-    selectedSkill = null;
+  async function showSkill(skill: Skill) {
+    openPanel(SkillDetails, { skill });
   }
 </script>
 
@@ -31,7 +22,7 @@
   <meta name="description" content="Bence Szabó's CV" />
 </svelte:head>
 
-<main class={isPanelOpen ? "panel-open" : ""}>
+<main>
   <h1>Skills</h1>
   <div class="icon-or-text">
     <a href="/site/skills" style="text-decoration: underline;">Icons</a>
@@ -43,7 +34,7 @@
         <tr>
           <td>
             {#each tier as skill}
-              <button onclick={() => openPanel(skill)}>
+              <button onclick={() => showSkill(skill)}>
                 <svelte:component
                   this={skill.icon}
                   size={iconSizes[i % iconSizes.length]}
@@ -57,21 +48,10 @@
   </table>
 </main>
 
-<side-panel-component isOpen={isPanelOpen} onclose={closePanel}>
-  {#if selectedSkill}
-    <SkillDetails skill={selectedSkill} />
-  {/if}
-</side-panel-component>
-
 <style>
   main {
     margin: 0 auto;
     padding: 20px;
-  }
-
-  main.panel-open table,
-  main.panel-open h1 {
-    filter: blur(2px);
   }
 
   h1 {

@@ -3,7 +3,7 @@
   import SkillDetails from "$lib/components/skill/SkillDetails.svelte";
   import history from "$lib/models/history";
   import { getSkillsByTier, type Skill } from "$lib/models/skills";
-  import { tick } from "svelte";
+  import { openPanel } from "$lib/stores/panelStore.svelte";
 
   const ratios = [2, 3, 4];
   const fontSizes = [30, 25, 20];
@@ -11,18 +11,9 @@
   const skills = history.getSkills();
   const tiers = ratios.map((_, i) => getSkillsByTier(skills, i, ratios));
 
-  let isPanelOpen = false;
-  let selectedSkill: Skill | null = null;
-
-  async function openPanel(skill: Skill) {
-    selectedSkill = skill;
-    await tick();
-    isPanelOpen = true;
-  }
-
-  function closePanel() {
-    isPanelOpen = false;
-    selectedSkill = null;
+  async function showSkill(skill: Skill) {
+    console.log("showSkill", skill);
+    openPanel(SkillDetails, { skill });
   }
 </script>
 
@@ -31,7 +22,8 @@
   <meta name="description" content="Bence Szabó's CV" />
 </svelte:head>
 
-<main class={isPanelOpen ? "panel-open" : ""}>
+<main>
+  <!-- <main class={isPanelOpen ? "panel-open" : ""}> -->
   <h1>Skills</h1>
   <div class="icon-or-text">
     <a href="/site/skills">Icons</a>
@@ -44,7 +36,7 @@
         <tr>
           <td>
             {#each tier as skill}
-              <button onclick={() => openPanel(skill)}>
+              <button onclick={() => showSkill(skill)}>
                 <div class="skill" style="font-size: {fontSizes[i]}px;">
                   {skill.name}
                 </div>
@@ -57,11 +49,11 @@
   </table>
 </main>
 
-<side-panel-component isOpen={isPanelOpen} onclose={closePanel}>
+<!-- <side-panel-component isOpen={isPanelOpen} onclose={closePanel}>
   {#if selectedSkill}
     <SkillDetails skill={selectedSkill} />
   {/if}
-</side-panel-component>
+</side-panel-component> -->
 
 <style>
   main {

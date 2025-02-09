@@ -45,17 +45,24 @@ export class History {
 
   public getProjectsBySkill(skill: Skill): Project[] {
     return this.getProjects().filter((project) =>
-      project.skills?.includes(skill)
+      project.skills?.map((s) => s.name).includes(skill.name)
     );
   }
 
   public getRolesBySkill(skill: Skill): Role[] {
-    return this.roles.filter((role) => getRoleSkills(role).includes(skill));
+    console.log(this.roles);
+    return this.roles.filter((role) =>
+      getRoleSkills(role)
+        .map((s) => s.name)
+        .includes(skill.name)
+    );
   }
 
   public getRolesByGeneralSkill(skill: Skill): Role[] {
     return this.roles.filter((role) =>
-      getGeneralRoleSkills(role).includes(skill)
+      getGeneralRoleSkills(role)
+        .map((s) => s.name)
+        .includes(skill.name)
     );
   }
 }

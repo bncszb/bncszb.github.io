@@ -1,4 +1,6 @@
 <script lang="ts">
+  import "$lib/components/SidePanel.svelte";
+  import { closePanel, panelState } from "$lib/stores/panelStore.svelte";
   import "../app.css";
   import Header from "./Header.svelte";
 
@@ -20,6 +22,11 @@
     {@render children()}
   </main>
 
+  <side-panel-component isOpen={panelState.isPanelOpen} onclose={closePanel}>
+    {#if panelState.panelContent && panelState.panelContent.component}
+      <panelState.panelContent.component {...panelState.panelContent.props} />
+    {/if}
+  </side-panel-component>
   <footer>
     <!-- <p>
       visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to learn

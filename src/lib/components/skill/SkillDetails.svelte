@@ -1,10 +1,21 @@
+<svelte:options customElement="skill-details" />
+
 <script lang="ts">
   import history from "$lib/models/history";
   import type { Skill } from "$lib/models/skills";
   import ProjectDetails from "../project/ProjectDetails.svelte";
   import RoleDetails from "../role/RoleDetails.svelte";
 
-  export let skill: Skill;
+  type Props = {
+    skill: Skill;
+  };
+
+  let { skill }: Props = $props();
+
+  const projects = $derived.by(() => history.getProjectsBySkill(skill));
+
+  const roles = $derived.by(() => history.getRolesByGeneralSkill(skill));
+
   let iconSize = 40;
 </script>
 
@@ -12,17 +23,19 @@
   <tbody>
     <tr>
       <td><h1>{skill.name}</h1></td>
-      <td> <svelte:component this={skill.icon} size={iconSize} /></td>
+      {#if skill.icon}
+        <td><skill.icon size={iconSize} /></td>
+      {/if}
     </tr>
   </tbody>
 </table>
 
 <h2>Experience</h2>
-{#each history.getProjectsBySkill(skill) as project}
+{#each projects as project}
   <ProjectDetails {project} />
 {/each}
 
-{#each history.getRolesByGeneralSkill(skill) as role}
+{#each roles as role}
   <RoleDetails {role} />
 {/each}
 
