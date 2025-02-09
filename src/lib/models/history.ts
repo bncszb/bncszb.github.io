@@ -82,11 +82,14 @@ export class History {
 
       for (let i = 0; i < skills.length - 1; i++) {
         const source = skills[i];
-        nodes.set(source.name, { id: source.name });
+        nodes.set(source.name, { id: source.name, r: 3 + 2 * source.mastery });
 
         for (let j = i + 1; j < skills.length; j++) {
           const target = skills[j];
-          nodes.set(target.name, { id: target.name });
+          nodes.set(target.name, {
+            id: target.name,
+            r: 3 + 2 * target.mastery,
+          });
 
           const edgeId = `${source.name}-${target.name}`;
           if (!edges.has(edgeId)) {
@@ -103,7 +106,10 @@ export class History {
     }
 
     if (skill) {
-      nodes.set(skill.name, { id: skill.name, fx: 1 / 2, fy: 1 / 2 });
+      const skillNode = nodes.get(skill.name);
+      if (skillNode) {
+        nodes.set(skill.name, { ...skillNode, fx: 1 / 2, fy: 1 / 2 });
+      }
     }
 
     const graph = {

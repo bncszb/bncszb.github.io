@@ -62,7 +62,7 @@
       .data(nodes)
       .enter()
       .append("circle")
-      .attr("r", 10)
+      .attr("r", (d) => d.r || 10)
       .attr("fill", color2)
       .attr("stroke", "#fff")
       .attr("stroke-width", 2)
@@ -78,7 +78,7 @@
         d3.select(this)
           .transition()
           .duration(200)
-          .attr("r", 10) // Reset size
+          .attr("r", (d) => d.r || 10) // Reset size
           .attr("fill", color2) // Reset color
           .attr("stroke-width", 2); // Reset border
       });
@@ -95,7 +95,7 @@
       .text((d) => d.id)
       .attr("font-size", "12px")
       .attr("fill", "black")
-      .attr("dx", 12)
+      .attr("dx", (d) => d.r + 3)
       .attr("dy", 4);
 
     // Update positions on each tick
