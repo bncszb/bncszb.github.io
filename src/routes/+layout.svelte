@@ -1,9 +1,6 @@
 <script lang="ts">
   import "$lib/components/side-panel/SidePanel.svelte";
-  import {
-    closePanel,
-    panelState,
-  } from "$lib/components/side-panel/side-panel.svelte";
+  import { panelState } from "$lib/components/side-panel/side-panel.svelte";
   import "../app.css";
   import Header from "./Header.svelte";
 
@@ -25,11 +22,8 @@
     {@render children()}
   </main>
 
-  <side-panel-component isOpen={panelState.isPanelOpen} onclose={closePanel}>
-    {#if panelState.panelContent && panelState.panelContent.component}
-      <panelState.panelContent.component {...panelState.panelContent.props} />
-    {/if}
-  </side-panel-component>
+  <side-panel-component> </side-panel-component>
+
   <footer>
     <!-- <p>
       visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to learn

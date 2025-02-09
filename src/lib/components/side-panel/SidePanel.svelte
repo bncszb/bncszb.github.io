@@ -1,21 +1,15 @@
 <svelte:options customElement="side-panel-component" />
 
 <script lang="ts">
-  type Props = {
-    isOpen: boolean;
-  };
-
-  let { isOpen }: Props = $props();
-
-  function close() {
-    $host().dispatchEvent(new CustomEvent("close", {}));
-  }
+  import { closePanel, panelState } from "./side-panel.svelte";
 </script>
 
-<div class="side-panel {isOpen ? 'open' : ''}">
-  <button class="close-btn" onclick={close}>×</button>
+<div class="side-panel {panelState.isPanelOpen ? 'open' : ''}">
+  <button class="close-btn" onclick={closePanel}>×</button>
   <div class="content">
-    <slot />
+    {#if panelState.panelContent && panelState.panelContent.component}
+      <panelState.panelContent.component {...panelState.panelContent.props} />
+    {/if}
   </div>
 </div>
 

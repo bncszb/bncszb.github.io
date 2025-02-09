@@ -1,1 +1,0 @@
-import{a as l}from"./DBpXwlAm.js";import"./CxbBQLb_.js";let n=l({isPanelOpen:!1,panelContent:null,openPanel:t,closePanel:o});function t(e,a={}){n.panelContent={component:e,props:a},n.isPanelOpen=!0}function o(){n.panelContent=null,n.isPanelOpen=!1}export{o as c,t as o,n as p};
