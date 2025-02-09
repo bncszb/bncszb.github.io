@@ -3,6 +3,7 @@
 <script lang="ts">
   import history from "$lib/models/history";
   import type { Skill } from "$lib/models/skills";
+  import Graph from "../graph/Graph.svelte";
   import ProjectDetails from "../project/ProjectDetails.svelte";
   import RoleDetails from "../role/RoleDetails.svelte";
 
@@ -38,6 +39,8 @@
 {#each roles as role}
   <RoleDetails {role} />
 {/each}
+
+<Graph graph={history.getStackGraph(skill)} />
 
 <style>
   table {

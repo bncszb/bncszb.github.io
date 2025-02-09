@@ -67,11 +67,15 @@ export class History {
     );
   }
 
-  public getStackGraph(): Graph {
+  public getStackGraph(skill?: Skill): Graph {
     const nodes = new Map<string, Node>();
     const edges = new Map<string, Edge>();
 
-    for (const project of this.getProjects()) {
+    const projects = skill
+      ? this.getProjectsBySkill(skill)
+      : this.getProjects();
+
+    for (const project of projects) {
       const skills = project.skills || [];
 
       if (skills.length < 2) continue;
@@ -97,6 +101,11 @@ export class History {
         }
       }
     }
+
+    if (skill) {
+      nodes.set(skill.name, { id: skill.name, fx: 1 / 2, fy: 1 / 2 });
+    }
+
     const graph = {
       nodes: Array.from(nodes.values()),
       edges: Array.from(edges.values()),

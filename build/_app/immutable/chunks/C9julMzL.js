@@ -1,1 +1,0 @@
-import{p as a}from"./DQWy0Eze.js";import"./Brqmb0py.js";let n=a({isPanelOpen:!1,panelContent:null,openPanel:t,closePanel:p});function t(e,l={}){n.panelContent={component:e,props:l},n.isPanelOpen=!0}function p(){n.panelContent=null,n.isPanelOpen=!1}export{p as c,t as o,n as p};
