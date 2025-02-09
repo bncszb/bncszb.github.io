@@ -7,6 +7,7 @@
   };
   mermaid.initialize({
     startOnLoad: false,
+    gantt: { useWidth: 1200, useMaxWidth: false },
   });
 
   let mermaidChart = $state<MermaidStore>({
@@ -31,12 +32,18 @@
   const generatePieChart = (data: PieChartData): void => {
     mermaid.run();
     const diagram = `
-%%{init: {'theme':'base'}}%%
-pie title ${data.title}
-  ${Object.entries(data.items)
-    .map(([key, value]) => `"${key}": ${value}`)
-    .join("\n")}
-    `;
+%%{init: {"theme": "dark"}}%%
+gantt
+    dateFormat  YYYY-MM
+    section Section
+    A task           :a1, 2014-01, 2016-09
+    Another task     :after a1  , 20d
+    A task           :a23, 2014-01, 2015-09
+
+    section Another
+    Task in sec      :2014-01-12  , 12d
+    another task      : 24d  
+  `;
     console.log(diagram);
 
     mermaid.render(`pets-pie-chart`, diagram).then((component) => {
@@ -51,8 +58,8 @@ pie title ${data.title}
   });
 </script>
 
+<h1>Gantt Chart</h1>
 <article>
-  <h1>Pie Chart Example</h1>
   {#if mermaidChart.component}
     {@html mermaidChart.component}
   {:else}
@@ -61,16 +68,17 @@ pie title ${data.title}
 </article>
 
 <style>
-  /* article :global(svg) {
-    background-color: #222; 
-    border-radius: 10px;
+  article {
+    background-color: #222;
     padding: 10px;
-  } */
 
-  article :global(text) {
-    font-size: 26px !important;
-    font-family: "Jetbrains Mono", monospace !important;
+    overflow-x: auto;
   }
-
-
+  /* article :global(svg#graphDiv) {
+    max-width: none !important;
+  }
+  article :global(text) {
+    /* font-size: 26px !important;
+    font-family: "Jetbrains Mono", monospace !important; 
+  } */
 </style>
