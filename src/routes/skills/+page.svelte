@@ -27,6 +27,7 @@
   <div class="icon-or-text">
     <a href="/site/skills" style="text-decoration: underline;">Icons</a>
     <a href="/site/skills/text">Text</a>
+    <a href="/site/skills/graph">Graph</a>
   </div>
   <table>
     <tbody>

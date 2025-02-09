@@ -1,3 +1,4 @@
+import type { Edge, Graph, Node } from "./graph";
 import type { Project } from "./projects";
 import allRoles, {
   getGeneralRoleSkills,
@@ -64,6 +65,43 @@ export class History {
         .map((s) => s.name)
         .includes(skill.name)
     );
+  }
+
+  public getStackGraph(): Graph {
+    const nodes = new Map<string, Node>();
+    const edges = new Map<string, Edge>();
+
+    for (const project of this.getProjects()) {
+      const skills = project.skills || [];
+
+      if (skills.length < 2) continue;
+
+      for (let i = 0; i < skills.length - 1; i++) {
+        const source = skills[i];
+        nodes.set(source.name, { id: source.name });
+
+        for (let j = i + 1; j < skills.length; j++) {
+          const target = skills[j];
+          nodes.set(target.name, { id: target.name });
+
+          const edgeId = `${source.name}-${target.name}`;
+          if (!edges.has(edgeId)) {
+            edges.set(edgeId, {
+              source: source.name,
+              target: target.name,
+              weight: 1,
+            });
+          } else {
+            edges.get(edgeId)!.weight!++;
+          }
+        }
+      }
+    }
+    const graph = {
+      nodes: Array.from(nodes.values()),
+      edges: Array.from(edges.values()),
+    };
+    return graph;
   }
 }
 const history = new History(allRoles);

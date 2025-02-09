@@ -28,6 +28,7 @@
   <div class="icon-or-text">
     <a href="/site/skills">Icons</a>
     <a href="/site/skills/text" style="text-decoration: underline;">Text</a>
+    <a href="/site/skills/graph">Graph</a>
   </div>
 
   <table class="tier">
