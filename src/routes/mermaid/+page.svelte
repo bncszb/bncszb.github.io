@@ -59,3 +59,18 @@ pie title ${data.title}
     <p>Loading...</p>
   {/if}
 </article>
+
+<style>
+  /* article :global(svg) {
+    background-color: #222; 
+    border-radius: 10px;
+    padding: 10px;
+  } */
+
+  article :global(text) {
+    font-size: 26px !important;
+    font-family: "Jetbrains Mono", monospace !important;
+  }
+
+
+</style>
