@@ -75,6 +75,7 @@
         <a href="/site/blog">Blog</a>
         <a href="/site/cv">CV</a>
         <a href="/site/skills">Skills</a>
+        <a href="/site/portfolio">Portfolio</a>
         <a href="/site/contact">Contact</a>
       </div>
     </div>

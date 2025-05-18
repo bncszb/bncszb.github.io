@@ -36,6 +36,13 @@
         <p>Technical expertise and professional competencies</p>
       </div>
     </a>
+    
+    <a href="/site/portfolio" class="card">
+      <div class="card-content">
+        <h2>Portfolio</h2>
+        <p>Collection of projects showcasing my work and expertise</p>
+      </div>
+    </a>
   </div>
   
   <section class="contact-section">
