@@ -28,43 +28,126 @@
         slot="headerSlot"
       />
 
-      <Markdown source={role.description} />
+      <div class="role-content">
+        {#if role.description}
+          <div class="role-description">
+            <Markdown source={role.description} />
+          </div>
+        {/if}
 
-      {#if role.bulletPoints && role.bulletPoints.length > 0}
-        <ul>
-          {#each role.bulletPoints as bulletPoint}
-            <li>{bulletPoint}</li>
-          {/each}
-        </ul>
-      {/if}
+        {#if role.bulletPoints && role.bulletPoints.length > 0}
+          <div class="role-highlights">
+            <h4>Highlights</h4>
+            <ul class="bullet-list">
+              {#each role.bulletPoints as bulletPoint}
+                <li>{bulletPoint}</li>
+              {/each}
+            </ul>
+          </div>
+        {/if}
 
-      {#if role.projects && role.projects.length > 0}
-        <h4>Projects:</h4>
-        <div class="projects-with-icons">
-          {#each role.projects as project}
-            <ShortDescriptionWIthIcons {project} />
-          {/each}
-        </div>
-      {/if}
+        {#if role.projects && role.projects.length > 0}
+          <div class="role-projects">
+            <h4>Projects</h4>
+            <div class="projects-grid">
+              {#each role.projects as project}
+                <div class="project-card">
+                  <ShortDescriptionWIthIcons {project} />
+                </div>
+              {/each}
+            </div>
+          </div>
+        {/if}
 
-      {#if getRoleSkills(role).length > 0}
-        Skills:
-        <ul>
-          {#each getRoleSkills(role) as skill}
-            <li>{skill.name}</li>
-          {/each}
-        </ul>
-      {/if}
+        {#if getRoleSkills(role).length > 0}
+          <div class="role-skills">
+            <h4>Skills Used</h4>
+            <div class="skills-list">
+              {#each getRoleSkills(role) as skill}
+                <span class="skill-tag">{skill.name}</span>
+              {/each}
+            </div>
+          </div>
+        {/if}
+      </div>
     </AccordionItem>
   {/if}
 </div>
 
 <style>
-  .projects-with-icons {
+  .role-section {
+    margin-bottom: 1rem;
+  }
+  
+  .role-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .role-description :global(p) {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+  }
+  
+  h4 {
+    font-size: 1.1rem;
+    color: var(--color-theme-1, #2c7a7b);
+    margin: 0 0 0.75rem 0;
+    font-weight: 600;
+  }
+  
+  .bullet-list {
+    padding-left: 1.5rem;
+    margin: 0;
+  }
+  
+  .bullet-list li {
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+  }
+  
+  .bullet-list li:last-child {
+    margin-bottom: 0;
+  }
+  
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+  }
+  
+  .project-card {
+    background-color: rgba(44, 122, 123, 0.05);
+    border-radius: 6px;
+    padding: 1rem;
+    transition: all var(--transition-speed, 0.3s) ease;
+  }
+  
+  .project-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 3px 6px var(--color-shadow, rgba(0, 0, 0, 0.1));
+  }
+  
+  .skills-list {
     display: flex;
     flex-wrap: wrap;
-    padding-left: 3em;
-    font-weight: 200;
-    padding-bottom: 2em;
+    gap: 0.5rem;
+  }
+  
+  .skill-tag {
+    display: inline-block;
+    background-color: rgba(44, 122, 123, 0.1);
+    color: var(--color-theme-1, #2c7a7b);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+  }
+  
+  @media (max-width: 768px) {
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
   }
 </style>

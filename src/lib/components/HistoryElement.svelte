@@ -2,45 +2,97 @@
   export let title = "";
   export let location = "";
   export let time = "";
+  
+  // Import icons if needed
+  // import { Icon } from "svelte-icons-pack";
+  // import { FiMapPin, FiCalendar } from "svelte-icons-pack/fi";
 </script>
 
-<table class="history-element">
-  <colgroup>
-    <col style="width: 60%;" />
-    <col style="width: 40%;" />
-  </colgroup>
-  <tbody>
-    <tr>
-      <td rowspan="2">
-        <h3 class="centered tight">{title}</h3>
-      </td>
-      <td>
-        <p class="centered tight">{location}</p>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <p class="centered tight">{time}</p>
-      </td>
-    </tr>
-  </tbody>
-</table>
+<div class="history-element">
+  <div class="title-container">
+    <h3 class="title">{title}</h3>
+  </div>
+  
+  <div class="details-container">
+    <div class="detail-item location">
+      <span class="icon">📍</span>
+      <span class="text">{location}</span>
+    </div>
+    
+    <div class="detail-item time">
+      <span class="icon">🗓️</span>
+      <span class="text">{time}</span>
+    </div>
+  </div>
+</div>
 
 <style>
   .history-element {
     width: 100%;
-    height: fit-content;
-    border: 3px;
-    font-size: medium;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    background-color: white;
+    transition: all var(--transition-speed, 0.3s) ease;
+    gap: 1rem;
   }
-
-  .history-element col {
-    width: auto;
+  
+  .history-element:hover {
+    background-color: rgba(44, 122, 123, 0.05);
+    transform: translateY(-2px);
   }
-
-  td {
-    /* border: 1px solid black; */
-    text-align: center;
-    padding: 8px;
+  
+  .title-container {
+    flex: 3;
+  }
+  
+  .details-container {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .title {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-theme-1, #2c7a7b);
+  }
+  
+  .detail-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .icon {
+    color: var(--color-text-light, #4a5568);
+    font-size: 0.9rem;
+    opacity: 0.8;
+  }
+  
+  .text {
+    color: var(--color-text, #2d3748);
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 600px) {
+    .history-element {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 0.75rem;
+    }
+    
+    .title-container, .details-container {
+      width: 100%;
+    }
+    
+    .details-container {
+      margin-top: 0.5rem;
+    }
   }
 </style>

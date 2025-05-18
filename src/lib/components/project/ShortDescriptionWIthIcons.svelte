@@ -2,55 +2,66 @@
   import type { Project } from "$lib/models/projects";
 
   export let project: Project;
+  
+  // Set a consistent icon size
+  const iconSize = 24;
 </script>
 
-<div class="short-description-with-icons">
-  <table class="short-description-with-icons">
-    <colgroup>
-      <col style="width: 60%;" />
-      <col style="width: 40%;" />
-    </colgroup>
-    <tbody class="short-description-with-icons">
-      <tr>
-        <td style="text-align: left;">
-          {project.shortDescription}
-        </td>
-        <td class="icons">
-          {#if project.skills && project.skills.length > 0}
-            {#each project.skills as skill}
-              <svelte:component this={skill.icon} />
-            {/each}
-          {/if}
-        </td>
-      </tr>
-    </tbody>
-  </table>
+<div class="project-card">
+  <div class="project-description">
+    <p>{project.shortDescription}</p>
+  </div>
+  
+  {#if project.skills && project.skills.length > 0}
+    <div class="project-skills">
+      {#each project.skills as skill}
+        {#if skill.icon}
+          <div class="skill-icon" title={skill.name}>
+            <svelte:component this={skill.icon} size={iconSize} />
+          </div>
+        {/if}
+      {/each}
+    </div>
+  {/if}
 </div>
 
 <style>
-  .short-description-with-icons {
+  .project-card {
     width: 100%;
-    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
   }
-
-  .short-description-with-icons col {
-    width: auto;
+  
+  .project-description {
+    flex: 1;
   }
-  td {
-    vertical-align: middle;
-    padding: 0px;
+  
+  .project-description p {
+    margin: 0;
+    line-height: 1.5;
+    color: var(--color-text, #2d3748);
+    font-size: 0.95rem;
   }
-  table {
-    padding: 0px;
-  }
-
-  .icons {
-    text-align: middle;
+  
+  .project-skills {
     display: flex;
     flex-wrap: wrap;
-    gap: 12px;
-    justify-content: center;
+    gap: 0.75rem;
+    justify-content: flex-start;
     align-items: center;
-    vertical-align: middle;
+    padding-top: 0.5rem;
+    border-top: 1px solid var(--color-border, #e2e8f0);
+  }
+  
+  .skill-icon {
+    color: var(--color-theme-1, #2c7a7b);
+    opacity: 0.8;
+    transition: all var(--transition-speed, 0.3s) ease;
+  }
+  
+  .skill-icon:hover {
+    opacity: 1;
+    transform: scale(1.1);
   }
 </style>
