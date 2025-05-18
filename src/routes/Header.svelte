@@ -1,17 +1,10 @@
 <script lang="ts">
+  import { page } from "$app/state";
   import github from "$lib/images/github.svg";
-  
-  // Get the current path to highlight the active link
-  let path = '';
-  
-  if (typeof window !== 'undefined') {
-    path = window.location.pathname;
-  }
-  
-  // Function to check if a link is active
-  function isActive(href: string): boolean {
-    if (href === '/site' && path === '/site/') return true;
-    return path.startsWith(href);
+
+  function isActive(pathname: string): boolean {
+    if (pathname === "/site" && page.url.pathname === "/site/") return true;
+    return page.url.pathname === pathname;
   }
 </script>
 
@@ -22,14 +15,23 @@
     </div>
 
     <nav>
-      <a href="/site" class={isActive('/site') && !path.includes('/site/') ? 'active' : ''}>Home</a>
-      <a href="/site/blog" class={isActive('/site/blog') ? 'active' : ''}>Blog</a>
-      <a href="/site/cv" class={isActive('/site/cv') ? 'active' : ''}>CV</a>
-      <a href="/site/skills" class={isActive('/site/skills') ? 'active' : ''}>Skills</a>
+      <a href="/site" class={isActive("/site") ? "active" : ""}>Home</a>
+      <a href="/site/blog" class={isActive("/site/blog") ? "active" : ""}
+        >Blog</a
+      >
+      <a href="/site/cv" class={isActive("/site/cv") ? "active" : ""}>CV</a>
+      <a href="/site/skills" class={isActive("/site/skills") ? "active" : ""}
+        >Skills</a
+      >
     </nav>
-    
+
     <div class="social">
-      <a href="https://github.com/bncszb" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+      <a
+        href="https://github.com/bncszb"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="GitHub"
+      >
         <img src={github} alt="GitHub" />
       </a>
     </div>
@@ -60,7 +62,7 @@
     font-weight: 700;
     font-size: 1.5rem;
   }
-  
+
   .logo-link {
     color: var(--color-theme-1);
     text-decoration: none;
@@ -74,7 +76,7 @@
     line-height: 1.5rem;
     transition: all var(--transition-speed) ease;
   }
-  
+
   .logo-link:hover {
     background-color: rgba(44, 122, 123, 0.2);
     transform: scale(1.05);
@@ -95,7 +97,9 @@
     width: 1.5rem;
     height: 1.5rem;
     opacity: 0.7;
-    transition: opacity var(--transition-speed) ease, transform var(--transition-speed) ease;
+    transition:
+      opacity var(--transition-speed) ease,
+      transform var(--transition-speed) ease;
   }
 
   .social img:hover {
@@ -116,13 +120,14 @@
     position: relative;
     transition: color var(--transition-speed) ease;
   }
-  
-  nav a:hover, nav a.active {
+
+  nav a:hover,
+  nav a.active {
     color: var(--color-theme-1);
   }
-  
+
   nav a::after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: 0;
     left: 0;
@@ -131,8 +136,9 @@
     background-color: var(--color-theme-1);
     transition: width var(--transition-speed) ease;
   }
-  
-  nav a:hover::after, nav a.active::after {
+
+  nav a:hover::after,
+  nav a.active::after {
     width: 100%;
   }
 
@@ -140,12 +146,12 @@
     nav {
       gap: 1rem;
     }
-    
+
     nav a {
       font-size: 0.9rem;
       letter-spacing: 0.03em;
     }
-    
+
     .social {
       display: none;
     }

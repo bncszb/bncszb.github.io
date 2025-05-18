@@ -4,7 +4,6 @@
 
   export let project: Project;
   
-  // Set a consistent icon size
   const iconSize = 24;
 </script>
 

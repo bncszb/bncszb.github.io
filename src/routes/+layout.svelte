@@ -1,20 +1,23 @@
 <script lang="ts">
   import "$lib/components/side-panel/SidePanel.svelte";
-  import { panelState, closePanel } from "$lib/components/side-panel/side-panel.svelte";
+  import {
+    closePanel,
+    panelState,
+  } from "$lib/components/side-panel/side-panel.svelte";
   import "../app.css";
   import Header from "./Header.svelte";
 
   let { children } = $props();
-  
+
   // Get current year for footer
   const currentYear = new Date().getFullYear();
-  
+
   // Function to handle clicks on the overlay
   function handleOverlayClick(e: MouseEvent) {
     // Stop propagation to prevent other click handlers from firing
     e.stopPropagation();
     e.preventDefault();
-    
+
     // Close the panel
     closePanel();
   }
@@ -24,15 +27,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta charset="utf-8" />
   <title>Bence Szabó MD | Personal Website</title>
-  <meta name="description" content="Personal website of Bence Szabó MD, featuring professional experience, skills, and blog posts." />
+  <meta
+    name="description"
+    content="Personal website of Bence Szabó MD, featuring professional experience, skills, and blog posts."
+  />
   <link rel="icon" href="/site/favicon.png" />
   <meta name="author" content="Bence Szabó" />
   <meta property="og:title" content="Bence Szabó MD | Personal Website" />
-  <meta property="og:description" content="Personal website of Bence Szabó MD, featuring professional experience, skills, and blog posts." />
+  <meta
+    property="og:description"
+    content="Personal website of Bence Szabó MD, featuring professional experience, skills, and blog posts."
+  />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Bence Szabó MD | Personal Website" />
-  <meta name="twitter:description" content="Personal website of Bence Szabó MD, featuring professional experience, skills, and blog posts." />
+  <meta
+    name="twitter:description"
+    content="Personal website of Bence Szabó MD, featuring professional experience, skills, and blog posts."
+  />
 </svelte:head>
 
 <div class="app">
@@ -43,13 +55,12 @@
   </main>
 
   {#if panelState.isPanelOpen}
-    <div 
-      class="panel-overlay" 
-      on:click={handleOverlayClick}
-      role="button"
+    <button
+      class="panel-overlay"
+      onclick={handleOverlayClick}
       tabindex="0"
       aria-label="Close panel"
-    ></div>
+    ></button>
   {/if}
 
   <side-panel-component> </side-panel-component>
@@ -92,7 +103,7 @@
     filter: blur(2px);
     pointer-events: none;
   }
-  
+
   .panel-overlay {
     position: fixed;
     top: 0;
@@ -110,7 +121,7 @@
     border-top: 1px solid var(--color-border);
     padding: 2rem 0;
   }
-  
+
   .footer-content {
     max-width: 1200px;
     margin: 0 auto;
@@ -119,25 +130,25 @@
     align-items: center;
     padding: 0 1.5rem;
   }
-  
+
   .footer-copyright p {
     margin: 0;
     font-size: 0.9rem;
     color: var(--color-text-light);
   }
-  
+
   .footer-links {
     display: flex;
     gap: 1.5rem;
   }
-  
+
   .footer-links a {
     font-size: 0.9rem;
     color: var(--color-text-light);
     text-decoration: none;
     transition: color var(--transition-speed) ease;
   }
-  
+
   .footer-links a:hover {
     color: var(--color-theme-1);
   }
@@ -148,7 +159,7 @@
       gap: 1rem;
       text-align: center;
     }
-    
+
     .footer-links {
       justify-content: center;
     }

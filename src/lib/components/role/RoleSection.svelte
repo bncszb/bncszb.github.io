@@ -76,63 +76,51 @@
   .role-section {
     margin-bottom: 1rem;
   }
-  
+
   .role-content {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
   }
-  
+
   .role-description :global(p) {
     margin-bottom: 1rem;
     line-height: 1.6;
   }
-  
+
   h4 {
     font-size: 1.1rem;
     color: var(--color-theme-1, #2c7a7b);
     margin: 0 0 0.75rem 0;
     font-weight: 600;
   }
-  
+
   .bullet-list {
     padding-left: 1.5rem;
     margin: 0;
   }
-  
+
   .bullet-list li {
     margin-bottom: 0.5rem;
     line-height: 1.5;
   }
-  
+
   .bullet-list li:last-child {
     margin-bottom: 0;
   }
-  
+
   .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 1rem;
   }
-  
-  .project-card {
-    background-color: rgba(44, 122, 123, 0.05);
-    border-radius: 6px;
-    padding: 1rem;
-    transition: all var(--transition-speed, 0.3s) ease;
-  }
-  
-  .project-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 3px 6px var(--color-shadow, rgba(0, 0, 0, 0.1));
-  }
-  
+
   .skills-list {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
   }
-  
+
   .skill-tag {
     display: inline-block;
     background-color: rgba(44, 122, 123, 0.1);
@@ -142,7 +130,7 @@
     font-size: 0.85rem;
     font-weight: 500;
   }
-  
+
   @media (max-width: 768px) {
     .projects-grid {
       grid-template-columns: 1fr;
