@@ -1,6 +1,6 @@
 <script lang="ts">
   import "$lib/components/side-panel/SidePanel.svelte";
-  import { panelState } from "$lib/components/side-panel/side-panel.svelte";
+  import { panelState, closePanel } from "$lib/components/side-panel/side-panel.svelte";
   import "../app.css";
   import Header from "./Header.svelte";
 
@@ -8,6 +8,16 @@
   
   // Get current year for footer
   const currentYear = new Date().getFullYear();
+  
+  // Function to handle clicks on the overlay
+  function handleOverlayClick(e: MouseEvent) {
+    // Stop propagation to prevent other click handlers from firing
+    e.stopPropagation();
+    e.preventDefault();
+    
+    // Close the panel
+    closePanel();
+  }
 </script>
 
 <svelte:head>
@@ -32,6 +42,16 @@
     {@render children()}
   </main>
 
+  {#if panelState.isPanelOpen}
+    <div 
+      class="panel-overlay" 
+      on:click={handleOverlayClick}
+      role="button"
+      tabindex="0"
+      aria-label="Close panel"
+    ></div>
+  {/if}
+
   <side-panel-component> </side-panel-component>
 
   <footer>
@@ -54,6 +74,7 @@
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    position: relative;
   }
 
   main {
@@ -69,6 +90,18 @@
 
   .panel-open {
     filter: blur(2px);
+    pointer-events: none;
+  }
+  
+  .panel-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.1);
+    z-index: 999;
+    cursor: pointer;
   }
 
   footer {
