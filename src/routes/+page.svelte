@@ -1,4 +1,5 @@
 <script lang="ts">
+  import ContactForm from "$lib/components/ContactForm.svelte";
 </script>
 
 <svelte:head>
@@ -36,6 +37,10 @@
       </div>
     </a>
   </div>
+  
+  <section class="contact-section">
+    <ContactForm />
+  </section>
 </main>
 
 <style>
@@ -44,6 +49,9 @@
     padding: 0;
     width: 100%;
     max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
   }
 
   .hero {
@@ -123,6 +131,10 @@
     line-height: 1.5;
   }
 
+  .contact-section {
+    padding: 2rem 20px 4rem;
+  }
+  
   @media (max-width: 768px) {
     .hero {
       height: 30vh;
@@ -138,6 +150,10 @@
 
     .navigation-cards {
       grid-template-columns: 1fr;
+    }
+    
+    main {
+      gap: 3rem;
     }
   }
 </style>

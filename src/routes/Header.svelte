@@ -23,6 +23,9 @@
       <a href="/site/skills" class={isActive("/site/skills") ? "active" : ""}
         >Skills</a
       >
+      <a href="/site/contact" class={isActive("/site/contact") ? "active" : ""}
+        >Contact</a
+      >
     </nav>
 
     <div class="social">
