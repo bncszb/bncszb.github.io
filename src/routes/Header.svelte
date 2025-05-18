@@ -1,105 +1,153 @@
 <script lang="ts">
   import github from "$lib/images/github.svg";
+  
+  // Get the current path to highlight the active link
+  let path = '';
+  
+  if (typeof window !== 'undefined') {
+    path = window.location.pathname;
+  }
+  
+  // Function to check if a link is active
+  function isActive(href: string): boolean {
+    if (href === '/site' && path === '/site/') return true;
+    return path.startsWith(href);
+  }
 </script>
 
 <header>
-  <div class="corner">
-    <!-- <a href="https://github.com/sveltejs/kit">
-      <img src={github} alt="GitHub" />
-    </a> -->
-  </div>
+  <div class="header-container">
+    <div class="logo">
+      <a href="/site" class="logo-link">BS</a>
+    </div>
 
-  <nav>
-    <a href="/site">Home</a>
-    <a href="/site/blog">Blog</a>
-    <a href="/site/cv">CV</a>
-    <a href="/site/skills">Skills</a>
-  </nav>
+    <nav>
+      <a href="/site" class={isActive('/site') && !path.includes('/site/') ? 'active' : ''}>Home</a>
+      <a href="/site/blog" class={isActive('/site/blog') ? 'active' : ''}>Blog</a>
+      <a href="/site/cv" class={isActive('/site/cv') ? 'active' : ''}>CV</a>
+      <a href="/site/skills" class={isActive('/site/skills') ? 'active' : ''}>Skills</a>
+    </nav>
+    
+    <div class="social">
+      <a href="https://github.com/bncszb" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+        <img src={github} alt="GitHub" />
+      </a>
+    </div>
+  </div>
 </header>
 
 <style>
   header {
-    display: flex;
-    justify-content: space-between;
     position: sticky;
     top: 0;
+    z-index: 100;
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 1px 3px var(--color-shadow);
+    padding: 0.5rem 0;
   }
 
-  .corner {
-    width: 3em;
-    height: 3em;
-  }
-
-  .corner a {
+  .header-container {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
   }
 
-  .corner img {
-    width: 2em;
-    height: 2em;
-    object-fit: contain;
+  .logo {
+    font-weight: 700;
+    font-size: 1.5rem;
+  }
+  
+  .logo-link {
+    color: var(--color-theme-1);
+    text-decoration: none;
+    padding: 0.5rem;
+    border-radius: 50%;
+    background-color: rgba(44, 122, 123, 0.1);
+    display: inline-block;
+    width: 2.5rem;
+    height: 2.5rem;
+    text-align: center;
+    line-height: 1.5rem;
+    transition: all var(--transition-speed) ease;
+  }
+  
+  .logo-link:hover {
+    background-color: rgba(44, 122, 123, 0.2);
+    transform: scale(1.05);
   }
 
   nav {
     display: flex;
     justify-content: center;
-    --background: rgba(255, 255, 255, 1);
+    gap: 1.5rem;
   }
 
-  svg {
-    width: 2em;
-    height: 3em;
-    display: block;
-  }
-
-  path {
-    fill: var(--background);
-  }
-
-  ul {
-    position: relative;
-    padding: 0;
-    margin: 0;
-    height: 3em;
+  .social {
     display: flex;
-    justify-content: center;
     align-items: center;
-    list-style: none;
-    background: var(--background);
-    background-size: contain;
   }
 
-  li {
-    position: relative;
-    height: 100%;
+  .social img {
+    width: 1.5rem;
+    height: 1.5rem;
+    opacity: 0.7;
+    transition: opacity var(--transition-speed) ease, transform var(--transition-speed) ease;
   }
 
-  li[aria-current="page"]::before {
-    --size: 6px;
-    content: "";
-    width: 0;
-    height: 0;
-    position: absolute;
-    top: 0;
-    left: calc(50% - var(--size));
-    border: var(--size) solid transparent;
-    border-top: var(--size) solid var(--color-theme-1);
+  .social img:hover {
+    opacity: 1;
+    transform: scale(1.1);
   }
 
   nav a {
     display: flex;
-    height: 100%;
     align-items: center;
-    padding: 0 0.5rem;
-    font-weight: 700;
+    padding: 0.5rem 0;
+    font-weight: 500;
     font-size: 1rem;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.05em;
     text-decoration: none;
-    transition: color 0.2s linear;
+    color: var(--color-text);
+    position: relative;
+    transition: color var(--transition-speed) ease;
+  }
+  
+  nav a:hover, nav a.active {
+    color: var(--color-theme-1);
+  }
+  
+  nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-theme-1);
+    transition: width var(--transition-speed) ease;
+  }
+  
+  nav a:hover::after, nav a.active::after {
+    width: 100%;
+  }
+
+  @media (max-width: 600px) {
+    nav {
+      gap: 1rem;
+    }
+    
+    nav a {
+      font-size: 0.9rem;
+      letter-spacing: 0.03em;
+    }
+    
+    .social {
+      display: none;
+    }
   }
 </style>

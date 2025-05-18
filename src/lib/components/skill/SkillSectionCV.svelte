@@ -6,7 +6,7 @@
 
   export let category = "";
   export let skills: Skill[] = [];
-  const iconSize = 50;
+  const iconSize = 24;
 
   function showSkill(skill: Skill) {
     return () => {
@@ -15,102 +15,76 @@
   }
 </script>
 
-<div class="skill-section">
+<div class="skill-category">
   {#if category && skills.length > 0}
-    <table class="skill-section">
-      <colgroup>
-        <col class="col1" />
-        <col class="col2" />
-        <col class="col3" />
-      </colgroup>
-      <tbody>
-        <tr>
-          <th>{category}</th>
-          <td>
-            {#each skills as skill}
-              <p>
-                <button onclick={stopPropagation(showSkill(skill))}>
-                  {skill.name}</button
-                >
-              </p>
-            {/each}
-          </td>
-          <td class="hide-on-mobile">
-            {#each skills as skill}
-              <button onclick={stopPropagation(showSkill(skill))}>
-                <svelte:component
-                  this={skill.icon}
-                  alt={skill.name}
-                  size={iconSize}
-                />
-              </button>
-            {/each}
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    <h4 class="category-title">{category}</h4>
+    <div class="skill-list">
+      {#each skills as skill}
+        <button 
+          class="skill-button" 
+          onclick={stopPropagation(showSkill(skill))}
+          title={skill.name}
+        >
+          {#if skill.icon}
+            <span class="skill-icon">
+              <svelte:component
+                this={skill.icon}
+                alt={skill.name}
+                size={iconSize}
+              />
+            </span>
+          {/if}
+          <span class="skill-name">{skill.name}</span>
+        </button>
+      {/each}
+    </div>
   {/if}
 </div>
 
 <style>
-  .skill-section {
-    width: 100%;
-    height: fit-content;
-    border: 3px;
+  .skill-category {
+    margin-bottom: 1rem;
   }
-
-  /* .skill-section col {
-    width: auto;
-  } */
-
-  th {
-    padding: 8px;
-    text-align: center;
-    vertical-align: top;
+  
+  .category-title {
+    font-size: 1rem;
+    color: var(--color-theme-1);
+    margin: 0 0 0.5rem 0;
+    padding-bottom: 0.25rem;
+    border-bottom: 1px solid var(--color-border);
   }
-  td {
-    /* border: 1px solid black; */
-    padding: 8px;
-  }
-
-  td:nth-child(3) {
+  
+  .skill-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 12px;
-    justify-content: center;
+    gap: 0.5rem;
+  }
+  
+  .skill-button {
+    display: flex;
     align-items: center;
-    vertical-align: middle;
+    gap: 0.5rem;
+    padding: 0.25rem 0.5rem;
+    background-color: rgba(44, 122, 123, 0.1);
+    border-radius: 4px;
+    font-size: 0.85rem;
+    color: var(--color-text);
+    transition: all var(--transition-speed) ease;
+    cursor: pointer;
   }
-
-  .col1 {
-    width: max(20%, 200px);
+  
+  .skill-button:hover {
+    background-color: rgba(44, 122, 123, 0.2);
+    transform: translateY(-2px);
   }
-
-  .col2 {
-    width: 30%;
+  
+  .skill-icon {
+    display: flex;
+    align-items: center;
+    color: var(--color-theme-1);
   }
-
-  .col3 {
-    width: 50%;
-  }
-
-  @media (max-width: 600px) {
-    .hide-on-mobile {
-      display: none;
-    }
-    .col1 {
-      width: 50%;
-    }
-    .col2 {
-      width: 50%;
-    }
-
-    th {
-      padding: 4px;
-    }
-
-    td {
-      padding: 4px;
-    }
+  
+  .skill-name {
+    font-weight: 500;
   }
 </style>
