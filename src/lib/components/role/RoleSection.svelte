@@ -51,9 +51,7 @@
             <h4>Projects</h4>
             <div class="projects-grid">
               {#each role.projects as project}
-                <div class="project-card">
-                  <ShortDescriptionWIthIcons {project} />
-                </div>
+                <ShortDescriptionWIthIcons {project} />
               {/each}
             </div>
           </div>

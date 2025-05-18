@@ -1,13 +1,22 @@
 <script lang="ts">
+  import { openPanel } from "$lib/components/side-panel/side-panel.svelte";
   import type { Project } from "$lib/models/projects";
+  import { stopPropagation } from "svelte/legacy";
+  import ProjectDetails from "./ProjectDetails.svelte";
 
   export let project: Project;
   
   // Set a consistent icon size
   const iconSize = 24;
+  
+  function showProject() {
+    return () => {
+      openPanel(ProjectDetails, { project });
+    };
+  }
 </script>
 
-<div class="project-card">
+<div class="project-card" on:click={stopPropagation(showProject())} role="button" tabindex="0">
   <div class="project-description">
     <p>{project.shortDescription}</p>
   </div>
@@ -23,6 +32,11 @@
       {/each}
     </div>
   {/if}
+  
+  <div class="view-details">
+    <span class="view-text">View Details</span>
+    <span class="arrow-icon">→</span>
+  </div>
 </div>
 
 <style>
@@ -31,6 +45,16 @@
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
+    cursor: pointer;
+    padding: 0.75rem;
+    border-radius: 6px;
+    transition: all var(--transition-speed, 0.3s) ease;
+  }
+  
+  .project-card:hover, .project-card:focus {
+    background-color: rgba(44, 122, 123, 0.1);
+    transform: translateY(-3px);
+    box-shadow: 0 3px 6px var(--color-shadow, rgba(0, 0, 0, 0.1));
   }
   
   .project-description {
@@ -63,5 +87,33 @@
   .skill-icon:hover {
     opacity: 1;
     transform: scale(1.1);
+  }
+  
+  .view-details {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--color-theme-1, #2c7a7b);
+    font-weight: 500;
+    margin-top: 0.25rem;
+    opacity: 0;
+    transition: opacity var(--transition-speed, 0.3s) ease;
+  }
+  
+  .project-card:hover .view-details,
+  .project-card:focus .view-details {
+    opacity: 1;
+  }
+  
+  .arrow-icon {
+    font-size: 1rem;
+    transition: transform var(--transition-speed, 0.3s) ease;
+  }
+  
+  .project-card:hover .arrow-icon,
+  .project-card:focus .arrow-icon {
+    transform: translateX(3px);
   }
 </style>
