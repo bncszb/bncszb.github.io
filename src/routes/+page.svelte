@@ -33,13 +33,6 @@
       </div>
     </a>
 
-    <a href="/site/skills" class="card">
-      <div class="card-content">
-        <h2>Skills</h2>
-        <p>Technical expertise and professional competencies</p>
-      </div>
-    </a>
-
     <a href="/site/solutions" class="card">
       <div class="card-content">
         <h2>Solutions</h2>

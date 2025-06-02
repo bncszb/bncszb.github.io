@@ -74,7 +74,6 @@
         <a href="/site">Home</a>
         <a href="/site/blog">Blog</a>
         <a href="/site/cv">CV</a>
-        <a href="/site/skills">Skills</a>
         <a href="/site/solutions">Solutions</a>
         <a href="/site/contact">Contact</a>
       </div>
