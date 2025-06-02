@@ -1,4 +1,4 @@
-import type { Project } from "../projects";
+import type { Project } from "../project";
 import type { Skill } from "../skills";
 import educationRoles from "./education-roles";
 import researchRoles from "./research-roles";

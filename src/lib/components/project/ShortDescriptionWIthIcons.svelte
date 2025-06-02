@@ -1,6 +1,6 @@
 <script lang="ts">
   import { openPanel } from "$lib/components/side-panel/side-panel.svelte";
-  import type { Project } from "$lib/models/projects";
+  import type { Project } from "$lib/models/project";
   import ProjectDetails from "./ProjectDetails.svelte";
 
   export let project: Project;

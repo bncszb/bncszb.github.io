@@ -1,4 +1,4 @@
-import type { Project } from "../projects";
+import type { Project } from "../project";
 import {
   dockerSkill,
   drugbankSkill,

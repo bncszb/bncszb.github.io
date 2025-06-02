@@ -1,6 +1,6 @@
 <script lang="ts">
   import ShortDescriptionWIthIcons from "$lib/components/project/ShortDescriptionWIthIcons.svelte";
-  import { roleCategories } from "$lib/models/roles/common-roles";
+  import { sideProjects } from "$lib/models/side-projects";
 
   export let data;
 
@@ -32,8 +32,30 @@
       </p>
     </div>
   </div>
-
   <div class="solutions-content">
+    <div class="projects-grid">
+      {#each sideProjects as project}
+        <div class="project-card-wrapper">
+          <div class="project-header">
+            <h3>{project.name}</h3>
+            <div class="project-meta">
+              <!-- <span class="role-name">{project.role.name}</span> -->
+              <!-- {#if project.role.institution} -->
+                <!-- <span class="institution">at {project.role.institution}</span> -->
+              <!-- {/if} -->
+              <!-- <span class="date-range">
+                {formatDate(project.role.startDate)} - {formatDate(
+                  project.role.endDate
+                )}
+              </span> -->
+            </div>
+          </div>
+          <ShortDescriptionWIthIcons {project} />
+        </div>
+      {/each}
+    </div>
+  </div>
+  <!-- <div class="solutions-content">
     {#each roleCategories as category}
       {#if projectsByCategory[category] && projectsByCategory[category].length > 0}
         <section class="category-section">
@@ -65,7 +87,7 @@
         </section>
       {/if}
     {/each}
-  </div>
+  </div> -->
 </div>
 
 <style>
@@ -117,20 +139,20 @@
     gap: 3rem;
     padding-bottom: 4rem;
   }
-
+/* 
   .category-section {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-  }
+  } */
 
-  h2 {
+  /* h2 {
     font-size: 1.8rem;
     color: var(--color-theme-1);
     border-bottom: 1px solid var(--color-border);
     padding-bottom: 0.5rem;
     margin: 0;
-  }
+  } */
 
   .projects-grid {
     display: grid;
@@ -175,14 +197,14 @@
     margin-bottom: 0.5rem;
   }
 
-  .role-name {
+  /* .role-name {
     font-weight: 500;
   }
 
   .date-range {
     font-style: italic;
     font-size: 0.85rem;
-  }
+  } */
 
   @media (max-width: 768px) {
     .projects-grid {

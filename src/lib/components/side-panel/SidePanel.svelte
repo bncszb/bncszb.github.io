@@ -1,4 +1,6 @@
-<svelte:options customElement="side-panel-component" />
+<svelte:options
+  customElement={{ tag: "side-panel-component", shadow: "none" }}
+/>
 
 <script lang="ts">
   import { closePanel, panelState } from "./side-panel.svelte";
