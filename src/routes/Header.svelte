@@ -23,8 +23,9 @@
       <a href="/site/skills" class={isActive("/site/skills") ? "active" : ""}
         >Skills</a
       >
-      <a href="/site/portfolio" class={isActive("/site/portfolio") ? "active" : ""}
-        >Portfolio</a
+      <a
+        href="/site/solutions"
+        class={isActive("/site/solutions") ? "active" : ""}>Solutions</a
       >
       <a href="/site/contact" class={isActive("/site/contact") ? "active" : ""}
         >Contact</a

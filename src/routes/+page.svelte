@@ -4,7 +4,10 @@
 
 <svelte:head>
   <title>Bence Szabó MD | Medical Professional</title>
-  <meta name="description" content="Personal website of Bence Szabó MD, featuring professional experience, skills, and blog posts." />
+  <meta
+    name="description"
+    content="Personal website of Bence Szabó MD, featuring professional experience, skills, and blog posts."
+  />
 </svelte:head>
 
 <main>
@@ -22,29 +25,29 @@
         <p>Thoughts and insights on medicine, technology, and more</p>
       </div>
     </a>
-    
+
     <a href="/site/cv" class="card">
       <div class="card-content">
         <h2>CV</h2>
         <p>Professional experience, education, and qualifications</p>
       </div>
     </a>
-    
+
     <a href="/site/skills" class="card">
       <div class="card-content">
         <h2>Skills</h2>
         <p>Technical expertise and professional competencies</p>
       </div>
     </a>
-    
-    <a href="/site/portfolio" class="card">
+
+    <a href="/site/solutions" class="card">
       <div class="card-content">
-        <h2>Portfolio</h2>
+        <h2>Solutions</h2>
         <p>Collection of projects showcasing my work and expertise</p>
       </div>
     </a>
   </div>
-  
+
   <section class="contact-section">
     <ContactForm />
   </section>
@@ -68,7 +71,11 @@
     height: 40vh;
     min-height: 300px;
     text-align: center;
-    background: linear-gradient(135deg, var(--color-bg-0) 0%, var(--color-bg-2) 100%);
+    background: linear-gradient(
+      135deg,
+      var(--color-bg-0) 0%,
+      var(--color-bg-2) 100%
+    );
     border-radius: 8px;
     margin: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -107,7 +114,9 @@
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
     height: 200px;
     display: flex;
     text-decoration: none;
@@ -141,7 +150,7 @@
   .contact-section {
     padding: 2rem 20px 4rem;
   }
-  
+
   @media (max-width: 768px) {
     .hero {
       height: 30vh;
@@ -158,7 +167,7 @@
     .navigation-cards {
       grid-template-columns: 1fr;
     }
-    
+
     main {
       gap: 3rem;
     }
