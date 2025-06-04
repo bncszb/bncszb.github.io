@@ -16,50 +16,56 @@
       openPanel(SkillDetails, { skill });
     };
   }
-  
+
   // Get the current view mode
-  const currentPath = typeof window !== 'undefined' ? window.location.pathname : '';
-  const isIconView = !currentPath.includes('/text') && !currentPath.includes('/graph');
-  const isTextView = currentPath.includes('/text');
-  const isGraphView = currentPath.includes('/graph');
+  const currentPath =
+    typeof window !== "undefined" ? window.location.pathname : "";
+  const isIconView =
+    !currentPath.includes("/text") && !currentPath.includes("/graph");
+  const isTextView = currentPath.includes("/text");
+  const isGraphView = currentPath.includes("/graph");
 </script>
 
 <svelte:head>
-  <title>Bence Szabó MD | Technical Skills</title>
-  <meta name="description" content="Overview of Bence Szabó's technical skills and expertise in programming, frameworks, databases, and medical ontologies." />
+  <title>Bence Séra-Szabó MD | Technical Skills</title>
+  <meta
+    name="description"
+    content="Overview of Bence Séra-Szabó's technical skills and expertise in programming, frameworks, databases, and medical ontologies."
+  />
 </svelte:head>
 
 <main>
   <div class="skills-header">
     <h1>Technical Skills</h1>
     <p class="skills-description">
-      An overview of my technical expertise across various domains, from programming languages to medical ontologies.
+      An overview of my technical expertise across various domains, from
+      programming languages to medical ontologies.
     </p>
   </div>
-  
+
   <div class="view-options">
-    <a href="/site/skills" class={isIconView ? 'active' : ''}>
+    <a href="/site/skills" class={isIconView ? "active" : ""}>
       <span class="view-icon">⊞</span>
       <span class="view-label">Icon View</span>
     </a>
-    <a href="/site/skills/text" class={isTextView ? 'active' : ''}>
+    <a href="/site/skills/text" class={isTextView ? "active" : ""}>
       <span class="view-icon">≡</span>
       <span class="view-label">Text View</span>
     </a>
-    <a href="/site/skills/graph" class={isGraphView ? 'active' : ''}>
+    <a href="/site/skills/graph" class={isGraphView ? "active" : ""}>
       <span class="view-icon">⋈</span>
       <span class="view-label">Graph View</span>
     </a>
   </div>
-  
+
   <div class="skills-container">
     {#each tiers as tier, i}
-      <div class="skill-tier tier-{i+1}">
-        <h2 class="tier-title">Tier {i+1}</h2>
+      <div class="skill-tier tier-{i + 1}">
+        <h2 class="tier-title">Tier {i + 1}</h2>
         <div class="skill-icons">
           {#each tier as skill}
-            <button 
-              class="skill-icon-button" 
+            <button
+              class="skill-icon-button"
               onclick={showSkill(skill)}
               title={skill.name}
             >
@@ -89,12 +95,12 @@
     text-align: center;
     margin: 2rem 0;
   }
-  
+
   .skills-header h1 {
     margin-bottom: 0.5rem;
     color: var(--color-theme-1);
   }
-  
+
   .skills-description {
     color: var(--color-text-light);
     max-width: 600px;
@@ -111,7 +117,7 @@
     border-radius: 8px;
     box-shadow: 0 2px 4px var(--color-shadow);
   }
-  
+
   .view-options a {
     display: flex;
     align-items: center;
@@ -122,16 +128,16 @@
     text-decoration: none;
     transition: all var(--transition-speed) ease;
   }
-  
+
   .view-options a:hover {
     background-color: rgba(0, 0, 0, 0.05);
   }
-  
+
   .view-options a.active {
     background-color: var(--color-theme-1);
     color: white;
   }
-  
+
   .view-icon {
     font-size: 1.2rem;
   }
@@ -142,14 +148,14 @@
     gap: 3rem;
     margin-bottom: 3rem;
   }
-  
+
   .skill-tier {
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 2px 4px var(--color-shadow);
     padding: 1.5rem;
   }
-  
+
   .tier-title {
     margin-top: 0;
     margin-bottom: 1.5rem;
@@ -158,14 +164,14 @@
     border-bottom: 1px solid var(--color-border);
     padding-bottom: 0.5rem;
   }
-  
+
   .skill-icons {
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
     justify-content: center;
   }
-  
+
   .skill-icon-button {
     display: flex;
     flex-direction: column;
@@ -177,34 +183,34 @@
     background-color: transparent;
     cursor: pointer;
   }
-  
+
   .skill-icon-button:hover {
     transform: translateY(-5px);
     background-color: rgba(0, 0, 0, 0.02);
   }
-  
+
   .skill-icon {
     display: flex;
     justify-content: center;
     align-items: center;
     color: var(--color-theme-1);
   }
-  
+
   .skill-name {
     font-size: 0.9rem;
     color: var(--color-text);
     text-align: center;
   }
-  
+
   @media (max-width: 768px) {
     .view-label {
       display: none;
     }
-    
+
     .view-options a {
       padding: 0.5rem;
     }
-    
+
     .skill-icons {
       gap: 1rem;
     }

@@ -18,8 +18,8 @@
 </script>
 
 <svelte:head>
-  <title>Bence Szabó</title>
-  <meta name="description" content="Bence Szabó's CV" />
+  <title>Bence Séra-Szabó</title>
+  <meta name="description" content="Bence Séra-Szabó's CV" />
 </svelte:head>
 
 <main>

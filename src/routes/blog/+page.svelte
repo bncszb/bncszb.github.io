@@ -25,8 +25,11 @@
 </script>
 
 <svelte:head>
-  <title>Bence Szabó MD | Blog</title>
-  <meta name="description" content="Blog posts by Bence Szabó MD on medicine, technology, and healthcare innovation." />
+  <title>Bence Séra-Szabó MD | Blog</title>
+  <meta
+    name="description"
+    content="Blog posts by Bence Séra-Szabó MD on medicine, technology, and healthcare innovation."
+  />
 </svelte:head>
 
 <main>
@@ -73,38 +76,40 @@
     text-align: center;
     margin: 2rem 0 3rem;
   }
-  
+
   .blog-header h1 {
     margin-bottom: 0.5rem;
     color: var(--color-theme-1);
   }
-  
+
   .blog-description {
     color: var(--color-text-light);
     max-width: 600px;
     margin: 0 auto;
   }
-  
+
   .blog-container {
     display: flex;
     flex-direction: column;
     gap: 2rem;
     margin-bottom: 2rem;
   }
-  
+
   .blog-post-wrapper {
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 2px 4px var(--color-shadow);
     overflow: hidden;
-    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    transition:
+      transform var(--transition-speed) ease,
+      box-shadow var(--transition-speed) ease;
   }
-  
+
   .blog-post-wrapper:hover {
     transform: translateY(-3px);
     box-shadow: 0 4px 8px var(--color-shadow);
   }
-  
+
   .no-posts {
     text-align: center;
     padding: 3rem;
@@ -112,7 +117,7 @@
     border-radius: 8px;
     box-shadow: 0 2px 4px var(--color-shadow);
   }
-  
+
   .pagination-container {
     margin: 2rem 0 4rem;
     display: flex;

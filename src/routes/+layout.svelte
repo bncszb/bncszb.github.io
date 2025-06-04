@@ -26,24 +26,24 @@
 <svelte:head>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta charset="utf-8" />
-  <title>Bence Szabó MD | Personal Website</title>
+  <title>Bence Séra-Szabó MD | Personal Website</title>
   <meta
     name="description"
-    content="Personal website of Bence Szabó MD, featuring professional experience, skills, and blog posts."
+    content="Personal website of Bence Séra-Szabó MD, featuring professional experience, skills, and blog posts."
   />
   <link rel="icon" href="/site/favicon.png" />
-  <meta name="author" content="Bence Szabó" />
-  <meta property="og:title" content="Bence Szabó MD | Personal Website" />
+  <meta name="author" content="Bence Séra-Szabó" />
+  <meta property="og:title" content="Bence Séra-Szabó MD | Personal Website" />
   <meta
     property="og:description"
-    content="Personal website of Bence Szabó MD, featuring professional experience, skills, and blog posts."
+    content="Personal website of Bence Séra-Szabó MD, featuring professional experience, skills, and blog posts."
   />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Bence Szabó MD | Personal Website" />
+  <meta name="twitter:title" content="Bence Séra-Szabó MD | Personal Website" />
   <meta
     name="twitter:description"
-    content="Personal website of Bence Szabó MD, featuring professional experience, skills, and blog posts."
+    content="Personal website of Bence Séra-Szabó MD, featuring professional experience, skills, and blog posts."
   />
 </svelte:head>
 
@@ -68,7 +68,7 @@
   <footer>
     <div class="footer-content">
       <div class="footer-copyright">
-        <p>&copy; {currentYear} Bence Szabó MD. All rights reserved.</p>
+        <p>&copy; {currentYear} Bence Séra-Szabó MD. All rights reserved.</p>
       </div>
       <div class="footer-links">
         <a href="/site">Home</a>

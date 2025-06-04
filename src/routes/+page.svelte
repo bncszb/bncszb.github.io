@@ -3,17 +3,17 @@
 </script>
 
 <svelte:head>
-  <title>Bence Szabó MD | Medical Professional</title>
+  <title>Bence Séra-Szabó MD | Medical Professional</title>
   <meta
     name="description"
-    content="Personal website of Bence Szabó MD, featuring professional experience, skills, and blog posts."
+    content="Personal website of Bence Séra-Szabó MD, featuring professional experience, skills, and blog posts."
   />
 </svelte:head>
 
 <main>
   <div class="hero">
     <div class="hero-content">
-      <h1>Bence Szabó <span class="md-title">MD</span></h1>
+      <h1>Bence Séra-Szabó <span class="md-title">MD</span></h1>
       <p class="tagline">Medical Professional & Technology Enthusiast</p>
     </div>
   </div>

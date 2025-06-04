@@ -15,10 +15,10 @@
 </script>
 
 <svelte:head>
-  <title>Solutions | Bence Szabó MD</title>
+  <title>Solutions | Bence Séra-Szabó MD</title>
   <meta
     name="description"
-    content="Solutions of projects by Bence Szabó MD, showcasing technical expertise and professional work."
+    content="Solutions of projects by Bence Séra-Szabó MD, showcasing technical expertise and professional work."
   />
 </svelte:head>
 
@@ -41,7 +41,7 @@
             <div class="project-meta">
               <!-- <span class="role-name">{project.role.name}</span> -->
               <!-- {#if project.role.institution} -->
-                <!-- <span class="institution">at {project.role.institution}</span> -->
+              <!-- <span class="institution">at {project.role.institution}</span> -->
               <!-- {/if} -->
               <!-- <span class="date-range">
                 {formatDate(project.role.startDate)} - {formatDate(
@@ -139,7 +139,7 @@
     gap: 3rem;
     padding-bottom: 4rem;
   }
-/* 
+  /* 
   .category-section {
     display: flex;
     flex-direction: column;
