@@ -3,7 +3,7 @@
   import github from "$lib/images/github.svg";
 
   function isActive(pathname: string): boolean {
-    if (pathname === "/site" && page.url.pathname === "/site/") return true;
+    if (pathname === "/" && page.url.pathname === "/") return true;
     return page.url.pathname === pathname;
   }
 </script>
@@ -11,21 +11,17 @@
 <header>
   <div class="header-container">
     <div class="logo">
-      <a href="/site" class="logo-link">BS</a>
+      <a href="/" class="logo-link">BS</a>
     </div>
 
     <nav>
-      <a href="/site" class={isActive("/site") ? "active" : ""}>Home</a>
-      <a href="/site/blog" class={isActive("/site/blog") ? "active" : ""}
-        >Blog</a
+      <a href="/" class={isActive("/") ? "active" : ""}>Home</a>
+      <a href="/blog" class={isActive("/blog") ? "active" : ""}>Blog</a>
+      <a href="/cv" class={isActive("/cv") ? "active" : ""}>CV</a>
+      <a href="/solutions" class={isActive("/solutions") ? "active" : ""}
+        >Solutions</a
       >
-      <a href="/site/cv" class={isActive("/site/cv") ? "active" : ""}>CV</a>
-      <a
-        href="/site/solutions"
-        class={isActive("/site/solutions") ? "active" : ""}>Solutions</a
-      >
-      <a href="/site/contact" class={isActive("/site/contact") ? "active" : ""}
-        >Contact</a
+      <a href="/contact" class={isActive("/contact") ? "active" : ""}>Contact</a
       >
     </nav>
 

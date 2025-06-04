@@ -1,11 +1,11 @@
 <script>
   import { Icon } from "svelte-icons-pack";
-  import { FiMail, FiGithub } from "svelte-icons-pack/fi";
+  import { FiGithub, FiMail } from "svelte-icons-pack/fi";
   import {
+    IoGlobeOutline,
     IoLocationOutline,
     IoLogoLinkedin,
     IoPhonePortraitOutline,
-    IoGlobeOutline
   } from "svelte-icons-pack/io";
 
   const iconSize = 20;
@@ -13,7 +13,7 @@
 
 <div class="contact-section">
   <h3>Contact Information</h3>
-  
+
   <div class="contact-grid">
     <div class="contact-item">
       <div class="contact-icon">
@@ -51,32 +51,44 @@
       </div>
       <div class="contact-text">
         <span class="contact-label">LinkedIn</span>
-        <a href="https://www.linkedin.com/in/szabob/" target="_blank" rel="noopener noreferrer">
+        <a
+          href="https://www.linkedin.com/in/szabob/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           linkedin.com/in/szabob
         </a>
       </div>
     </div>
-    
+
     <div class="contact-item">
       <div class="contact-icon">
         <Icon src={FiGithub} size={iconSize} />
       </div>
       <div class="contact-text">
         <span class="contact-label">GitHub</span>
-        <a href="https://github.com/bncszb" target="_blank" rel="noopener noreferrer">
+        <a
+          href="https://github.com/bncszb"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           github.com/bncszb
         </a>
       </div>
     </div>
-    
+
     <div class="contact-item">
       <div class="contact-icon">
         <Icon src={IoGlobeOutline} size={iconSize} />
       </div>
       <div class="contact-text">
         <span class="contact-label">Website</span>
-        <a href="https://bncszb.github.io/site/" target="_blank" rel="noopener noreferrer">
-          bncszb.github.io/site
+        <a
+          href="https://bncszb.github.io/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          bncszb.github.io/
         </a>
       </div>
     </div>
@@ -87,7 +99,7 @@
   .contact-section {
     width: 100%;
   }
-  
+
   h3 {
     margin-top: 0;
     margin-bottom: 1rem;
@@ -108,7 +120,7 @@
     align-items: flex-start;
     gap: 0.75rem;
   }
-  
+
   .contact-icon {
     color: var(--color-theme-1);
     display: flex;
@@ -116,18 +128,18 @@
     justify-content: center;
     min-width: 24px;
   }
-  
+
   .contact-text {
     display: flex;
     flex-direction: column;
   }
-  
+
   .contact-label {
     font-size: 0.8rem;
     color: var(--color-text-light);
     margin-bottom: 0.2rem;
   }
-  
+
   .contact-text a {
     color: var(--color-theme-1);
     text-decoration: none;
@@ -135,16 +147,16 @@
     font-size: 0.9rem;
     word-break: break-all;
   }
-  
+
   .contact-text a:hover {
     color: var(--color-theme-2);
     text-decoration: underline;
   }
-  
+
   .contact-text span:not(.contact-label) {
     font-size: 0.9rem;
   }
-  
+
   @media (min-width: 768px) {
     .contact-grid {
       grid-template-columns: 1fr;

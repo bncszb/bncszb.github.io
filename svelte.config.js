@@ -17,9 +17,9 @@ const config = {
 			strict: true
 	
 		}),
-	  paths: {
-		base: '/site' 
-	  }
+	//   paths: {
+	// 	base: '' 
+	//   }
 	},
 	compilerOptions:{
 		customElement:true,

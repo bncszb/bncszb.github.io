@@ -85,7 +85,7 @@
             <span>GitHub</span>
           </a>
 
-          <a href="https://bncszb.github.io/site/" class="social-link">
+          <a href="https://bncszb.github.io/" class="social-link">
             <Icon src={IoGlobeOutline} size={iconSize} />
             <span>Website</span>
           </a>

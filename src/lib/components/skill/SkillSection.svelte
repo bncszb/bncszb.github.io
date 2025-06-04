@@ -11,7 +11,7 @@
     {#if category && skills.length > 0}
       <h2>{category}</h2>
       {#each skills as skill}
-        <a href="/site/skills/{getSkillKebab(skill)}">
+        <a href="/skills/{getSkillKebab(skill)}">
           <table>
             <tbody>
               <tr>
@@ -43,7 +43,5 @@
   }
   a {
     margin: auto;
-
   }
-
 </style>

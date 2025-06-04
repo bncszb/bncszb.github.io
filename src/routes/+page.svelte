@@ -19,21 +19,21 @@
   </div>
 
   <div class="navigation-cards">
-    <a href="/site/blog" class="card">
+    <a href="/blog" class="card">
       <div class="card-content">
         <h2>Blog</h2>
         <p>Thoughts and insights on medicine, technology, and more</p>
       </div>
     </a>
 
-    <a href="/site/cv" class="card">
+    <a href="/cv" class="card">
       <div class="card-content">
         <h2>CV</h2>
         <p>Professional experience, education, and qualifications</p>
       </div>
     </a>
 
-    <a href="/site/solutions" class="card">
+    <a href="/solutions" class="card">
       <div class="card-content">
         <h2>Solutions</h2>
         <p>Collection of projects showcasing my work and expertise</p>

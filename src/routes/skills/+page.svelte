@@ -44,15 +44,15 @@
   </div>
 
   <div class="view-options">
-    <a href="/site/skills" class={isIconView ? "active" : ""}>
+    <a href="/skills" class={isIconView ? "active" : ""}>
       <span class="view-icon">⊞</span>
       <span class="view-label">Icon View</span>
     </a>
-    <a href="/site/skills/text" class={isTextView ? "active" : ""}>
+    <a href="/skills/text" class={isTextView ? "active" : ""}>
       <span class="view-icon">≡</span>
       <span class="view-label">Text View</span>
     </a>
-    <a href="/site/skills/graph" class={isGraphView ? "active" : ""}>
+    <a href="/skills/graph" class={isGraphView ? "active" : ""}>
       <span class="view-icon">⋈</span>
       <span class="view-label">Graph View</span>
     </a>

@@ -31,7 +31,7 @@
     name="description"
     content="Personal website of Bence Séra-Szabó MD, featuring professional experience, skills, and blog posts."
   />
-  <link rel="icon" href="/site/favicon.png" />
+  <link rel="icon" href="/favicon.png" />
   <meta name="author" content="Bence Séra-Szabó" />
   <meta property="og:title" content="Bence Séra-Szabó MD | Personal Website" />
   <meta
@@ -71,11 +71,11 @@
         <p>&copy; {currentYear} Bence Séra-Szabó MD. All rights reserved.</p>
       </div>
       <div class="footer-links">
-        <a href="/site">Home</a>
-        <a href="/site/blog">Blog</a>
-        <a href="/site/cv">CV</a>
-        <a href="/site/solutions">Solutions</a>
-        <a href="/site/contact">Contact</a>
+        <a href="/">Home</a>
+        <a href="/blog">Blog</a>
+        <a href="/cv">CV</a>
+        <a href="/solutions">Solutions</a>
+        <a href="/contact">Contact</a>
       </div>
     </div>
   </footer>

@@ -26,9 +26,9 @@
   <!-- <main class={isPanelOpen ? "panel-open" : ""}> -->
   <h1>Skills</h1>
   <div class="icon-or-text">
-    <a href="/site/skills">Icons</a>
-    <a href="/site/skills/text" style="text-decoration: underline;">Text</a>
-    <a href="/site/skills/graph">Graph</a>
+    <a href="/skills">Icons</a>
+    <a href="/skills/text" style="text-decoration: underline;">Text</a>
+    <a href="/skills/graph">Graph</a>
   </div>
 
   <table class="tier">

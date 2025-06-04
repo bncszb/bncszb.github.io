@@ -83,7 +83,7 @@
           .attr("stroke-width", 2); // Reset border
       });
     svg.selectAll("circle").on("click", (_, d) => {
-      window.location.href = `/site/skills/${getSkillKebab(d.id)}`;
+      window.location.href = `/skills/${getSkillKebab(d.id)}`;
     });
 
     // Node labels

@@ -6,9 +6,9 @@
 <main>
   <h1>Skills</h1>
   <div class="icon-or-text">
-    <a href="/site/skills">Icons</a>
-    <a href="/site/skills/text">Text</a>
-    <a href="/site/skills/graph" style="text-decoration: underline;">Graph</a>
+    <a href="/skills">Icons</a>
+    <a href="/skills/text">Text</a>
+    <a href="/skills/graph" style="text-decoration: underline;">Graph</a>
   </div>
   <Graph graph={history.getStackGraph()} />
 </main>
