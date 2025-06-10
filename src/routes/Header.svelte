@@ -11,7 +11,7 @@
 <header>
   <div class="header-container">
     <div class="logo">
-      <a href="/" class="logo-link">BS</a>
+      <!-- <a href="/" class="logo-link">BS</a> -->
     </div>
 
     <nav>
