@@ -1,4 +1,4 @@
-const shortContentLength = 300;
+const shortContentLength = 400;
 
 export type Post = {
   path: string;
@@ -24,22 +24,23 @@ export const posts: Post[] = Object.entries(markdownFiles)
 
     const containsMedia = containsImage || containsTable;
 
-    console.log({ path, containsMedia });
-
+    const [title, body] = extractTitle(content);
     return {
       path,
-      title: extractTitle(content),
+      title: title.trim(),
       date: extractDateFromFilename(path),
-      content,
-      shortContent: getShortContent(content, containsMedia),
+      content: body.trim(),
+      shortContent: getShortContent(body, containsMedia),
       containsMedia,
     };
   })
   .sort((a, b) => b.date.getTime() - a.date.getTime());
 
-function extractTitle(content: string): string {
+function extractTitle(content: string): [string, string] {
   const match = content.match(/^#\s*(.*)/);
-  return match ? match[1] : "Untitled";
+  const title = match ? match[1] : "Untitled";
+  const body = match ? content.slice(match[0].length).trim() : content.trim();
+  return [title, body];
 }
 
 function extractDateFromFilename(filePath: string): Date {
