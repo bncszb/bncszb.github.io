@@ -1,13 +1,8 @@
 <script lang="ts">
   import ContactForm from "$lib/components/ContactForm.svelte";
   import { Icon } from "svelte-icons-pack";
-  import { FiGithub, FiMail } from "svelte-icons-pack/fi";
-  import {
-    IoGlobeOutline,
-    IoLocationOutline,
-    IoLogoLinkedin,
-    IoPhonePortraitOutline,
-  } from "svelte-icons-pack/io";
+  import { FiGithub } from "svelte-icons-pack/fi";
+  import { IoLogoLinkedin } from "svelte-icons-pack/io";
 
   const iconSize = 24;
 </script>
@@ -28,40 +23,6 @@
 
   <div class="contact-container">
     <div class="contact-info">
-      <h2>Contact Information</h2>
-
-      <div class="contact-methods">
-        <div class="contact-method">
-          <div class="icon">
-            <Icon src={FiMail} size={iconSize} />
-          </div>
-          <div class="details">
-            <h3>Email</h3>
-            <a href="mailto:bszabo96@gmail.com">bszabo96@gmail.com</a>
-          </div>
-        </div>
-
-        <div class="contact-method">
-          <div class="icon">
-            <Icon src={IoPhonePortraitOutline} size={iconSize} />
-          </div>
-          <div class="details">
-            <h3>Phone</h3>
-            <p>+36 20 566 6348</p>
-          </div>
-        </div>
-
-        <div class="contact-method">
-          <div class="icon">
-            <Icon src={IoLocationOutline} size={iconSize} />
-          </div>
-          <div class="details">
-            <h3>Location</h3>
-            <p>Budapest, Hungary</p>
-          </div>
-        </div>
-      </div>
-
       <div class="social-links">
         <h2>Connect</h2>
         <div class="social-grid">
@@ -83,11 +44,6 @@
           >
             <Icon src={FiGithub} size={iconSize} />
             <span>GitHub</span>
-          </a>
-
-          <a href="https://bncszb.github.io/" class="social-link">
-            <Icon src={IoGlobeOutline} size={iconSize} />
-            <span>Website</span>
           </a>
         </div>
       </div>

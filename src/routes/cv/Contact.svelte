@@ -1,12 +1,7 @@
 <script>
   import { Icon } from "svelte-icons-pack";
-  import { FiGithub, FiMail } from "svelte-icons-pack/fi";
-  import {
-    IoGlobeOutline,
-    IoLocationOutline,
-    IoLogoLinkedin,
-    IoPhonePortraitOutline,
-  } from "svelte-icons-pack/io";
+  import { FiGithub } from "svelte-icons-pack/fi";
+  import { IoLocationOutline, IoLogoLinkedin } from "svelte-icons-pack/io";
 
   const iconSize = 20;
 </script>
@@ -15,26 +10,6 @@
   <h3>Contact Information</h3>
 
   <div class="contact-grid">
-    <div class="contact-item">
-      <div class="contact-icon">
-        <Icon src={FiMail} size={iconSize} />
-      </div>
-      <div class="contact-text">
-        <span class="contact-label">Email</span>
-        <a href="mailto:bszabo96@gmail.com">bszabo96@gmail.com</a>
-      </div>
-    </div>
-
-    <div class="contact-item">
-      <div class="contact-icon">
-        <Icon src={IoPhonePortraitOutline} size={iconSize} />
-      </div>
-      <div class="contact-text">
-        <span class="contact-label">Phone</span>
-        <span>+36 20 566 6348</span>
-      </div>
-    </div>
-
     <div class="contact-item">
       <div class="contact-icon">
         <Icon src={IoLocationOutline} size={iconSize} />
@@ -73,22 +48,6 @@
           rel="noopener noreferrer"
         >
           github.com/bncszb
-        </a>
-      </div>
-    </div>
-
-    <div class="contact-item">
-      <div class="contact-icon">
-        <Icon src={IoGlobeOutline} size={iconSize} />
-      </div>
-      <div class="contact-text">
-        <span class="contact-label">Website</span>
-        <a
-          href="https://bncszb.github.io/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          bncszb.github.io/
         </a>
       </div>
     </div>
