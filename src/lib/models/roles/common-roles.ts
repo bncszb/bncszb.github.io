@@ -10,6 +10,7 @@ export const roleCategories = [
   "Research",
   "Education",
   "Volunteering",
+  "Course",
 ] as const;
 
 export type RoleCategory = (typeof roleCategories)[number];

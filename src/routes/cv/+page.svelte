@@ -4,6 +4,7 @@
   import educationRoles from "$lib/models/roles/education-roles";
   import researchRoles from "$lib/models/roles/research-roles";
   import volunteerRoles from "$lib/models/roles/volunteer-roles";
+  import courseRoles from "$lib/models/roles/course-roles";
   import workRoles from "$lib/models/roles/work-roles";
   import Contact from "./Contact.svelte";
   import Summary from "./Summary.svelte";
@@ -56,6 +57,13 @@
       <div class="content-section">
         <h2>Education</h2>
         {#each educationRoles as role}
+          <RoleSection {role} />
+        {/each}
+      </div>
+
+      <div class="content-section">
+        <h2>Courses</h2>
+        {#each courseRoles as role}
           <RoleSection {role} />
         {/each}
       </div>
