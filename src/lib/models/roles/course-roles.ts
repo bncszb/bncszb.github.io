@@ -47,6 +47,11 @@ const introductionToVectorIndexesAndUnstructuredData: Certification = {
   url: "https://graphacademy.neo4j.com/c/542aa4d1-938e-43d4-95ca-aec9df9b98a4/",
 };
 
+const cypherAggregations: Certification = {
+  name: "Cypher Aggregations",
+  url: "https://graphacademy.neo4j.com/c/27b86973-f856-45c8-adc4-f79e429273b3/",
+};
+
 const Neo4jProfessional: Role = {
   category: "Course",
   name: "Neo4j Certified Professional",
@@ -67,6 +72,7 @@ Completed courses include:
 ${getCertificationBulletPoints([
   neo4jFundamentals,
   cypherFundamentals,
+  cypherAggregations,
   graphDataModelingFundamentals,
   importingDataFundamentals,
   intermediateCypherQueries,
