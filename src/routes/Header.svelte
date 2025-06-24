@@ -32,7 +32,7 @@
         rel="noopener noreferrer"
         aria-label="GitHub"
       >
-        <img src={github} alt="GitHub" />
+        <img src={github} alt="GitHub" width="24" height="24" />
       </a>
     </div>
   </div>
@@ -97,6 +97,8 @@
     width: 1.5rem;
     height: 1.5rem;
     opacity: 0.7;
+    display: block;
+    object-fit: contain;
     transition:
       opacity var(--transition-speed) ease,
       transform var(--transition-speed) ease;
