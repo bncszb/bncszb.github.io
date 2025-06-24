@@ -87,4 +87,43 @@ ${getCertificationBulletPoints([
   skills: [neo4jSkill],
 };
 
-export default [Neo4jProfessional];
+const machineLearning: Certification = {
+  name: "Machine Learning by Andrew Ng",
+};
+
+const neuralNetworksAndDeepLearning: Certification = {
+  name: "Neural Networks and Deep Learning",
+  url: "https://www.coursera.org/account/accomplishments/verify/MVE76QN8YZDF",
+};
+
+const customModelsLayersAndLossFunctions: Certification = {
+  name: "Custom Models, Layers, and Loss Functions with TensorFlow",
+  url: "https://www.coursera.org/account/accomplishments/verify/4ZBNLEMTRM5T",
+};
+
+const customAndDistributedTrainingWithTensorFlow: Certification = {
+  name: "Custom and Distributed Training with TensorFlow",
+  url: "https://www.coursera.org/account/accomplishments/verify/HL6WPKHG3CBH",
+};
+
+const DeepLearningCourses: Role = {
+  category: "Course",
+  name: "Deep Learning Courses",
+  startDate: new Date("2020-07-01"),
+  endDate: new Date("2021-08-01"),
+  instutition: "DeepLearning.ai",
+  location: "Coursera",
+  description: `Completed various deep learning courses on DeepLearning.ai, focusing on neural networks, convolutional networks, and sequence models. These courses provided a solid foundation in deep learning techniques and their applications in real-world scenarios.
+  
+Completed courses include:
+${getCertificationBulletPoints([
+  machineLearning,
+  neuralNetworksAndDeepLearning,
+  customModelsLayersAndLossFunctions,
+  customAndDistributedTrainingWithTensorFlow,
+])}
+  
+  `,
+};
+
+export default [Neo4jProfessional, DeepLearningCourses];
