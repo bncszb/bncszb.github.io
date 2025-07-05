@@ -64,11 +64,6 @@ const Neo4jProfessional: Role = {
   endDate: new Date("2025-06-01"),
   instutition: "GraphAcademy",
   location: "Neo4j",
-  // bulletPoints: [
-  //   "Biochemistry competition: 5th place (2015)",
-  //   "Biophysics competition: 6th place (2015)",
-  //   "Research in LinkGroup",
-  // ],
   description: `
 The Neo4j Certified Professional is a certification that demonstrates proficiency in using Neo4j, a leading graph database technology. This certification covers fundamental concepts of graph databases, Cypher query language, data modeling, and practical applications of Neo4j.
 
@@ -82,13 +77,33 @@ ${getCertificationBulletPoints([
   importingDataFundamentals,
   intermediateCypherQueries,
   usingNeo4jWithPython,
-  introductionToNeo4jGraphDataScience,
-  neo4jGraphDataScienceFundamentals,
   introductionToVectorIndexesAndUnstructuredData,
-  pathFindingWithGDS,
 ])}
 
 [Neo4j Certified Professional Certificate](https://graphacademy.neo4j.com/c/ba749cdc-9371-49a5-8eb9-4b63917a4307/)
+`,
+  skills: [neo4jSkill],
+};
+
+const Neo4jGraphDataScienceCertification: Role = {
+  category: "Course",
+  name: "Neo4j Graph Data Science Certification",
+  startDate: new Date("2025-06-01"),
+  endDate: new Date("2025-07-01"),
+  instutition: "GraphAcademy",
+  location: "Neo4j",
+  description: `
+The Neo4j Graph Data Science Certification is a specialized certification that focuses on the application of graph algorithms and data science techniques using Neo4j's Graph Data Science (GDS) library. This certification covers advanced topics such as pathfinding, community detection, and machine learning with graph data.
+
+${getCertificationBulletPoints([
+  neo4jFundamentals,
+  introductionToNeo4jGraphDataScience,
+  neo4jGraphDataScienceFundamentals,
+  pathFindingWithGDS,
+])}
+
+[Neo4j Graph Data Science Certification
+](https://graphacademy.neo4j.com/c/2bb6ca87-2bff-44c5-a281-77b2cab677ac/)
 `,
   skills: [neo4jSkill],
 };
@@ -132,4 +147,8 @@ ${getCertificationBulletPoints([
   `,
 };
 
-export default [Neo4jProfessional, DeepLearningCourses];
+export default [
+  Neo4jGraphDataScienceCertification,
+  Neo4jProfessional,
+  DeepLearningCourses,
+];
