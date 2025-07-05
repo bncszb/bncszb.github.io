@@ -42,6 +42,11 @@ const neo4jGraphDataScienceFundamentals: Certification = {
   url: "https://graphacademy.neo4j.com/c/b4f7f3cd-271f-4345-a9f6-ca1db9602314/",
 };
 
+const pathFindingWithGDS: Certification = {
+  name: "Path Finding with GDS",
+  url: "https://graphacademy.neo4j.com/c/2c5246be-7b32-4403-a5bf-d28202dd9a45/",
+};
+
 const introductionToVectorIndexesAndUnstructuredData: Certification = {
   name: "Introduction to Vector Indexes and Unstructured Data",
   url: "https://graphacademy.neo4j.com/c/542aa4d1-938e-43d4-95ca-aec9df9b98a4/",
@@ -80,6 +85,7 @@ ${getCertificationBulletPoints([
   introductionToNeo4jGraphDataScience,
   neo4jGraphDataScienceFundamentals,
   introductionToVectorIndexesAndUnstructuredData,
+  pathFindingWithGDS,
 ])}
 
 [Neo4j Certified Professional Certificate](https://graphacademy.neo4j.com/c/ba749cdc-9371-49a5-8eb9-4b63917a4307/)
