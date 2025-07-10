@@ -27,8 +27,7 @@
     <div class="hero-content">
       <h1>Projects</h1>
       <p class="tagline">
-        A collection of projects showcasing my technical expertise and
-        professional work
+        A collection of projects that reflect my skills and areas of interest.
       </p>
     </div>
   </div>
