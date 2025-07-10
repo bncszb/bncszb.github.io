@@ -18,8 +18,8 @@
       <a href="/" class={isActive("/") ? "active" : ""}>Home</a>
       <a href="/blog" class={isActive("/blog") ? "active" : ""}>Blog</a>
       <a href="/cv" class={isActive("/cv") ? "active" : ""}>CV</a>
-      <a href="/solutions" class={isActive("/solutions") ? "active" : ""}
-        >Solutions</a
+      <a href="/projects" class={isActive("/projects") ? "active" : ""}
+        >Projects</a
       >
       <a href="/contact" class={isActive("/contact") ? "active" : ""}>Contact</a
       >

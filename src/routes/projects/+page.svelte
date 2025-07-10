@@ -15,24 +15,24 @@
 </script>
 
 <svelte:head>
-  <title>Solutions | Bence Séra-Szabó MD</title>
+  <title>Projects | Bence Séra-Szabó MD</title>
   <meta
     name="description"
-    content="Solutions of projects by Bence Séra-Szabó MD, showcasing technical expertise and professional work."
+    content="Projects by Bence Séra-Szabó MD, showcasing technical expertise and professional work."
   />
 </svelte:head>
 
-<div class="solutions-container">
+<div class="projects-container">
   <div class="hero">
     <div class="hero-content">
-      <h1>Solutions</h1>
+      <h1>Projects</h1>
       <p class="tagline">
         A collection of projects showcasing my technical expertise and
         professional work
       </p>
     </div>
   </div>
-  <div class="solutions-content">
+  <div class="projects-content">
     <div class="projects-grid">
       {#each sideProjects as project}
         <div class="project-card-wrapper">
@@ -55,7 +55,7 @@
       {/each}
     </div>
   </div>
-  <!-- <div class="solutions-content">
+  <!-- <div class="projects-content">
     {#each roleCategories as category}
       {#if projectsByCategory[category] && projectsByCategory[category].length > 0}
         <section class="category-section">
@@ -91,7 +91,7 @@
 </div>
 
 <style>
-  .solutions-container {
+  .projects-container {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
@@ -133,7 +133,7 @@
     margin: 0 auto;
   }
 
-  .solutions-content {
+  .projects-content {
     display: flex;
     flex-direction: column;
     gap: 3rem;

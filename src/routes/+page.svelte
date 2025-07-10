@@ -33,9 +33,9 @@
       </div>
     </a>
 
-    <a href="/solutions" class="card">
+    <a href="/projects" class="card">
       <div class="card-content">
-        <h2>Solutions</h2>
+        <h2>Projects</h2>
         <p>Collection of projects showcasing my work and expertise</p>
       </div>
     </a>

@@ -74,7 +74,7 @@
         <a href="/">Home</a>
         <a href="/blog">Blog</a>
         <a href="/cv">CV</a>
-        <a href="/solutions">Solutions</a>
+        <a href="/projects">Projects</a>
         <a href="/contact">Contact</a>
       </div>
     </div>
