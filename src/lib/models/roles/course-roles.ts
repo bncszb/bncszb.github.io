@@ -57,6 +57,11 @@ const cypherAggregations: Certification = {
   url: "https://graphacademy.neo4j.com/c/27b86973-f856-45c8-adc4-f79e429273b3/",
 };
 
+const developingWithNeo4jMCPTools: Certification = {
+  name: "Developing with Neo4j MCP Tools",
+  url: "https://graphacademy.neo4j.com/c/2a3eefd7-7cf1-4609-98fc-c45da4c83e12/",
+};
+
 const Neo4jProfessional: Role = {
   category: "Course",
   name: "Neo4j Certified Professional",
@@ -78,6 +83,7 @@ ${getCertificationBulletPoints([
   intermediateCypherQueries,
   usingNeo4jWithPython,
   introductionToVectorIndexesAndUnstructuredData,
+  developingWithNeo4jMCPTools,
 ])}
 
 [Neo4j Certified Professional Certificate](https://graphacademy.neo4j.com/c/ba749cdc-9371-49a5-8eb9-4b63917a4307/)
