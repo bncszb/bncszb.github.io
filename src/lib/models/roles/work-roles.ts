@@ -76,6 +76,7 @@ const biotHeadOfAIRole: Role = {
   category: "Work Experience",
   name: "Head of AI",
   startDate: new Date("2024-07-01"),
+  endDate: new Date("2025-07-31"),
   instutition: "Biot.ai Lab",
   location: "Budapest",
   description: `
