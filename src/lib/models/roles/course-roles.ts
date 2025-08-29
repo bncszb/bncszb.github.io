@@ -82,8 +82,6 @@ ${getCertificationBulletPoints([
   importingDataFundamentals,
   intermediateCypherQueries,
   usingNeo4jWithPython,
-  introductionToVectorIndexesAndUnstructuredData,
-  developingWithNeo4jMCPTools,
 ])}
 
 [Neo4j Certified Professional Certificate](https://graphacademy.neo4j.com/c/ba749cdc-9371-49a5-8eb9-4b63917a4307/)
@@ -99,18 +97,43 @@ const Neo4jGraphDataScienceCertification: Role = {
   instutition: "GraphAcademy",
   location: "Neo4j",
   description: `
-The Neo4j Graph Data Science Certification is a specialized certification that focuses on the application of graph algorithms and data science techniques using Neo4j's Graph Data Science (GDS) library. This certification covers advanced topics such as pathfinding, community detection, and machine learning with graph data.
-
-${getCertificationBulletPoints([
-  neo4jFundamentals,
-  introductionToNeo4jGraphDataScience,
-  neo4jGraphDataScienceFundamentals,
-  pathFindingWithGDS,
-])}
-
-[Neo4j Graph Data Science Certification
-](https://graphacademy.neo4j.com/c/2bb6ca87-2bff-44c5-a281-77b2cab677ac/)
+  The Neo4j Graph Data Science Certification is a specialized certification that focuses on the application of graph algorithms and data science techniques using Neo4j's Graph Data Science (GDS) library. This certification covers advanced topics such as pathfinding, community detection, and machine learning with graph data.
+  
+  ${getCertificationBulletPoints([
+    neo4jFundamentals,
+    introductionToNeo4jGraphDataScience,
+    neo4jGraphDataScienceFundamentals,
+    pathFindingWithGDS,
+  ])}
+  
+[Neo4j Graph Data Science Certification](https://graphacademy.neo4j.com/c/2bb6ca87-2bff-44c5-a281-77b2cab677ac/)
 `,
+  skills: [neo4jSkill],
+};
+
+const buildingKnowledgeGraphsWithLLMs: Certification = {
+  name: "Building Knowledge Graphs with LLMs",
+  url: "https://graphacademy.neo4j.com/c/0c4d0c2a-1f66-42de-a780-504e7a80c76f/",
+};
+
+const Neo4jGenerativeAI: Role = {
+  category: "Course",
+  name: "Generative AI with Knowledge Graphs",
+  startDate: new Date("2025-07-01"),
+  // endDate: new Date("2025-07-01"),
+  instutition: "GraphAcademy",
+  location: "Neo4j",
+  description: `
+  A learning pathway by Neo4j to understand how to build knowledge graphs with LLMs in Neo4j for Generative AI applications.
+  
+  It builds on top of the Neo4j Fundamentals and Graph Data Science pathways.
+  Aditional completed courses include:
+  ${getCertificationBulletPoints([
+    introductionToVectorIndexesAndUnstructuredData,
+    buildingKnowledgeGraphsWithLLMs,
+    developingWithNeo4jMCPTools,
+  ])}
+  `,
   skills: [neo4jSkill],
 };
 
@@ -142,18 +165,19 @@ const DeepLearningCourses: Role = {
   location: "Coursera",
   description: `Completed various deep learning courses on DeepLearning.ai, focusing on neural networks, convolutional networks, and sequence models. These courses provided a solid foundation in deep learning techniques and their applications in real-world scenarios.
   
-Completed courses include:
-${getCertificationBulletPoints([
-  machineLearning,
-  neuralNetworksAndDeepLearning,
-  customModelsLayersAndLossFunctions,
-  customAndDistributedTrainingWithTensorFlow,
-])}
+  Completed courses include:
+  ${getCertificationBulletPoints([
+    machineLearning,
+    neuralNetworksAndDeepLearning,
+    customModelsLayersAndLossFunctions,
+    customAndDistributedTrainingWithTensorFlow,
+  ])}
   
   `,
 };
 
 export default [
+  Neo4jGenerativeAI,
   Neo4jGraphDataScienceCertification,
   Neo4jProfessional,
   DeepLearningCourses,
