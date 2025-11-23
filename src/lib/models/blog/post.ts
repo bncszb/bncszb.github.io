@@ -1,4 +1,4 @@
-const shortContentLength = 400;
+const shortContentLength = 500;
 
 export type Post = {
   path: string;
