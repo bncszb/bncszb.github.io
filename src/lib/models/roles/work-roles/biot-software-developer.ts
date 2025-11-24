@@ -1,28 +1,21 @@
 
-import type { Project } from "$lib/models/project"
+import type { Project } from "$lib/models/project";
+import type { Role } from "$lib/models/roles/common-roles";
 import {
-  dockerSkill,
   drugbankSkill,
   goSkill,
   icd10Skill,
   kubernetesSkill,
-  langchainSkill,
-  langfuseSkill,
   mlflowSkill,
   mysqlSkill,
-  neo4jSkill,
   networkxSkill,
-  pandasSkill,
-  plotlySkill,
   pythonSkill,
   pytorchSkill,
   qdrantSkill,
   rxNormSkill,
-  snomedSkill,
-  tensorflowSkill,
-  typescriptSkill,
-} from "$lib/models/skills"
-import type { Role } from "$lib/models/roles/common-roles"
+  snomedSkill
+} from "$lib/models/skills";
+
 const medcationServiceProject: Project = {
   name: "Medication Service",
   shortDescription: "Medication microservice using DrugBank and Go",
