@@ -1,5 +1,5 @@
 import type { Edge, Graph, Node } from "./graph";
-import type { Project } from "./projects";
+import type { Project } from "./project";
 import allRoles, {
   getGeneralRoleSkills,
   getRoleSkills,
@@ -8,7 +8,7 @@ import allRoles, {
 import { getSkillsByCategory, getSkillUrlMap, type Skill } from "./skills";
 
 export class History {
-  constructor(public roles: Role[]) {}
+  constructor(public roles: Role[]) { }
 
   public getProjects(): Project[] {
     let projects: Project[] = [];

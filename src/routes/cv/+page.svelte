@@ -1,11 +1,11 @@
 <script lang="ts">
   import RoleSection from "$lib/components/role/RoleSection.svelte";
   import Skills from "$lib/components/skill/Skills.svelte";
+  import workRoles from "$lib/models/roles/work-roles";
   import educationRoles from "$lib/models/roles/education-roles";
   import researchRoles from "$lib/models/roles/research-roles";
   import volunteerRoles from "$lib/models/roles/volunteer-roles";
   import courseRoles from "$lib/models/roles/course-roles";
-  import workRoles from "$lib/models/roles/work-roles";
   import Contact from "./Contact.svelte";
   import Summary from "./Summary.svelte";
 </script>
