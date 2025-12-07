@@ -2,6 +2,12 @@ import { neo4jSkill } from "../skills";
 import { getCertificationBulletPoints, type Certification } from "../types";
 import type { Role } from "./common-roles";
 
+// TODO: add somewhere
+export const terraform: Certification = {
+  name: "Terraform for the Absolute Beginner with Hands - on Labs",
+  url: "https://www.coursera.org/account/accomplishments/verify/ZZ53CV0L6A5H"
+}
+
 const neo4jFundamentals: Certification = {
   name: "Neo4j Fundamentals",
   url: "https://graphacademy.neo4j.com/c/9efffb85-f16f-43f1-ac05-8c47e69fcced/",
@@ -75,14 +81,14 @@ The Neo4j Certified Professional is a certification that demonstrates proficienc
 Completed courses include:
 
 ${getCertificationBulletPoints([
-  neo4jFundamentals,
-  cypherFundamentals,
-  cypherAggregations,
-  graphDataModelingFundamentals,
-  importingDataFundamentals,
-  intermediateCypherQueries,
-  usingNeo4jWithPython,
-])}
+    neo4jFundamentals,
+    cypherFundamentals,
+    cypherAggregations,
+    graphDataModelingFundamentals,
+    importingDataFundamentals,
+    intermediateCypherQueries,
+    usingNeo4jWithPython,
+  ])}
 
 [Neo4j Certified Professional Certificate](https://graphacademy.neo4j.com/c/ba749cdc-9371-49a5-8eb9-4b63917a4307/)
 `,
