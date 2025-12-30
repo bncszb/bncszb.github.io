@@ -6,6 +6,7 @@ import {
   langchainSkill,
   langfuseSkill,
   neo4jSkill,
+  pythonSkill,
   qdrantSkill,
   typescriptSkill,
 } from "$lib/models/skills";
@@ -53,10 +54,19 @@ After the extraction, there are additional steps to clean the graph and to make 
   skills: [neo4jSkill, langchainSkill, qdrantSkill, typescriptSkill],
 };
 
+const insuranceProject: Project = {
+  name: "Insurance Knowledge Base",
+  shortDescription: "Internal RAG solution for an insurance company",
+  description: `
+An internal knowledge base for the complaint management department of an insurance company. It was a complex RAG solution with multiple information sources like vector search through Qdrant, typo tolerant full text search using Meilisearch or knowledge graph with Neo4j.
+`,
+  skills: [neo4jSkill, langchainSkill, qdrantSkill, pythonSkill],
+};
 const biotHeadOfAIProjects: Project[] = [
+  insuranceProject,
+  progressNoteSummarizationProject,
   speechToFormProject,
   knowledgeGraphProject,
-  progressNoteSummarizationProject,
 ];
 
 export const biotHeadOfAIRole: Role = {
