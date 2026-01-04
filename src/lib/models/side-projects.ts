@@ -1,5 +1,5 @@
 import type { Project } from "./project";
-import { dockerSkill, neo4jSkill, pythonSkill, snomedSkill } from "./skills";
+import { dockerSkill, icd10Skill, neo4jSkill, pythonSkill, snomedSkill } from "./skills";
 
 const awesomeMedicalKnowledgeProject: Project = {
   name: "Awesome Medical Knowledge",
@@ -15,6 +15,16 @@ It has everything from integration using FHIR, CDA or other standards to ingesti
   github: "https://github.com/bncszb/awesome-medical-knowledge",
 };
 
+const icdNeo4jLoaderProject: Project = {
+  name: "ICD Neo4j Loader",
+  shortDescription:
+    "A small loader package that helps loading ICD data into Neo4j",
+  description: `
+A small loader package that helps loading ICD data into Neo4j.
+`,
+  skills: [neo4jSkill, pythonSkill, icd10Skill],
+  github: "https://github.com/bncszb/icd-neo4j-loader",
+};
 const snomedNeo4jProject: Project = {
   name: "SNOMED Neo4j",
   shortDescription:
@@ -30,5 +40,6 @@ Due to licensing, the data is imported during local build using a UMLS API key.
 
 export const sideProjects = [
   awesomeMedicalKnowledgeProject,
+  icdNeo4jLoaderProject,
   snomedNeo4jProject,
 ];
