@@ -126,7 +126,7 @@ const Neo4jGenerativeAI: Role = {
   category: "Course",
   name: "Generative AI with Knowledge Graphs",
   startDate: new Date("2025-07-01"),
-  // endDate: new Date("2025-07-01"),
+  endDate: new Date("2025-08-31"),
   instutition: "GraphAcademy",
   location: "Neo4j",
   description: `
