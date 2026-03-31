@@ -44,7 +44,7 @@ const ulyssysAIResearcherProjects: Project[] = [
   dataValidationProject,
 ];
 
-export const ulyssysAIResearcherRole: Role = {
+export const ulyssysAIResearcher: Role = {
   category: "Work Experience",
   name: "AI Researcher",
   startDate: new Date("2021-09-01"),

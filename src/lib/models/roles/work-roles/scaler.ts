@@ -17,6 +17,22 @@ export const telekomSeniorAIEngineer: Role = {
   category: "Work Experience",
   name: "Senior AI Engineer",
   startDate: new Date("2025-09-01"),
+  endDate: new Date('2026-03-31'),
+  instutition: "Magyar Telekom",
+  location: "Budapest",
+  description: `
+Design and development of the Model AI project.
+`,
+  bulletPoints: [],
+  projects: [modelAI],
+  skills: [],
+};
+
+
+export const telekomTechLead: Role = {
+  category: "Work Experience",
+  name: "Tech Lead",
+  startDate: new Date("2026-04-01"),
   instutition: "Magyar Telekom",
   location: "Budapest",
   description: `

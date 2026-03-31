@@ -69,7 +69,7 @@ const biotHeadOfAIProjects: Project[] = [
   knowledgeGraphProject,
 ];
 
-export const biotHeadOfAIRole: Role = {
+export const biotHeadOfAI: Role = {
   category: "Work Experience",
   name: "Head of AI",
   startDate: new Date("2024-07-01"),

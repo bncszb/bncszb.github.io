@@ -84,7 +84,7 @@ const biotSoftwareDeveloperProjects: Project[] = [
   patientSimilaritySearchProject,
 ];
 
-export const biotSoftwareDeveloperRole: Role = {
+export const biotSoftwareDeveloper: Role = {
   category: "Work Experience",
   name: "Software Developer",
   startDate: new Date("2022-12-01"),
