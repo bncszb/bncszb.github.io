@@ -4,9 +4,9 @@ import { pythonSkill } from "$lib/models/skills";
 
 const modelAI: Project = {
   name: "Model AI",
-  shortDescription: "RAG-based data mopdelling tool",
+  shortDescription: "RAG-based data modelling tool",
   description: `
-A complex solution for data modellers that helps in the most important steps of data modelling.
+A complex solution for data modellers that helps in the most important steps of their daily work.
 
 Capable of generation of conceptual, logical and physicial models based on industry standards, internal documentation and the code used for the data pipelines. 
 `,
