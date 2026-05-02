@@ -70,18 +70,8 @@
   }
   
   function goToPage(page: number | string) {
-    // Skip if it's not a number or is the current page
     if (typeof page !== 'number' || page === currentPage) return;
-    
-    if (page < currentPage) {
-      while (currentPage > page) {
-        prevPage();
-      }
-    } else {
-      while (currentPage < page) {
-        nextPage();
-      }
-    }
+    $host().dispatchEvent(new CustomEvent("goto", { detail: page }));
   }
 </script>
 

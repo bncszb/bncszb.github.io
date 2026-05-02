@@ -22,6 +22,11 @@
   function prevPage() {
     if (currentPage > 1) currentPage--;
   }
+
+  function goToPage(e: Event) {
+    const page = (e as CustomEvent<number>).detail;
+    if (page >= 1 && page <= totalPages) currentPage = page;
+  }
 </script>
 
 <svelte:head>
@@ -60,6 +65,7 @@
       {totalPages}
       onprev={prevPage}
       onnext={nextPage}
+      ongoto={goToPage}
     >
     </pagination-component>
   </div>

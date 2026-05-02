@@ -33,8 +33,7 @@
   .skill-section {
     width: 100%;
     height: fit-content;
-    border: 3px;
-    justify-content: left;
+    justify-content: flex-start;
   }
 
   table {
