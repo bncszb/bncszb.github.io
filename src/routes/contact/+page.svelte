@@ -57,6 +57,7 @@
 
 <style>
   main {
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem 1rem;
@@ -98,52 +99,6 @@
     margin-bottom: 1.5rem;
     padding-bottom: 0.5rem;
     border-bottom: 1px solid var(--color-border, #e2e8f0);
-  }
-
-  .contact-methods {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-
-  .contact-method {
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-  }
-
-  .icon {
-    color: var(--color-theme-1, #2c7a7b);
-    background-color: rgba(44, 122, 123, 0.1);
-    padding: 0.75rem;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .details h3 {
-    font-size: 1.1rem;
-    margin: 0 0 0.25rem 0;
-    color: var(--color-text, #2d3748);
-  }
-
-  .details p,
-  .details a {
-    margin: 0;
-    color: var(--color-text-light, #4a5568);
-    font-size: 0.95rem;
-  }
-
-  .details a {
-    color: var(--color-theme-1, #2c7a7b);
-    text-decoration: none;
-    transition: color var(--transition-speed, 0.3s) ease;
-  }
-
-  .details a:hover {
-    color: var(--color-theme-2, #3182ce);
-    text-decoration: underline;
   }
 
   .social-grid {
