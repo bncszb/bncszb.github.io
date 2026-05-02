@@ -17,7 +17,9 @@
     </div>
     <div class="hero-content">
       <h1>Bence Séra-Szabó <span class="md-title">MD</span></h1>
-      <p class="tagline">Physician building at the intersection of medicine and technology</p>
+      <p class="tagline">
+        Physician building at the intersection of medicine and technology
+      </p>
     </div>
   </div>
 
@@ -68,7 +70,7 @@
 
   .hero {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 3fr 2fr;
     min-height: 420px;
     overflow: hidden;
     border-radius: 0 0 var(--radius) var(--radius);
@@ -104,7 +106,7 @@
   }
 
   h1 {
-    font-size: 2.6rem;
+    font-size: 2rem;
     margin: 0;
     color: var(--color-text);
     text-shadow: none;
@@ -136,8 +138,12 @@
     background-color: white;
     border-radius: var(--radius);
     overflow: hidden;
-    box-shadow: 0 1px 3px var(--color-shadow), 0 4px 16px var(--color-shadow);
-    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    box-shadow:
+      0 1px 3px var(--color-shadow),
+      0 4px 16px var(--color-shadow);
+    transition:
+      transform var(--transition-speed) ease,
+      box-shadow var(--transition-speed) ease;
     display: flex;
     flex-direction: row;
     text-decoration: none;
@@ -146,7 +152,9 @@
 
   .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 4px 8px var(--color-shadow-md), 0 16px 36px var(--color-shadow-md);
+    box-shadow:
+      0 4px 8px var(--color-shadow-md),
+      0 16px 36px var(--color-shadow-md);
   }
 
   .card-accent {
