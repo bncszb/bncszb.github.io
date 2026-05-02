@@ -43,49 +43,34 @@
     position: sticky;
     top: 0;
     z-index: 100;
-    background-color: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 1px 3px var(--color-shadow);
-    padding: 0.5rem 0;
+    background-color: rgba(250, 248, 245, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--color-border);
+    padding: 0;
   }
 
   .header-container {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: stretch;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1.5rem;
+    height: 56px;
   }
 
   .logo {
     font-weight: 700;
     font-size: 1.5rem;
-  }
-
-  .logo-link {
-    color: var(--color-theme-1);
-    text-decoration: none;
-    padding: 0.5rem;
-    border-radius: 50%;
-    background-color: rgba(44, 122, 123, 0.1);
-    display: inline-block;
-    width: 2.5rem;
-    height: 2.5rem;
-    text-align: center;
-    line-height: 1.5rem;
-    transition: all var(--transition-speed) ease;
-  }
-
-  .logo-link:hover {
-    background-color: rgba(44, 122, 123, 0.2);
-    transform: scale(1.05);
+    display: flex;
+    align-items: center;
   }
 
   nav {
     display: flex;
-    justify-content: center;
-    gap: 1.5rem;
+    align-items: stretch;
+    gap: 0.25rem;
   }
 
   .social {
@@ -94,9 +79,9 @@
   }
 
   .social img {
-    width: 1.5rem;
-    height: 1.5rem;
-    opacity: 0.7;
+    width: 1.25rem;
+    height: 1.25rem;
+    opacity: 0.55;
     display: block;
     object-fit: contain;
     transition:
@@ -105,53 +90,61 @@
   }
 
   .social img:hover {
-    opacity: 1;
+    opacity: 0.9;
     transform: scale(1.1);
   }
 
   nav a {
     display: flex;
     align-items: center;
-    padding: 0.5rem 0;
+    padding: 0 0.85rem;
     font-weight: 500;
-    font-size: 1rem;
+    font-size: 0.88rem;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.07em;
     text-decoration: none;
-    color: var(--color-text);
+    color: var(--color-text-light);
     position: relative;
     transition: color var(--transition-speed) ease;
   }
 
-  nav a:hover,
+  nav a:hover {
+    color: var(--color-text);
+  }
+
   nav a.active {
     color: var(--color-theme-1);
+    font-weight: 600;
   }
 
   nav a::after {
     content: "";
     position: absolute;
     bottom: 0;
-    left: 0;
-    width: 0;
+    left: 0.85rem;
+    right: 0.85rem;
     height: 2px;
-    background-color: var(--color-theme-1);
-    transition: width var(--transition-speed) ease;
+    background: linear-gradient(90deg, var(--color-theme-1), #4a4038);
+    border-radius: 2px 2px 0 0;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform var(--transition-speed) ease;
   }
 
   nav a:hover::after,
   nav a.active::after {
-    width: 100%;
+    transform: scaleX(1);
   }
 
   @media (max-width: 600px) {
     nav {
-      gap: 1rem;
+      gap: 0;
     }
 
     nav a {
-      font-size: 0.9rem;
-      letter-spacing: 0.03em;
+      padding: 0 0.6rem;
+      font-size: 0.82rem;
+      letter-spacing: 0.04em;
     }
 
     .social {
