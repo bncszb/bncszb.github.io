@@ -46,7 +46,8 @@
     gap: 0.75rem;
     cursor: pointer;
     padding: 0.75rem;
-    border-radius: 6px;
+    /* border-radius: 6px; */
+    border: 0;
     transition: all var(--transition-speed, 0.3s) ease;
   }
 
@@ -72,7 +73,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 0.75rem;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     padding-top: 0.5rem;
     border-top: 1px solid var(--color-border, #e2e8f0);
