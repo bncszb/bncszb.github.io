@@ -122,11 +122,15 @@ const buildingKnowledgeGraphsWithLLMs: Certification = {
   url: "https://graphacademy.neo4j.com/c/0c4d0c2a-1f66-42de-a780-504e7a80c76f/",
 };
 
+const contextGraphs: Certification = {
+  name: "Context Graphs: Agent Memory with Neo4j",
+  url: "https://graphacademy.neo4j.com/c/d3c1af4a-60f2-493f-b367-5a3642db8d94/",
+}
 const Neo4jGenerativeAI: Role = {
   category: "Course",
   name: "Generative AI with Knowledge Graphs",
   startDate: new Date("2025-07-01"),
-  endDate: new Date("2025-08-31"),
+  endDate: new Date("2026-05-31"),
   instutition: "GraphAcademy",
   location: "Neo4j",
   description: `
@@ -135,6 +139,7 @@ const Neo4jGenerativeAI: Role = {
   It builds on top of the Neo4j Fundamentals and Graph Data Science pathways.
   Aditional completed courses include:
   ${getCertificationBulletPoints([
+    contextGraphs,
     introductionToVectorIndexesAndUnstructuredData,
     buildingKnowledgeGraphsWithLLMs,
     developingWithNeo4jMCPTools,
