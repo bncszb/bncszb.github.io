@@ -26,6 +26,10 @@
 
   <div class="cv-container">
     <div class="cv-sidebar">
+      <div class="sidebar-photo">
+        <img src="/bence_szabo.jpg" alt="Bence Séra-Szabó" />
+      </div>
+
       <div class="sidebar-section">
         <Contact />
       </div>
@@ -117,7 +121,35 @@
   .cv-sidebar {
     flex: 1;
     max-width: 280px;
-    min-width: 0; /* Allow content to shrink below min-content width */
+    min-width: 0;
+  }
+
+  .sidebar-photo {
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 4px var(--color-shadow);
+    aspect-ratio: 1620 / 2326;
+    position: relative;
+    background-color: var(--color-bg-0);
+  }
+
+  .sidebar-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    filter: saturate(0.75) brightness(1.1) contrast(0.95);
+    mix-blend-mode: multiply;
+  }
+
+  .sidebar-photo::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23noise)' opacity='0.06'/%3E%3C/svg%3E");
+    pointer-events: none;
   }
 
   .cv-content {
