@@ -21,6 +21,9 @@
       <a href="/projects" class={isActive("/projects") ? "active" : ""}
         >Projects</a
       >
+      <a href="/services" class={isActive("/services") ? "active" : ""}
+        >Services</a
+      >
       <a href="/contact" class={isActive("/contact") ? "active" : ""}>Contact</a
       >
     </nav>

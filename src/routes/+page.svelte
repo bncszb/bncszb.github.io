@@ -50,6 +50,15 @@
         <p>Open-source tools and experiments in health tech</p>
       </div>
     </a>
+
+    <a href="/services" class="card">
+      <div class="card-accent"></div>
+      <div class="card-content">
+        <span class="card-label">Hire</span>
+        <h2>Services</h2>
+        <p>Contracting in scientific programming, AI workflows, and medical software</p>
+      </div>
+    </a>
   </div>
 
   <section class="contact-section">
@@ -129,7 +138,7 @@
 
   .navigation-cards {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 1.5rem;
     padding: 0 1.5rem;
   }
@@ -199,7 +208,13 @@
     padding: 0 1.5rem 4rem;
   }
 
-  @media (max-width: 900px) {
+  @media (max-width: 1100px) {
+    .navigation-cards {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 600px) {
     .navigation-cards {
       grid-template-columns: 1fr;
     }
