@@ -1,6 +1,6 @@
 <script lang="ts">
   import Post from "$lib/components/blog/Post.svelte";
-  import "$lib/components/Pagination.svelte";
+  import Pagination from "$lib/components/Pagination.svelte";
   import { posts } from "$lib/models/blog/post";
 
   const POSTS_PER_PAGE = 3;
@@ -23,8 +23,7 @@
     if (currentPage > 1) currentPage--;
   }
 
-  function goToPage(e: Event) {
-    const page = (e as CustomEvent<number>).detail;
+  function goToPage(page: number) {
     if (page >= 1 && page <= totalPages) currentPage = page;
   }
 </script>
@@ -60,14 +59,13 @@
   </div>
 
   <div class="pagination-container">
-    <pagination-component
+    <Pagination
       {currentPage}
       {totalPages}
       onprev={prevPage}
       onnext={nextPage}
       ongoto={goToPage}
-    >
-    </pagination-component>
+    />
   </div>
 </main>
 

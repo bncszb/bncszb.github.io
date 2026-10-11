@@ -1,20 +1,21 @@
-<svelte:options customElement="pagination-component" />
-
 <script lang="ts">
   type Props = {
     currentPage: number;
     totalPages: number;
+    onprev: () => void;
+    onnext: () => void;
+    ongoto: (page: number) => void;
   };
 
-  let { currentPage, totalPages }: Props = $props();
+  let { currentPage, totalPages, onprev, onnext, ongoto }: Props = $props();
 
   function prevPage() {
-    if (currentPage > 1) $host().dispatchEvent(new CustomEvent("prev", {}));
+    if (currentPage > 1) onprev();
   }
 
   function nextPage() {
     if (currentPage < totalPages)
-      $host().dispatchEvent(new CustomEvent("next", {}));
+      onnext();
   }
   
   // Generate page numbers to display
@@ -71,7 +72,7 @@
   
   function goToPage(page: number | string) {
     if (typeof page !== 'number' || page === currentPage) return;
-    $host().dispatchEvent(new CustomEvent("goto", { detail: page }));
+    ongoto(page);
   }
 </script>
 

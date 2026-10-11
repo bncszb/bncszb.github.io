@@ -1,5 +1,5 @@
 <script lang="ts">
-    import "$lib/components/side-panel/SidePanel.svelte";
+    import SidePanel from "$lib/components/side-panel/SidePanel.svelte";
     import { closePanel, panelState } from "$lib/components/side-panel/side-panel.svelte";
     import "../app.css";
     import Header from "./Header.svelte";
@@ -55,7 +55,7 @@
         <button class="panel-overlay" onclick={handleOverlayClick} tabindex="0" aria-label="Close panel"></button>
     {/if}
 
-    <side-panel-component> </side-panel-component>
+    <SidePanel />
 
     <footer>
         <div class="footer-content">

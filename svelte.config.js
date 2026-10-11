@@ -20,9 +20,6 @@ const config = {
 	//   paths: {
 	// 	base: '' 
 	//   }
-	},
-	compilerOptions:{
-		customElement:true,
 	}
 };
 

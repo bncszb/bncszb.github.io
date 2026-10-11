@@ -1,5 +1,3 @@
-<svelte:options customElement="skill-details" />
-
 <script lang="ts">
   import history from "$lib/models/history";
   import type { Skill } from "$lib/models/skills";
