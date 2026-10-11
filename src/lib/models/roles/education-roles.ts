@@ -5,7 +5,7 @@ const MedicineRole: Role = {
   name: "Doctor of Medicine",
   startDate: new Date("2014-09-01"),
   endDate: new Date("2021-06-01"),
-  instutition: "Semmelweis University",
+  institution: "Semmelweis University",
   location: "Budapest",
   bulletPoints: [
     "Biochemistry competition: 5th place (2015)",
@@ -19,7 +19,7 @@ const PhysicsRole: Role = {
   name: "Bachelor of Science in Physics",
   startDate: new Date("2016-09-01"),
   endDate: new Date("2020-06-01"),
-  instutition: "Eötvös Loránd University",
+  institution: "Eötvös Loránd University",
   location: "Budapest",
   bulletPoints: ["Biophysics Specialization"],
 };

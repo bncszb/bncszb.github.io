@@ -25,7 +25,7 @@
     <div class="role-title-container">
       <h3 class="role-title">{role.name}</h3>
       <div class="role-meta">
-        <span class="role-location">📍 {role.instutition}, {role.location}</span>
+        <span class="role-location">📍 {role.institution}, {role.location}</span>
         <span class="role-date">🗓️ {dateRange}</span>
       </div>
     </div>

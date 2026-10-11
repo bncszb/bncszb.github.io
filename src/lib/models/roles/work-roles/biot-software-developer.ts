@@ -2,18 +2,18 @@
 import type { Project } from "$lib/models/project";
 import type { Role } from "$lib/models/roles/common-roles";
 import {
-  drugbankSkill,
-  goSkill,
-  icd10Skill,
-  kubernetesSkill,
-  mlflowSkill,
-  mysqlSkill,
-  networkxSkill,
-  pythonSkill,
-  pytorchSkill,
-  qdrantSkill,
-  rxNormSkill,
-  snomedSkill
+    drugbankSkill,
+    goSkill,
+    icd10Skill,
+    kubernetesSkill,
+    mlflowSkill,
+    mysqlSkill,
+    networkxSkill,
+    pythonSkill,
+    pytorchSkill,
+    qdrantSkill,
+    rxNormSkill,
+    snomedSkill
 } from "$lib/models/skills";
 
 const medcationServiceProject: Project = {
@@ -89,7 +89,7 @@ export const biotSoftwareDeveloper: Role = {
   name: "Software Developer",
   startDate: new Date("2022-12-01"),
   endDate: new Date("2024-07-01"),
-  instutition: "Biot.ai Lab",
+  institution: "Biot.ai Lab",
   location: "Budapest",
   description: `
 Backend developer with a focus on AI projects and medical supervision. The backend was written in Django with additional services in Go. During my time in this role I learned a lot about DevOps and Kubernetes as well.

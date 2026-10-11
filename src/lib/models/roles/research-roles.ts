@@ -1,9 +1,9 @@
 import {
-  dockerSkill,
-  networkxSkill,
-  pythonSkill,
-  pytorchSkill,
-  tensorflowSkill,
+    dockerSkill,
+    networkxSkill,
+    pythonSkill,
+    pytorchSkill,
+    tensorflowSkill,
 } from "../skills";
 import type { Role } from "./common-roles";
 
@@ -12,7 +12,7 @@ const wignerRole: Role = {
   name: "Variational autoencoders in visual systems",
   startDate: new Date("2021-09-01"),
   endDate: new Date("2022-04-01"),
-  instutition: "Wigner Research Centre for Physics",
+  institution: "Wigner Research Centre for Physics",
   location: "Budapest",
   bulletPoints: [
     "Study of normal and chained variational autoencoder models trained on natural image patches",
@@ -31,7 +31,7 @@ const linkGroupRole: Role = {
   name: "Cooperation formation in networks",
   startDate: new Date("2018-09-01"),
   endDate: new Date("2021-06-01"),
-  instutition: "LinkGroup",
+  institution: "LinkGroup",
   location: "Budapest",
   bulletPoints: [
     "The role of nodes with fix strategies in spatial social dilemma games",

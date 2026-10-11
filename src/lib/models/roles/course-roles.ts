@@ -73,7 +73,7 @@ const Neo4jProfessional: Role = {
   name: "Neo4j Certified Professional",
   startDate: new Date("2025-05-01"),
   endDate: new Date("2025-06-01"),
-  instutition: "GraphAcademy",
+  institution: "GraphAcademy",
   location: "Neo4j",
   description: `
 The Neo4j Certified Professional is a certification that demonstrates proficiency in using Neo4j, a leading graph database technology. This certification covers fundamental concepts of graph databases, Cypher query language, data modeling, and practical applications of Neo4j.
@@ -100,7 +100,7 @@ const Neo4jGraphDataScienceCertification: Role = {
   name: "Neo4j Graph Data Science Certification",
   startDate: new Date("2025-06-01"),
   endDate: new Date("2025-07-01"),
-  instutition: "GraphAcademy",
+  institution: "GraphAcademy",
   location: "Neo4j",
   description: `
   The Neo4j Graph Data Science Certification is a specialized certification that focuses on the application of graph algorithms and data science techniques using Neo4j's Graph Data Science (GDS) library. This certification covers advanced topics such as pathfinding, community detection, and machine learning with graph data.
@@ -131,7 +131,7 @@ const Neo4jGenerativeAI: Role = {
   name: "Generative AI with Knowledge Graphs",
   startDate: new Date("2025-07-01"),
   endDate: new Date("2026-05-31"),
-  instutition: "GraphAcademy",
+  institution: "GraphAcademy",
   location: "Neo4j",
   description: `
   A learning pathway by Neo4j to understand how to build knowledge graphs with LLMs in Neo4j for Generative AI applications.
@@ -172,7 +172,7 @@ const DeepLearningCourses: Role = {
   name: "Deep Learning Courses",
   startDate: new Date("2020-07-01"),
   endDate: new Date("2021-08-01"),
-  instutition: "DeepLearning.ai",
+  institution: "DeepLearning.ai",
   location: "Coursera",
   description: `Completed various deep learning courses on DeepLearning.ai, focusing on neural networks, convolutional networks, and sequence models. These courses provided a solid foundation in deep learning techniques and their applications in real-world scenarios.
   

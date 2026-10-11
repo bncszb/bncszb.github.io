@@ -4,7 +4,7 @@ const MalteseRole: Role = {
   category: "Volunteering",
   name: "Disaster and Humanitarian Relief",
   startDate: new Date("2019-07-01"),
-  instutition: "Hungarian Charity Service of the Order of Malta",
+  institution: "Hungarian Charity Service of the Order of Malta",
   location: "Budapest",
   description:``,
   bulletPoints: [
@@ -20,7 +20,7 @@ const KorhazSuliRole: Role = {
   name: "Teaching",
   startDate: new Date("2020-09-01"),
   endDate: new Date("2021-03-01"),
-  instutition: "KórházSuli",
+  institution: "KórházSuli",
   location: "Budapest",
   bulletPoints: ["Online teaching of high school students", "Physics"],
 };

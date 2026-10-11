@@ -1,14 +1,14 @@
 
 import type { Project } from "$lib/models/project";
-import type { Role } from "$lib/models/roles/common-roles"
+import type { Role } from "$lib/models/roles/common-roles";
 import {
-  kubernetesSkill,
-  langchainSkill,
-  langfuseSkill,
-  neo4jSkill,
-  pythonSkill,
-  qdrantSkill,
-  typescriptSkill,
+    kubernetesSkill,
+    langchainSkill,
+    langfuseSkill,
+    neo4jSkill,
+    pythonSkill,
+    qdrantSkill,
+    typescriptSkill,
 } from "$lib/models/skills";
 
 const speechToFormProject: Project = {
@@ -74,7 +74,7 @@ export const biotHeadOfAI: Role = {
   name: "Head of AI",
   startDate: new Date("2024-07-01"),
   endDate: new Date("2025-07-31"),
-  instutition: "Biot.ai Lab",
+  institution: "Biot.ai Lab",
   location: "Budapest",
   description: `
 Responsible for the AI infrastructure and the AI projects at Biot.ai Lab.

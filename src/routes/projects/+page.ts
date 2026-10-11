@@ -19,7 +19,7 @@ export const load: PageLoad = () => {
         ...project,
         role: {
           name: role.name,
-          institution: role.instutition,
+          institution: role.institution,
           startDate: role.startDate,
           endDate: role.endDate,
         },

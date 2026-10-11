@@ -20,7 +20,7 @@ export type Role = {
   name: string;
   startDate: Date;
   endDate?: Date;
-  instutition?: string;
+  institution?: string;
   location?: string;
   description?: string;
   bulletPoints?: string[];

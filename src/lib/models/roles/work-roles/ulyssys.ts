@@ -1,11 +1,11 @@
 import type { Project } from "$lib/models/project";
 import type { Role } from "$lib/models/roles/common-roles";
 import {
-	dockerSkill,
-	pandasSkill,
-	plotlySkill,
-	pythonSkill,
-	tensorflowSkill,
+    dockerSkill,
+    pandasSkill,
+    plotlySkill,
+    pythonSkill,
+    tensorflowSkill,
 } from "$lib/models/skills";
 
 const maskRCNNProject: Project = {
@@ -48,7 +48,7 @@ export const ulyssysAIResearcher: Role = {
 	name: "AI Researcher",
 	startDate: new Date("2021-09-01"),
 	endDate: new Date("2022-12-01"),
-	instutition: "Ulyssys",
+	institution: "Ulyssys",
 	location: "Budapest",
 	description: `
 Researcher in the Ulyssys AI group. The group worked on a EU funded project about malignant nodule segmentation in lung CT images.

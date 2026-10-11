@@ -13,7 +13,7 @@
     <AccordionItem>
       <HistoryElement
         title={role.name}
-        location={role.instutition + ", " + role.location}
+        location={role.institution + ", " + role.location}
         time={role.startDate.toLocaleString("en-US", {
           year: "numeric",
           month: "short",

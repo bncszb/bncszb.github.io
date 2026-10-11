@@ -18,7 +18,7 @@ export const telekomSeniorAIEngineer: Role = {
 	name: "Senior AI Engineer & Tech Lead",
 	startDate: new Date("2025-09-01"),
 	endDate: new Date("2026-06-30"),
-	instutition: "Magyar Telekom",
+	institution: "Magyar Telekom",
 	location: "Budapest",
 	description: `
 Design and development of the Model AI project.
