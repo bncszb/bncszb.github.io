@@ -1,6 +1,6 @@
 
-import type { Project } from "$lib/models/project";
-import type { Role } from "$lib/models/roles/common-roles";
+import type { Project } from "#lib/models/project";
+import type { Role } from "#lib/models/roles/common-roles";
 import {
     drugbankSkill,
     goSkill,
@@ -14,7 +14,7 @@ import {
     qdrantSkill,
     rxNormSkill,
     snomedSkill
-} from "$lib/models/skills";
+} from "#lib/models/skills";
 
 const medcationServiceProject: Project = {
   name: "Medication Service",

@@ -1,6 +1,6 @@
 <script lang="ts">
-  import history from "$lib/models/history";
-  import type { Skill } from "$lib/models/skills";
+  import history from "#lib/models/history";
+  import type { Skill } from "#lib/models/skills";
   import Graph from "../graph/Graph.svelte";
   import ProjectDetails from "../project/ProjectDetails.svelte";
   import RoleDetails from "../role/RoleDetails.svelte";

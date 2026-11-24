@@ -1,6 +1,6 @@
 <script lang="ts">
-    import SidePanel from "$lib/components/side-panel/SidePanel.svelte";
-    import { closePanel, panelState } from "$lib/components/side-panel/side-panel.svelte";
+    import SidePanel from "#lib/components/side-panel/SidePanel.svelte";
+    import { closePanel, panelState } from "#lib/components/side-panel/side-panel.svelte";
     import "../app.css";
     import Header from "./Header.svelte";
 

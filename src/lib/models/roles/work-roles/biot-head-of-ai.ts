@@ -1,6 +1,6 @@
 
-import type { Project } from "$lib/models/project";
-import type { Role } from "$lib/models/roles/common-roles";
+import type { Project } from "#lib/models/project";
+import type { Role } from "#lib/models/roles/common-roles";
 import {
     kubernetesSkill,
     langchainSkill,
@@ -9,7 +9,7 @@ import {
     pythonSkill,
     qdrantSkill,
     typescriptSkill,
-} from "$lib/models/skills";
+} from "#lib/models/skills";
 
 const speechToFormProject: Project = {
   name: "Speech-to-form",

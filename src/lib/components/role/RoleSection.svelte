@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { getRoleSkills, type Role } from "$lib/models/roles/common-roles";
+  import { getRoleSkills, type Role } from "#lib/models/roles/common-roles";
   import AccordionItem from "../AccordionItem.svelte";
   import HistoryElement from "../HistoryElement.svelte";
   import Markdown from "../Markdown.svelte";

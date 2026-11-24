@@ -1,6 +1,6 @@
-import type { Project } from "$lib/models/project";
-import type { Role } from "$lib/models/roles/common-roles";
-import { pythonSkill } from "$lib/models/skills";
+import type { Project } from "#lib/models/project";
+import type { Role } from "#lib/models/roles/common-roles";
+import { pythonSkill } from "#lib/models/skills";
 
 const modelAI: Project = {
 	name: "Model AI",

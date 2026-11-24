@@ -1,5 +1,5 @@
-import type { Project } from "$lib/models/project";
-import { pythonSkill } from "$lib/models/skills";
+import type { Project } from "#lib/models/project";
+import { pythonSkill } from "#lib/models/skills";
 import type { Role } from "../common-roles";
 
 const AZAIEngineer: Project = {

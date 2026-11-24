@@ -1,6 +1,6 @@
 <script lang="ts">
-  import type { Graph } from "$lib/models/graph";
-  import { getSkillKebab } from "$lib/models/skills";
+  import type { Graph } from "#lib/models/graph";
+  import { getSkillKebab } from "#lib/models/skills";
 
   type Props = {
     graph: Graph;

@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { openPanel } from "$lib/components/side-panel/side-panel.svelte";
-  import { type Skill } from "$lib/models/skills";
+  import { openPanel } from "#lib/components/side-panel/side-panel.svelte";
+  import { type Skill } from "#lib/models/skills";
   import { stopPropagation } from "svelte/legacy";
   import SkillDetails from "./SkillDetails.svelte";
 

@@ -1,4 +1,4 @@
-import { dockerSkill, neo4jSkill, pythonSkill } from "$lib/models/skills";
+import { dockerSkill, neo4jSkill, pythonSkill } from "#lib/models/skills";
 import type { Role } from "../common-roles";
 
 

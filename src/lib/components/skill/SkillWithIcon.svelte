@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { type Skill } from "$lib/models/skills";
+  import { type Skill } from "#lib/models/skills";
   export let skill: Skill;
   export let iconSize = 40;
 </script>

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { Post } from "$lib/models/blog/post";
+  import type { Post } from "#lib/models/blog/post";
   import Markdown from "../Markdown.svelte";
 
   type Props = {

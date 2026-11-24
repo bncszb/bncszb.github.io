@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { getRoleSkills, type Role } from "$lib/models/roles/common-roles";
+  import { getRoleSkills, type Role } from "#lib/models/roles/common-roles";
   import Markdown from "../Markdown.svelte";
 
   export let role: Role;

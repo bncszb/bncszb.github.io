@@ -1,12 +1,12 @@
-import type { Project } from "$lib/models/project";
-import type { Role } from "$lib/models/roles/common-roles";
+import type { Project } from "#lib/models/project";
+import type { Role } from "#lib/models/roles/common-roles";
 import {
     dockerSkill,
     pandasSkill,
     plotlySkill,
     pythonSkill,
     tensorflowSkill,
-} from "$lib/models/skills";
+} from "#lib/models/skills";
 
 const maskRCNNProject: Project = {
 	name: "Mask R-CNN",

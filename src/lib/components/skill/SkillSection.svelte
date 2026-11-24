@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { getSkillKebab, type Skill } from "$lib/models/skills";
+  import { getSkillKebab, type Skill } from "#lib/models/skills";
 
   export let category = "";
   export let skills: Skill[] = [];

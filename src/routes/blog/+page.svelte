@@ -1,7 +1,7 @@
 <script lang="ts">
-  import Post from "$lib/components/blog/Post.svelte";
-  import Pagination from "$lib/components/Pagination.svelte";
-  import { posts } from "$lib/models/blog/post";
+  import Post from "#lib/components/blog/Post.svelte";
+  import Pagination from "#lib/components/Pagination.svelte";
+  import { posts } from "#lib/models/blog/post";
 
   const POSTS_PER_PAGE = 3;
   const totalPages = Math.ceil(posts.length / POSTS_PER_PAGE);

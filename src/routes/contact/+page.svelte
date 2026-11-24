@@ -1,5 +1,5 @@
 <script lang="ts">
-  import ContactForm from "$lib/components/ContactForm.svelte";
+  import ContactForm from "#lib/components/ContactForm.svelte";
   import { Icon } from "svelte-icons-pack";
   import { FiGithub } from "svelte-icons-pack/fi";
   import { IoLogoLinkedin } from "svelte-icons-pack/io";

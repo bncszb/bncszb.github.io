@@ -1,6 +1,6 @@
 <script lang="ts">
     import { page } from "$app/state";
-    import github from "$lib/images/github.svg";
+    import github from "#lib/images/github.svg";
 
     function isActive(pathname: string): boolean {
         if (pathname === "/" && page.url.pathname === "/") return true;

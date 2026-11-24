@@ -1,7 +1,7 @@
 <script>
-  import SkillSection from "$lib/components/skill/SkillSectionCV.svelte";
-  import { skillsByCategory } from "$lib/models/history";
-  import { skillCategories } from "$lib/models/skills";
+  import SkillSection from "#lib/components/skill/SkillSectionCV.svelte";
+  import { skillsByCategory } from "#lib/models/history";
+  import { skillCategories } from "#lib/models/skills";
 </script>
 
 <div class="skills-container">

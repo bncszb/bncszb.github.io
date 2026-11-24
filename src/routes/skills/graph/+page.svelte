@@ -1,6 +1,6 @@
 <script lang="ts">
-  import Graph from "$lib/components/graph/Graph.svelte";
-  import history from "$lib/models/history";
+  import Graph from "#lib/components/graph/Graph.svelte";
+  import history from "#lib/models/history";
 </script>
 
 <main>

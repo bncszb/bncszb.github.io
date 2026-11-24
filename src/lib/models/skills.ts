@@ -18,7 +18,7 @@ import {
 	SiTensorflow,
 	SiTypescript,
 } from "@icons-pack/svelte-simple-icons";
-import type { SvelteComponent } from "svelte";
+import type { Component } from "svelte";
 
 export const skillCategories = [
 	"Programming Languages",
@@ -33,7 +33,7 @@ export type SkillCategory = (typeof skillCategories)[number];
 export type Skill = {
 	name: string;
 	category: SkillCategory;
-	icon?: new (...args: any) => SvelteComponent;
+	icon?: Component<{ size?: number; color?: string; title?: string } & Record<string, any>>;
 	mastery: number;
 };
 

@@ -1,6 +1,6 @@
 <script lang="ts">
-  import ShortDescriptionWIthIcons from "$lib/components/project/ShortDescriptionWIthIcons.svelte";
-  import { sideProjects } from "$lib/models/side-projects";
+  import ShortDescriptionWIthIcons from "#lib/components/project/ShortDescriptionWIthIcons.svelte";
+  import { sideProjects } from "#lib/models/side-projects";
 
   export let data;
 

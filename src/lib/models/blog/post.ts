@@ -11,7 +11,8 @@ export type Post = {
 
 // Import all markdown files as raw text at build time
 const markdownFiles = import.meta.glob("/src/lib/models/blog/posts/*.md", {
-  as: "raw",
+  query: "?raw",
+  import: "default",
   eager: true,
 });
 

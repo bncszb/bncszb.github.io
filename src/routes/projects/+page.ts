@@ -1,4 +1,4 @@
-import history from "$lib/models/history";
+import history from "#lib/models/history";
 import type { PageLoad } from "./$types";
 
 export const prerender = true;

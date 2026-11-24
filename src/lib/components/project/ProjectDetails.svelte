@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { Project } from "$lib/models/project";
+  import type { Project } from "#lib/models/project";
   import Markdown from "../Markdown.svelte";
 
   export let project: Project;
